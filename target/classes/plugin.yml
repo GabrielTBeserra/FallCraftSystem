@@ -1,0 +1,67 @@
+name: FallCraftSystem
+version: 1.0-SNAPSHOT
+main: fallcraftsystem.core.FallCraftSystem
+api-version: 1.8.8
+commands:
+  setwarp:
+    description: Set the new warp.
+    aliases: [setwarp]
+    permission: fallcraft.module.warp.admin
+    usage: Use /setwarp <Name> <Position> [Permission] to set the new warp.
+  delwarp:
+    description: Set the new warp.
+    aliases: [delwarp]
+    permission: fallcraft.warps.admin
+    usage: Use /delwarp <Name> to delete the new warp.
+  warp:
+    description: warp commnad.
+    permission: fallcraft.module.warp.use
+    usage: Use /warp <warp name> to teleport.
+  warplist:
+    description: See the all warps.
+    permission: fallcraft.module.warp.list
+    usage: Use /warplist to see all warps.
+  lobby:
+    description: See the all warps.
+    aliases: [spawn , hub]
+    permission: fallcraft.module.essentials.spawn
+    usage: Use /warplist to see all warps.
+  setlobby:
+    description: See the all warps.
+    permission: fallcraft.module.essentials.setspawn
+    usage: Use /warplist to see all warps.
+  v:
+    description: Set vanish.
+    permission: fallcraft.module.essentials.v
+    usage: Use /warplist to see all warps.
+  fly:
+    description: Set vanish.
+    permission: fallcraft.module.essentials.fly
+    usage: Use /warplist to see all warps.
+  gm:
+    description: Set vanish.
+    permission: fallcraft.module.essentials.gm
+    usage: Use /warplist to see all warps.
+  tp:
+    description: Set vanish.
+    permission: fallcraft.module.essentials.tp
+    usage: Use /warplist to see all warps.
+  savei:
+    description: See the all warps.
+    permission: fallcraft.module.essentials.setspawn
+    usage: Use /warplist to see all warps.
+  rec:
+    description: See the all warps.
+    permission: fallcraft.module.essentials.setspawn
+    usage: Use /warplist to see all warps.
+permissions:
+  fallcraft.module.warp.*:
+    description: Da acesso a todos comandos do Warp
+    children:
+      fallcraft.module.warp.list: true
+      fallcraft.module.warp.use: true
+      fallcraft.module.warp.admin: true
+  fallcraft.module.essentials:
+    description: Acesso a todos os modulos de essentials
+    children:
+      fallcraft.module.essentials.spawn: true
