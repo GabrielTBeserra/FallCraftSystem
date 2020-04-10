@@ -14,10 +14,12 @@ public class LoadEssentialCommandsModule {
            new Fly(fallCraftSystem);
            new Gm(fallCraftSystem);
            new Tp(fallCraftSystem);
+           new Tpall(fallCraftSystem);
+           new Reloadall(fallCraftSystem);
 
-            fallCraftSystem.getServer().getConsoleSender().sendMessage(MethodsStatics.formater(PluginInfo.PLUGIN_NAME + "&cModule &f>> &aSpawn load"));
+            fallCraftSystem.getServer().getConsoleSender().sendMessage(MethodsStatics.formater(PluginInfo.PLUGIN_NAME + "&cModule &f>> &aCommands load"));
         } catch (Exception e) {
-            fallCraftSystem.getServer().getConsoleSender().sendMessage(MethodsStatics.formater(PluginInfo.PLUGIN_NAME + "&cModule &f>> &aSpawn not load"));
+            fallCraftSystem.getServer().getConsoleSender().sendMessage(MethodsStatics.formater(PluginInfo.PLUGIN_NAME + "&cModule &f>> &aCommands not load"));
         }
 
     }

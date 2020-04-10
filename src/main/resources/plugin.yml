@@ -2,6 +2,7 @@ name: FallCraftSystem
 version: ${project.version}
 main: fallcraftsystem.core.FallCraftSystem
 api-version: 1.8.8
+depend: [WorldGuard]
 commands:
   setwarp:
     description: Set the new warp.
@@ -45,6 +46,14 @@ commands:
   tp:
     description: Set vanish.
     permission: fallcraft.module.essentials.tp
+    usage: Use /warplist to see all warps.
+  tpall:
+    description: Set vanish.
+    permission: fallcraft.module.essentials.tpall
+    usage: Use /warplist to see all warps.
+  reloadall:
+    description: Set vanish.
+    permission: fallcraft.module.essentials.reloadall
     usage: Use /warplist to see all warps.
   savei:
     description: See the all warps.

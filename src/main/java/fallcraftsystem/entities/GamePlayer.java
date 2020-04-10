@@ -2,6 +2,7 @@ package fallcraftsystem.entities;
 
 import fallcraftsystem.entities.enums.FlyStatus;
 import fallcraftsystem.entities.enums.PlayerStatus;
+import fallcraftsystem.entities.enums.PvpStatus;
 import fallcraftsystem.entities.enums.VanishStatus;
 import org.bukkit.entity.Player;
 
@@ -10,22 +11,16 @@ public class GamePlayer {
     private PlayerStatus playerStatus;
     private VanishStatus vanishStatus;
     private FlyStatus fLyStatus;
+    private PvpStatus pvpStatus;
 
-
-    public GamePlayer(Player player, PlayerStatus playerStatus, VanishStatus vanishStatus, FlyStatus fLyStatus) {
+    public GamePlayer(Player player, PlayerStatus playerStatus, VanishStatus vanishStatus, FlyStatus fLyStatus, PvpStatus pvpStatus) {
         this.player = player;
         this.playerStatus = playerStatus;
         this.vanishStatus = vanishStatus;
         this.fLyStatus = fLyStatus;
+        this.pvpStatus = pvpStatus;
     }
 
-    public FlyStatus getfLyStatus() {
-        return fLyStatus;
-    }
-
-    public void setfLyStatus(FlyStatus fLyStatus) {
-        this.fLyStatus = fLyStatus;
-    }
 
     public Player getPlayer() {
         return player;
@@ -49,5 +44,21 @@ public class GamePlayer {
 
     public void setVanishStatus(VanishStatus vanishStatus) {
         this.vanishStatus = vanishStatus;
+    }
+
+    public FlyStatus getfLyStatus() {
+        return fLyStatus;
+    }
+
+    public void setfLyStatus(FlyStatus fLyStatus) {
+        this.fLyStatus = fLyStatus;
+    }
+
+    public PvpStatus getPvpStatus() {
+        return pvpStatus;
+    }
+
+    public void setPvpStatus(PvpStatus pvpStatus) {
+        this.pvpStatus = pvpStatus;
     }
 }
