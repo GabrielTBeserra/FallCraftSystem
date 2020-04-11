@@ -18,4 +18,5 @@ public class PluginInfo {
         PluginInfo.SERVER_NAME = "&FFall&bCraft &9&l>>&f ";
         PluginInfo.players = new HashMap<Player, GamePlayer>();
     }
+
 }

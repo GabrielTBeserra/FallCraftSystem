@@ -7,7 +7,6 @@ package fallcraftsystem.modules.essentials.commands;
 import fallcraftsystem.core.FallCraftSystem;
 import fallcraftsystem.utils.MethodsStatics;
 import fallcraftsystem.utils.PluginInfo;
-import net.md_5.bungee.api.chat.ComponentBuilder;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -44,7 +43,6 @@ public class Reloadall implements CommandExecutor {
         }
 
         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "reload");
-
 
 
         return true;

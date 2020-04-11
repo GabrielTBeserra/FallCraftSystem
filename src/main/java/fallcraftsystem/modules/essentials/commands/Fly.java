@@ -30,14 +30,14 @@ public class Fly implements CommandExecutor {
 
         GamePlayer gm = PluginInfo.players.get(player);
 
-        if (gm.getfLyStatus().equals(FlyStatus.NOT_FLYING)) {
+        if (gm.getFlyStatus().equals(FlyStatus.NOT_FLYING)) {
             player.sendMessage("Voce esta voando agora");
             player.setAllowFlight(true);
-            PluginInfo.players.get(player).setfLyStatus(FlyStatus.FLYING);
+            PluginInfo.players.get(player).setFlyStatus(FlyStatus.FLYING);
         } else {
             player.setAllowFlight(false);
             player.sendMessage("Voce esta nao voando agora");
-            PluginInfo.players.get(player).setfLyStatus(FlyStatus.NOT_FLYING);
+            PluginInfo.players.get(player).setFlyStatus(FlyStatus.NOT_FLYING);
         }
 
 

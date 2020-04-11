@@ -1,24 +1,41 @@
 package fallcraftsystem.entities;
 
-import fallcraftsystem.entities.enums.FlyStatus;
-import fallcraftsystem.entities.enums.PlayerStatus;
-import fallcraftsystem.entities.enums.PvpStatus;
-import fallcraftsystem.entities.enums.VanishStatus;
+import fallcraftsystem.entities.enums.*;
 import org.bukkit.entity.Player;
 
 public class GamePlayer {
+    private SpyStatus spyStatus;
     private Player player;
     private PlayerStatus playerStatus;
     private VanishStatus vanishStatus;
-    private FlyStatus fLyStatus;
+    private FlyStatus flyStatus;
     private PvpStatus pvpStatus;
 
-    public GamePlayer(Player player, PlayerStatus playerStatus, VanishStatus vanishStatus, FlyStatus fLyStatus, PvpStatus pvpStatus) {
+    public GamePlayer(Player player, PlayerStatus playerStatus, VanishStatus vanishStatus, FlyStatus fLyStatus, PvpStatus pvpStatus, SpyStatus spyStatus) {
         this.player = player;
         this.playerStatus = playerStatus;
         this.vanishStatus = vanishStatus;
-        this.fLyStatus = fLyStatus;
+        this.flyStatus = fLyStatus;
         this.pvpStatus = pvpStatus;
+        this.spyStatus = spyStatus;
+    }
+
+    public GamePlayer(Player player) {
+        this.player = player;
+        this.playerStatus = PlayerStatus.FREE;
+        this.vanishStatus = VanishStatus.VISIBLE;
+        this.flyStatus = FlyStatus.NOT_FLYING;
+        this.pvpStatus = PvpStatus.OFF;
+        this.spyStatus = SpyStatus.OFF;
+    }
+
+
+    public SpyStatus getSpyStatus() {
+        return spyStatus;
+    }
+
+    public void setSpyStatus(SpyStatus spyStatus) {
+        this.spyStatus = spyStatus;
     }
 
 
@@ -46,12 +63,12 @@ public class GamePlayer {
         this.vanishStatus = vanishStatus;
     }
 
-    public FlyStatus getfLyStatus() {
-        return fLyStatus;
+    public FlyStatus getFlyStatus() {
+        return flyStatus;
     }
 
-    public void setfLyStatus(FlyStatus fLyStatus) {
-        this.fLyStatus = fLyStatus;
+    public void setFlyStatus(FlyStatus fLyStatus) {
+        this.flyStatus = fLyStatus;
     }
 
     public PvpStatus getPvpStatus() {

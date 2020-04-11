@@ -63,6 +63,10 @@ commands:
     description: See the all warps.
     permission: fallcraft.module.essentials.setspawn
     usage: Use /warplist to see all warps.
+  spy:
+    description: See the all warps.
+    permission: fallcraft.module.essentials.spy
+    usage: Use /warplist to see all warps.
 permissions:
   fallcraft.module.warp.*:
     description: Da acesso a todos comandos do Warp
