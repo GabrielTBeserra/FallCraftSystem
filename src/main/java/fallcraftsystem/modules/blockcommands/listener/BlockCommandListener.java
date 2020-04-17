@@ -19,7 +19,6 @@ public class BlockCommandListener implements Listener {
 
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onPlayerCommandPreprocess(final PlayerCommandPreprocessEvent event) {
-        final String[] args = event.getMessage().toLowerCase().split(" ");
         final String[] message = event.getMessage().toLowerCase().split(" ");
         if (BlocksCommands.blockedCommands.contains(message[0])) {
             event.getPlayer().sendMessage(MethodsStatics.formater(PluginInfo.SERVER_NAME + "&cYou don`t have permission for this!"));

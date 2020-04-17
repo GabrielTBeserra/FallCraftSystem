@@ -1,8 +1,12 @@
 package fallcraftsystem.modules.scoreboard.listener;
 
+import com.massivecraft.factions.entity.MPlayer;
 import fallcraftsystem.core.FallCraftSystem;
 import fallcraftsystem.utils.MethodsStatics;
 import fallcraftsystem.utils.PluginInfo;
+import fallcraftsystem.utils.dependencies.ChatVault;
+import fallcraftsystem.utils.dependencies.VaultEconomy;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -30,19 +34,48 @@ public class GameScoreboard implements Listener {
                 try {
                     ScoreboardManager scoreboardManager = plugin.getServer().getScoreboardManager();
                     Scoreboard scoreboard = scoreboardManager.getNewScoreboard();
-                    Objective objective = scoreboard.registerNewObjective("STATS", "MENU");
+                    Objective objective = scoreboard.registerNewObjective(MethodsStatics.formater("&3&l" + player.getName()), "MENU");
                     objective.setDisplaySlot(DisplaySlot.SIDEBAR);
-                    Team health = scoreboard.registerNewTeam("health");
-                    health.addEntry("Health: §b");
-                    health.setSuffix("");
-                    health.setPrefix("");
-                    final Score score = objective.getScore(MethodsStatics.formater("&2&lPlayer: " + MethodsStatics.formater("&6" + player.getName())));
-                    final Score score1 = objective.getScore(MethodsStatics.formater("&2&lPVP: " + MethodsStatics.formater("&6" + PluginInfo.players.get(player).getPvpStatus().toString())));
-                    final Runtime r = Runtime.getRuntime();
-                    final long memUsed = r.totalMemory() - r.freeMemory();
 
-                    score.setScore(8);
-                    score1.setScore(7);
+                    MPlayer mplayer = MPlayer.get(player);
+
+
+                    String facName = "";
+
+
+                    Score score1 = objective.getScore(MethodsStatics.formater("&a Facção: &eSem facção"));
+
+
+                    if (!(mplayer.getFactionTag().equals("") || mplayer.getFactionTag().equals(" "))) {
+                        score1 = objective.getScore(MethodsStatics.formater("&a Facção: &e" + mplayer.getFactionName()));
+                    }
+
+
+                    Score score2 = objective.getScore(MethodsStatics.formater("&a Power: &e" + String.format("%.1f", mplayer.getPower())));
+                    Score score3 = objective.getScore(" ");
+                    Score score4 = objective.getScore(MethodsStatics.formater("&a Money: &e" + VaultEconomy.getVault().getBalance(player)));
+                    Score score5 = objective.getScore("  ");
+                    Score score7 = objective.getScore(MethodsStatics.formater("&a PVP: " + MethodsStatics.formater("&6" + PluginInfo.players.get(player).getPvpStatus().toString())));
+                    Score score8 = objective.getScore(MethodsStatics.formater("&a Players Online: &e" + Bukkit.getOnlinePlayers().size()));
+
+                    score1.setScore(10);
+                    score2.setScore(9);
+                    score3.setScore(8);
+                    score4.setScore(7);
+                    score5.setScore(6);
+                    score7.setScore(5);
+                    score8.setScore(4);
+
+
+                    if (!(mplayer.getFactionTag().equals("") || mplayer.getFactionTag().equals(" "))) {
+                        facName = "&5[&f" + mplayer.getFactionTag() + "&5] ";
+                    }
+
+
+                    player.setPlayerListName(
+                            MethodsStatics.formater(
+                                    ChatVault.getChat().getPlayerPrefix(player) + facName + "&7" + player.getName()));
+
 
                     player.setScoreboard(scoreboard);
                 } catch (Exception e) {

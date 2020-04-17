@@ -30,8 +30,9 @@ public class Tp implements CommandExecutor {
         if (args.length == 2) {
             final Player player1 = Bukkit.getPlayer(args[0]);
             final Player player2 = Bukkit.getPlayer(args[1]);
-            if (!player1.isOnline() || !player2.isOnline()) {
+            if (!(player1.isOnline() || player2.isOnline()) || (player1 == null || player2 == null)) {
                 sender.sendMessage(MethodsStatics.formater(PluginInfo.SERVER_NAME + "&cO player nao esta online!"));
+                return true;
             }
             player1.teleport(player2.getLocation());
             for (final Player PPplayer : Bukkit.getOnlinePlayers()) {
@@ -41,8 +42,9 @@ public class Tp implements CommandExecutor {
             }
         } else if (args.length == 1) {
             final Player player1 = Bukkit.getPlayer(args[0]);
-            if (!player1.isOnline()) {
+            if (!player1.isOnline() || player1 == null) {
                 sender.sendMessage(MethodsStatics.formater(PluginInfo.SERVER_NAME + "&cO player nao esta online!"));
+                return true;
             }
             PlayerSender.teleport(player1.getLocation());
             for (final Player PPplayer2 : Bukkit.getOnlinePlayers()) {

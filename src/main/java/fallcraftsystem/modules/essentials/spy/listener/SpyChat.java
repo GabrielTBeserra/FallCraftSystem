@@ -34,7 +34,7 @@ public class SpyChat implements Listener {
 
             for (Player player : Bukkit.getOnlinePlayers()) {
                 if (player.hasPermission("fallcraft.module.essentials.spy")
-                        && PluginInfo.players.get(event.getPlayer()).getSpyStatus().equals(SpyStatus.ON)) {
+                        && PluginInfo.players.get(player).getSpyStatus().equals(SpyStatus.ON)) {
                     player.sendMessage(
                             MethodsStatics.formater("&c&lSPY &9&l>> &5" + sender.getName() + " &7to &5" + alvo.getName() + "&8: &7" + msg));
                 }

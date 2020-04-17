@@ -78,4 +78,16 @@ public class GamePlayer {
     public void setPvpStatus(PvpStatus pvpStatus) {
         this.pvpStatus = pvpStatus;
     }
+
+    @Override
+    public String toString() {
+        return "GamePlayer{" +
+                "spyStatus=" + spyStatus +
+                ", player=" + player +
+                ", playerStatus=" + playerStatus +
+                ", vanishStatus=" + vanishStatus +
+                ", flyStatus=" + flyStatus +
+                ", pvpStatus=" + pvpStatus +
+                '}';
+    }
 }

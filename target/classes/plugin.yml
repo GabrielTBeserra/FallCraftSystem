@@ -5,17 +5,15 @@ api-version: 1.8.8
 depend: [WorldGuard]
 commands:
   setwarp:
-    description: Set the new warp.
-    aliases: [setwarp]
+    description: Defino um novo warp.
     permission: fallcraft.module.warp.admin
-    usage: Use /setwarp <Name> <Position> [Permission] to set the new warp.
+    usage: Use /setwarp <Name> <Position> [Permission] para definir um warp.
   delwarp:
-    description: Set the new warp.
-    aliases: [delwarp]
-    permission: fallcraft.warps.admin
-    usage: Use /delwarp <Name> to delete the new warp.
+    description: Deleta um warp.
+    permission: fallcraft.module.warp.admin
+    usage: Use /delwarp <Name> tpara deletar um warp.
   warp:
-    description: warp commnad.
+    description: Abre o menu de warps.
     permission: fallcraft.module.warp.use
     usage: Use /warp <warp name> to teleport.
   warplist:
@@ -23,50 +21,46 @@ commands:
     permission: fallcraft.module.warp.list
     usage: Use /warplist to see all warps.
   lobby:
-    description: See the all warps.
+    description: Vai ate o spawn.
     aliases: [spawn , hub]
     permission: fallcraft.module.essentials.spawn
-    usage: Use /warplist to see all warps.
+    usage: Use /lobby para ir ate o spawn.
   setlobby:
-    description: See the all warps.
+    description: Define o ponto do lobby.
     permission: fallcraft.module.essentials.setspawn
-    usage: Use /warplist to see all warps.
+    usage: Use /setlobby para definir o ponto do spawn.
   v:
-    description: Set vanish.
+    description: Alterna entre visivel e invisivel.
     permission: fallcraft.module.essentials.v
-    usage: Use /warplist to see all warps.
+    usage: Use /v para alternar.
   fly:
-    description: Set vanish.
+    description: Alterna entre voar e nao voar.
     permission: fallcraft.module.essentials.fly
-    usage: Use /warplist to see all warps.
+    usage: Use /fly para alternar.
   gm:
-    description: Set vanish.
+    description: Define o modo de jogo.
     permission: fallcraft.module.essentials.gm
-    usage: Use /warplist to see all warps.
+    usage: Use /gm <0|1|2|3>.
   tp:
-    description: Set vanish.
+    description: Teleporta para outro player.
     permission: fallcraft.module.essentials.tp
-    usage: Use /warplist to see all warps.
+    usage: Use /tp <player> [player].
   tpall:
-    description: Set vanish.
+    description: Teleporta todos players do servidor para um unico player.
     permission: fallcraft.module.essentials.tpall
-    usage: Use /warplist to see all warps.
+    usage: Use /tpall.
   reloadall:
-    description: Set vanish.
+    description: Kicka todos do servidor e o reinicia.
     permission: fallcraft.module.essentials.reloadall
-    usage: Use /warplist to see all warps.
-  savei:
-    description: See the all warps.
-    permission: fallcraft.module.essentials.setspawn
-    usage: Use /warplist to see all warps.
-  rec:
-    description: See the all warps.
-    permission: fallcraft.module.essentials.setspawn
-    usage: Use /warplist to see all warps.
+    usage: Use /reloadall.
   spy:
-    description: See the all warps.
+    description: Habilita ou desabilita o modo spy.
     permission: fallcraft.module.essentials.spy
-    usage: Use /warplist to see all warps.
+    usage: Use /spy.
+  createnpc:
+    description: teste
+    permission: fallcraft.module.essentials.createnpc
+    usage: Use /createnpc nome
 permissions:
   fallcraft.module.warp.*:
     description: Da acesso a todos comandos do Warp

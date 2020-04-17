@@ -7,22 +7,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3c811c06-88ae-4391-aae1-b69ffd2ec5dc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/entities/enums/SpyStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/essentials/spy/command/SpyCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/essentials/spy/core/LoadSpyModule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/essentials/spy/listener/SpyChat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_citizensnpcs_citizensapi_2_0_20_SNAPSHOT.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_bukkit_bukkit_1_8_8_R0_1_SNAPSHOT.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/entities/enums/BattleLogStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/npc/core/LoadNPC.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/npc/core/LoadNpcModule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/npc/listener/NpcsEvents.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/npc/npc.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_bukkit_bukkit_1_13_1_R0_1_SNAPSHOT.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/worldguard_6_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/worldguard_6_2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FallCraftSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/FallCraftSystem.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fallcraftsystem/core/FallCraftSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/core/FallCraftSystem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fallcraftsystem/entities/GamePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/entities/GamePlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/essentials/commands/Fly.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/essentials/commands/Fly.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/essentials/commands/Reloadall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/essentials/commands/Reloadall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/essentials/commands/Tpall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/essentials/commands/Tpall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fallcraftsystem/utils/PluginInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/utils/PluginInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fallcraftsystem/entities/enums/FlyStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/entities/enums/FlyStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/blockcommands/listener/BlockCommandListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/blockcommands/listener/BlockCommandListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/essentials/commands/Tp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/essentials/commands/Tp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/essentials/spy/listener/SpyChat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/essentials/spy/listener/SpyChat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/scoreboard/listener/GameScoreboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/scoreboard/listener/GameScoreboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fallcraftsystem/utils/MethodsStatics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/utils/MethodsStatics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fallcraftsystem/utils/dependencies/VaultEconomy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/utils/dependencies/VaultEconomy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fallcraftsystem/utils/generalevents/GeneralEvents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/utils/generalevents/GeneralEvents.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/essentials/commands/Reloadall.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/essentials/commands/Reloadall.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/essentials/commands/Tpall.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/essentials/commands/Tpall.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/FallCraftSystem-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/core/FallCraftSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fallcraftsystem/core/FallCraftSystem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/entities/GamePlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fallcraftsystem/entities/GamePlayer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/essentials/commands/Tp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/essentials/commands/Tp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/essentials/spy/listener/SpyChat.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/essentials/spy/listener/SpyChat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/scoreboard/listener/GameScoreboard$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/scoreboard/listener/GameScoreboard$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/scoreboard/listener/GameScoreboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/scoreboard/listener/GameScoreboard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/utils/MethodsStatics.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fallcraftsystem/utils/MethodsStatics.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/utils/dependencies/VaultEconomy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fallcraftsystem/utils/dependencies/VaultEconomy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/utils/generalevents/GeneralEvents.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fallcraftsystem/utils/generalevents/GeneralEvents.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/original-FallCraftSystem-1.0-SNAPSHOT.jar" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,11 +79,12 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/worldedit-bukkit-6.1.9.jar!/" />
+    <property name="last_opened_file_path" value="$USER_HOME$/OneDrive/Documentos/server-files/Server/spigot.jar!/" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -139,7 +164,21 @@
       <workItem from="1586561974897" duration="27000" />
       <workItem from="1586562186091" duration="846000" />
       <workItem from="1586571418249" duration="1160000" />
-      <workItem from="1586577732945" duration="5084000" />
+      <workItem from="1586577732945" duration="5085000" />
+      <workItem from="1586629934935" duration="9997000" />
+      <workItem from="1586815033789" duration="2539000" />
+      <workItem from="1586833550084" duration="2241000" />
+      <workItem from="1586890437518" duration="697000" />
+      <workItem from="1586892700670" duration="143000" />
+      <workItem from="1586901992844" duration="14000" />
+      <workItem from="1586902016581" duration="1264000" />
+      <workItem from="1586929014052" duration="1583000" />
+      <workItem from="1586987262275" duration="1655000" />
+      <workItem from="1586988936375" duration="5388000" />
+      <workItem from="1587002315569" duration="7206000" />
+      <workItem from="1587046207987" duration="549000" />
+      <workItem from="1587075093492" duration="3374000" />
+      <workItem from="1587096737937" duration="4174000" />
     </task>
     <servers />
   </component>
@@ -151,10 +190,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="578" y="117" key="#FallCraftSystem_[clean,package]/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1586408869101" />
-    <state x="765" y="234" key="#com.intellij.ide.util.MemberChooser" timestamp="1586580653648">
+    <state x="765" y="234" key="#com.intellij.ide.util.MemberChooser" timestamp="1586989029936">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="765" y="234" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1586580653648" />
+    <state x="765" y="234" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1586989029936" />
     <state x="690" y="308" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1586382965042">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -179,42 +218,42 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="613" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1586527141425" />
-    <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586467097012">
+    <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1587007640161">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1586467097012" />
+    <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1587007640161" />
     <state x="718" y="387" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1586408957940">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="718" y="387" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1586408957940" />
-    <state x="740" y="266" key="FileChooserDialogImpl" timestamp="1586536316256">
+    <state x="740" y="266" key="FileChooserDialogImpl" timestamp="1586988765794">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="740" y="266" key="FileChooserDialogImpl/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1586536316256" />
-    <state width="938" height="285" key="GridCell.Tab.0.bottom" timestamp="1586409955480">
+    <state x="740" y="266" key="FileChooserDialogImpl/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1586988765794" />
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1586904226997">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="938" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1586409955480" />
-    <state width="938" height="285" key="GridCell.Tab.0.center" timestamp="1586409955480">
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1586904226997" />
+    <state width="1877" height="285" key="GridCell.Tab.0.center" timestamp="1586904226997">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="938" height="285" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1586409955480" />
-    <state width="938" height="285" key="GridCell.Tab.0.left" timestamp="1586409955480">
+    <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1586904226997" />
+    <state width="1877" height="285" key="GridCell.Tab.0.left" timestamp="1586904226997">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="938" height="285" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1586409955480" />
-    <state width="938" height="285" key="GridCell.Tab.0.right" timestamp="1586409955480">
+    <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1586904226997" />
+    <state width="1877" height="285" key="GridCell.Tab.0.right" timestamp="1586904226997">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="938" height="285" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1586409955480" />
+    <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1586904226997" />
     <state x="490" y="180" key="Maven.ArtifactSearchDialog" timestamp="1586386902750">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="490" y="180" key="Maven.ArtifactSearchDialog/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1586386902750" />
-    <state x="440" y="99" key="SettingsEditor" timestamp="1586537342312">
+    <state x="440" y="99" key="SettingsEditor" timestamp="1586988919115">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="440" y="99" key="SettingsEditor/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1586537342312" />
+    <state x="440" y="99" key="SettingsEditor/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1586988919115" />
     <state x="656" y="349" key="com.intellij.ide.util.TipDialog" timestamp="1586379776757">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -223,14 +262,18 @@
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
     <state x="-1642" y="-25" width="1529" height="1037" maximized="true" key="dock-window-1/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1586467690705" />
+    <state x="690" y="286" key="extract.method.dialog" timestamp="1587004773739">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="690" y="286" key="extract.method.dialog/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1587004773739" />
     <state x="342" y="195" key="new project wizard" timestamp="1586409456637">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="342" y="195" key="new project wizard/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1586409456637" />
-    <state x="616" y="243" width="672" height="677" key="run.anything.popup" timestamp="1586579024894">
+    <state x="616" y="243" width="672" height="677" key="run.anything.popup" timestamp="1586638860686">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="616" y="243" width="672" height="677" key="run.anything.popup/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1586579024894" />
+    <state x="616" y="243" width="672" height="677" key="run.anything.popup/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1586638860686" />
     <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1586465432585">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

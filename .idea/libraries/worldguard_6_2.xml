@@ -1,7 +1,13 @@
 <component name="libraryTable">
   <library name="worldguard-6.2">
-    <CLASSES />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/OneDrive/Documentos/server-files/MambaFactions_Premium.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/Documentos/server-files/MambaMassiveCore_Premium.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/Documentos/server-files/Server/spigot.jar!/" />
+    </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/OneDrive/Documentos/server-files/Server/spigot.jar!/" />
+    </SOURCES>
   </library>
 </component>
