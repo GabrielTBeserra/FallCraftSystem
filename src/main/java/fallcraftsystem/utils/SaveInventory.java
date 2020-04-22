@@ -51,6 +51,45 @@ public class SaveInventory {
         return pr1;
     }
 
+    public static void save(FallCraftSystem plugin, String a, String title) {
+        try {
+            File fl = new File(WarpFile.plugin.getDataFolder() + "/kits/");
+            if (!fl.exists()) {
+                fl.mkdir();
+            }
+            FileOutputStream f = new FileOutputStream(plugin.getDataFolder() + "/kits/" + title + ".txt");
+            ObjectOutputStream o = new ObjectOutputStream(f);
+
+            o.writeObject(a);
+
+            o.close();
+            f.close();
+
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
+
+    public static String recovery(FallCraftSystem plugin, String title) {
+        String pr1 = null;
+        try {
+            FileInputStream fi = new FileInputStream(plugin.getDataFolder() + "/kits/" + title + ".txt");
+            ObjectInputStream oi = new ObjectInputStream(fi);
+
+            pr1 = (String) oi.readObject();
+
+
+            oi.close();
+            fi.close();
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+        return pr1;
+    }
+
+
     public static String InventoryToString(Inventory invInventory) {
         String serialization = invInventory.getSize() + ";";
         for (int i = 0; i < invInventory.getSize(); i++) {

@@ -3,6 +3,7 @@ package fallcraftsystem.modules.essentials.warp.commands;
 import fallcraftsystem.modules.essentials.warp.utils.STATIC;
 import fallcraftsystem.modules.essentials.warp.utils.WarpFile;
 import fallcraftsystem.utils.MethodsStatics;
+import fallcraftsystem.utils.PluginInfo;
 import org.bukkit.*;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
@@ -39,7 +40,7 @@ public class ClickItemTeleport implements Listener {
         event.setCancelled(true);
         final Player player = (Player) event.getWhoClicked();
         player.closeInventory();
-        player.sendMessage(MethodsStatics.formater(STATIC.PREFIX + "&c&lTeleported to: &6" + warpName));
+        player.sendMessage(MethodsStatics.formater(PluginInfo.SERVER_NAME + "&c&lTeleported to: &6" + warpName));
         player.teleport(loc);
         player.playSound(loc, Sound.ENDERMAN_TELEPORT, 1.0f, 1.0f);
     }

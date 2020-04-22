@@ -18,6 +18,6 @@ public class AddHearthBarToPlayer implements Listener{
 
     @EventHandler
     public void playerJoin(PlayerJoinEvent e){
-        //scoreboard.getTeam("blue").addPlayer(e.getPlayer());
+       // scoreboard.getTeam("blue").addPlayer(e.getPlayer());
     }
 }

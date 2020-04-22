@@ -35,7 +35,7 @@ public class Tpall implements CommandExecutor {
             public void run() {
                 final Player PlayerSender = (Player) sender;
 
-                Bukkit.broadcastMessage(MethodsStatics.formater(PluginInfo.SERVER_NAME + "&aTeleportando todo mundo para o &e" + PlayerSender.getName() + " em:"));
+                Bukkit.broadcastMessage(MethodsStatics.formater(PluginInfo.SERVER_NAME + "&aTeleportando todo mundo para o &e" + PlayerSender.getName() + " &aem:"));
 
 
                 for (int i = 3; i >= 0; i--) {

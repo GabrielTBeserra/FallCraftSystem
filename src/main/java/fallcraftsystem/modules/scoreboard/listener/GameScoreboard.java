@@ -31,6 +31,8 @@ public class GameScoreboard implements Listener {
 
             @Override
             public void run() {
+
+
                 try {
                     ScoreboardManager scoreboardManager = plugin.getServer().getScoreboardManager();
                     Scoreboard scoreboard = scoreboardManager.getNewScoreboard();
@@ -85,7 +87,8 @@ public class GameScoreboard implements Listener {
 
 
             }
-        }.runTaskTimer(plugin, 0, 10);
+        }.runTaskTimer(plugin, 0, 7);
+
 
     }
 }

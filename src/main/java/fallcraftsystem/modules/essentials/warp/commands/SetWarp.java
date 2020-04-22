@@ -4,6 +4,7 @@ import fallcraftsystem.core.FallCraftSystem;
 import fallcraftsystem.modules.essentials.warp.utils.STATIC;
 import fallcraftsystem.modules.essentials.warp.utils.WarpFile;
 import fallcraftsystem.utils.MethodsStatics;
+import fallcraftsystem.utils.PluginInfo;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -31,11 +32,11 @@ public class SetWarp implements CommandExecutor {
             return true;
         }
         if (args.length == 0) {
-            sender.sendMessage(MethodsStatics.formater(STATIC.PREFIX + "&c&lUse /setwarp <Name> <Position> [Permission] to set the new warp!"));
+            sender.sendMessage(MethodsStatics.formater(PluginInfo.SERVER_NAME + "&c&lUse /setwarp <Name> <Position> [Permission] to set the new warp!"));
             return true;
         }
         if (args.length == 1) {
-            sender.sendMessage(MethodsStatics.formater(STATIC.PREFIX + "&c&lVoce precisa informar a posicao do item!"));
+            sender.sendMessage(MethodsStatics.formater(PluginInfo.SERVER_NAME + "&c&lVoce precisa informar a posicao do item!"));
             return true;
         }
         final Player player = (Player) sender;
@@ -44,11 +45,11 @@ public class SetWarp implements CommandExecutor {
         try {
             iconPos = Integer.parseInt(args[1]);
         } catch (Exception e) {
-            sender.sendMessage(MethodsStatics.formater(STATIC.PREFIX + "&c&lVoce precisa informar a posicao do item!"));
+            sender.sendMessage(MethodsStatics.formater(PluginInfo.SERVER_NAME + "&c&lVoce precisa informar a posicao do item!"));
             return true;
         }
         if (iconPos > STATIC.MENU_SIZE) {
-            sender.sendMessage(MethodsStatics.formater(STATIC.PREFIX + "&c&lVoce precisa informar um numero menor que " + STATIC.MENU_SIZE));
+            sender.sendMessage(MethodsStatics.formater(PluginInfo.SERVER_NAME + "&c&lVoce precisa informar um numero menor que " + STATIC.MENU_SIZE));
             return true;
         }
         final String title = args[0];
@@ -66,7 +67,7 @@ public class SetWarp implements CommandExecutor {
         this.locationFile.set("warps." + warpName + ".Z", player.getLocation().getZ());
         this.locationFile.set("warps." + warpName + ".POS", iconPos - 1);
         this.locationFile.set("warps." + warpName + ".ICON", itemName);
-        this.locationFile.set("warps." + warpName + ".TYPE", player.getInventory().getItemInHand().getDurability());
+        this.locationFile.set("warps." + warpName + ".TYPE",player.getInventory().getItemInHand().getDurability());
         this.locationFile.set("warps." + warpName + ".EFFECT", enchant);
         this.locationFile.set("warps." + warpName + ".WOLRD", player.getLocation().getWorld().getName());
         if (args.length == 2) {

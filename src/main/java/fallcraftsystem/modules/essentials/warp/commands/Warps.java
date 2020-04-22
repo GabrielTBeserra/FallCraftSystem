@@ -2,6 +2,7 @@ package fallcraftsystem.modules.essentials.warp.commands;
 
 import fallcraftsystem.modules.essentials.warp.utils.STATIC;
 import fallcraftsystem.utils.MethodsStatics;
+import fallcraftsystem.utils.PluginInfo;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
@@ -9,7 +10,6 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -19,7 +19,7 @@ public class Warps {
     public static void openInv(final Player player, final FileConfiguration locationFile) {
         final Inventory inventory = Bukkit.createInventory(player, STATIC.MENU_SIZE, MethodsStatics.formater("&9&lWARPS"));
         if (!locationFile.contains("warps")) {
-            player.sendMessage(MethodsStatics.formater(STATIC.PREFIX + "&c&lNot warp setted"));
+            player.sendMessage(MethodsStatics.formater(PluginInfo.SERVER_NAME + "&c&lNot warp setted"));
             return;
         }
         final ConfigurationSection sec = locationFile.getConfigurationSection("warps");

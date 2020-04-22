@@ -6,6 +6,7 @@ import fallcraftsystem.modules.essentials.spawn.LoadEssentialSpawnModule;
 import fallcraftsystem.modules.essentials.spy.core.LoadSpyModule;
 import fallcraftsystem.modules.essentials.warp.LoadEssentialWarpModule;
 import fallcraftsystem.modules.heathbar.core.ModuleHearthBar;
+import fallcraftsystem.modules.kits.core.LoadKitModules;
 import fallcraftsystem.modules.npc.core.LoadNpcModule;
 import fallcraftsystem.modules.scoreboard.core.LoadScoreboard;
 import fallcraftsystem.utils.MethodsStatics;
@@ -21,6 +22,7 @@ public final class FallCraftSystem extends JavaPlugin {
 
     @Override
     public void onEnable() {
+
         Bukkit.getServer().getConsoleSender().sendMessage(MethodsStatics.formater("&a======================================================="));
         Bukkit.getServer().getConsoleSender().sendMessage(MethodsStatics.formater("&a=     ########### ########## #          #             ="));
         Bukkit.getServer().getConsoleSender().sendMessage(MethodsStatics.formater("&a=     #           #        # #          #             ="));
@@ -53,6 +55,7 @@ public final class FallCraftSystem extends JavaPlugin {
         VaultEconomy.setupEconomy(this);
         new LoadNpcModule(this);
         new PluginInfo();
+        new LoadKitModules(this);
         new LoadEssentialWarpModule(this);
         new LoadEssentialSpawnModule(this);
         new LoadEssentialCommandsModule(this);

@@ -57,10 +57,17 @@ commands:
     description: Habilita ou desabilita o modo spy.
     permission: fallcraft.module.essentials.spy
     usage: Use /spy.
-  createnpc:
-    description: teste
-    permission: fallcraft.module.essentials.createnpc
-    usage: Use /createnpc nome
+  kit:
+    description: Abre o menu para ver todos os kits disponiveis.
+    usage: Use /kit.
+  createkit:
+    description: Cria um novo kit.
+    permission: fallcraft.module.kitcreate
+    usage: Use /createkit <nome> <posicao> <horas> [permissao].
+  delkit:
+    description: Deleta um kit.
+    permission: fallcraft.module.delkit
+    usage: Use /delkit <nome>.
 permissions:
   fallcraft.module.warp.*:
     description: Da acesso a todos comandos do Warp
