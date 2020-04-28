@@ -3,7 +3,7 @@ package fallcraftsystem.modules.essentials.warp.commands;
 import fallcraftsystem.core.FallCraftSystem;
 import fallcraftsystem.modules.essentials.warp.utils.STATIC;
 import fallcraftsystem.modules.essentials.warp.utils.WarpFile;
-import fallcraftsystem.utils.MethodsStatics;
+import fallcraftsystem.utils.Ultilities;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -35,8 +35,8 @@ public class WarpList implements CommandExecutor
                 list.append("&f&l>> &6&l" + key + "\n");
             }
         }
-        sender.sendMessage(MethodsStatics.formater(String.valueOf(STATIC.PREFIX) + "&5&lList from warps"));
-        sender.sendMessage(MethodsStatics.formater(list.toString()));
+        sender.sendMessage(Ultilities.formater(String.valueOf(STATIC.PREFIX) + "&5&lList from warps"));
+        sender.sendMessage(Ultilities.formater(list.toString()));
         return true;
     }
 }

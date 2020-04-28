@@ -2,7 +2,7 @@ package fallcraftsystem.modules.scoreboard.listener;
 
 import com.massivecraft.factions.entity.MPlayer;
 import fallcraftsystem.core.FallCraftSystem;
-import fallcraftsystem.utils.MethodsStatics;
+import fallcraftsystem.utils.Ultilities;
 import fallcraftsystem.utils.PluginInfo;
 import fallcraftsystem.utils.dependencies.ChatVault;
 import fallcraftsystem.utils.dependencies.VaultEconomy;
@@ -36,7 +36,7 @@ public class GameScoreboard implements Listener {
                 try {
                     ScoreboardManager scoreboardManager = plugin.getServer().getScoreboardManager();
                     Scoreboard scoreboard = scoreboardManager.getNewScoreboard();
-                    Objective objective = scoreboard.registerNewObjective(MethodsStatics.formater("&3&l" + player.getName()), "MENU");
+                    Objective objective = scoreboard.registerNewObjective(Ultilities.formater("&3&l" + player.getName()), "MENU");
                     objective.setDisplaySlot(DisplaySlot.SIDEBAR);
 
                     MPlayer mplayer = MPlayer.get(player);
@@ -45,20 +45,20 @@ public class GameScoreboard implements Listener {
                     String facName = "";
 
 
-                    Score score1 = objective.getScore(MethodsStatics.formater("&a Facção: &eSem facção"));
+                    Score score1 = objective.getScore(Ultilities.formater("&a Facção: &eSem facção"));
 
 
                     if (!(mplayer.getFactionTag().equals("") || mplayer.getFactionTag().equals(" "))) {
-                        score1 = objective.getScore(MethodsStatics.formater("&a Facção: &e" + mplayer.getFactionName()));
+                        score1 = objective.getScore(Ultilities.formater("&a Facção: &e" + mplayer.getFactionName()));
                     }
 
 
-                    Score score2 = objective.getScore(MethodsStatics.formater("&a Power: &e" + String.format("%.1f", mplayer.getPower())));
+                    Score score2 = objective.getScore(Ultilities.formater("&a Power: &e" + String.format("%.1f", mplayer.getPower())));
                     Score score3 = objective.getScore(" ");
-                    Score score4 = objective.getScore(MethodsStatics.formater("&a Money: &e" + VaultEconomy.getVault().getBalance(player)));
+                    Score score4 = objective.getScore(Ultilities.formater("&a Money: &e" + VaultEconomy.getVault().getBalance(player)));
                     Score score5 = objective.getScore("  ");
-                    Score score7 = objective.getScore(MethodsStatics.formater("&a PVP: " + MethodsStatics.formater("&6" + PluginInfo.players.get(player).getPvpStatus().toString())));
-                    Score score8 = objective.getScore(MethodsStatics.formater("&a Players Online: &e" + Bukkit.getOnlinePlayers().size()));
+                    Score score7 = objective.getScore(Ultilities.formater("&a PVP: " + Ultilities.formater("&6" + PluginInfo.players.get(player).getPvpStatus().toString())));
+                    Score score8 = objective.getScore(Ultilities.formater("&a Players Online: &e" + Bukkit.getOnlinePlayers().size()));
 
                     score1.setScore(10);
                     score2.setScore(9);
@@ -75,7 +75,7 @@ public class GameScoreboard implements Listener {
 
 
                     player.setPlayerListName(
-                            MethodsStatics.formater(
+                            Ultilities.formater(
                                     ChatVault.getChat().getPlayerPrefix(player) + facName + "&7" + player.getName()));
 
 

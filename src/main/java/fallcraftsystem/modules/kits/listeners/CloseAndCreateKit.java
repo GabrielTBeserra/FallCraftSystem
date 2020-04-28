@@ -4,7 +4,7 @@ import fallcraftsystem.core.FallCraftSystem;
 import fallcraftsystem.modules.kits.commands.CreateKit;
 import fallcraftsystem.modules.kits.core.KitInv;
 import fallcraftsystem.modules.kits.utils.KitConfig;
-import fallcraftsystem.utils.MethodsStatics;
+import fallcraftsystem.utils.Ultilities;
 import fallcraftsystem.utils.PluginInfo;
 import fallcraftsystem.utils.SaveInventory;
 import org.apache.commons.lang.StringUtils;
@@ -48,7 +48,7 @@ public class CloseAndCreateKit implements Listener {
         KitConfig.getKitFIle().set("kit." + kit.getKitName() + ".time", kit.getTime());
         KitConfig.save();
 
-        player.sendMessage(MethodsStatics.formater(PluginInfo.SERVER_NAME + "&aKit &6" + StringUtils.capitalize(kit.getKitName()) + " &acriado com sucesso!"));
+        player.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&aKit &6" + StringUtils.capitalize(kit.getKitName()) + " &acriado com sucesso!"));
 
     }
 

@@ -1,7 +1,7 @@
 package fallcraftsystem.modules.essentials.commands;
 
 import fallcraftsystem.core.FallCraftSystem;
-import fallcraftsystem.utils.MethodsStatics;
+import fallcraftsystem.utils.Ultilities;
 import fallcraftsystem.utils.PluginInfo;
 import org.bukkit.GameMode;
 import org.bukkit.command.Command;
@@ -23,12 +23,12 @@ public class Gm implements CommandExecutor {
             return true;
         }
         if (args.length == 0) {
-            sender.sendMessage(MethodsStatics.formater("&2Informe 1/2/3"));
+            sender.sendMessage(Ultilities.formater("&2Informe 1/2/3"));
             return true;
         }
         final Player player = (Player) sender;
         if (!(args[0] instanceof String)) {
-            sender.sendMessage(MethodsStatics.formater("&2Informe 1/2/3"));
+            sender.sendMessage(Ultilities.formater("&2Informe 1/2/3"));
             return true;
         }
         final String s;
@@ -51,11 +51,11 @@ public class Gm implements CommandExecutor {
                 break;
             }
             default: {
-                sender.sendMessage(MethodsStatics.formater("&2Informe 1/2/3"));
+                sender.sendMessage(Ultilities.formater("&2Informe 1/2/3"));
                 break;
             }
         }
-        sender.sendMessage(MethodsStatics.formater( PluginInfo.SERVER_NAME +"&2Modo de jogo atualizado para: &6&l" + player.getGameMode().toString()));
+        sender.sendMessage(Ultilities.formater( PluginInfo.SERVER_NAME +"&2Modo de jogo atualizado para: &6&l" + player.getGameMode().toString()));
         return true;
     }
 }

@@ -3,7 +3,7 @@ package fallcraftsystem.modules.kits.listeners;
 import fallcraftsystem.core.FallCraftSystem;
 import fallcraftsystem.modules.kits.utils.KitConfig;
 import fallcraftsystem.modules.kits.utils.KitDbConfig;
-import fallcraftsystem.utils.MethodsStatics;
+import fallcraftsystem.utils.Ultilities;
 import fallcraftsystem.utils.PluginInfo;
 import fallcraftsystem.utils.SaveInventory;
 import fallcraftsystem.utils.TimeCalculator;
@@ -43,7 +43,13 @@ public class ClickAndGetItem implements Listener {
             return;
         }
         // Pega o nome do kit de acordo com o padrao KIT.<name>
-        String kit = ChatColor.stripColor(event.getCurrentItem().getItemMeta().getDisplayName()).toLowerCase();
+        String kit = ChatColor.stripColor(event.getCurrentItem().getItemMeta().getDisplayName()).toLowerCase().trim();
+
+        event.setCancelled(true);
+
+        if(kit.equals("")){
+            return;
+        }
         // Pega o nome do kit no arquivo de configuracoes
         String kitName = KitConfig.getKitFIle().getString("kit." + kit + ".name");
         // Recupera o inventario serializado
@@ -52,6 +58,7 @@ public class ClickAndGetItem implements Listener {
         Inventory inventory = SaveInventory.StringToInventory(invString);
         // Pega qual player que esta clicando no intenrio
         Player player = (Player) event.getWhoClicked();
+
 
 
         if (KitDbConfig.getDBKItFile().contains(player.getUniqueId() + "." + kit)) {
@@ -75,11 +82,13 @@ public class ClickAndGetItem implements Listener {
                 }
 
 
-                if (!(minutosRestantes <= 0 && horas <= 0 && minutosRestantes <= 0)) {
-                    player.sendMessage(MethodsStatics.formater(PluginInfo.SERVER_NAME + "&cVoce ja pegou esse item!"));
-                    event.setCancelled(true);
-                    return;
-                }
+               if(!(player.isOp() || player.hasPermission("fallcraft.kit.bypass"))){
+                   if (!(minutosRestantes <= 0 && horas <= 0 && minutosRestantes <= 0)) {
+                       player.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&cVoce ja pegou esse item!"));
+                       event.setCancelled(true);
+                       return;
+                   }
+               }
 
 
 
@@ -97,7 +106,7 @@ public class ClickAndGetItem implements Listener {
 
 
         if (!player.hasPermission(KitConfig.getKitFIle().getString("kit." + kit + ".perm"))) {
-            player.sendMessage(MethodsStatics.formater("&cVoce nao tem permissao para pegar esse kit!"));
+            player.sendMessage(Ultilities.formater("&cVoce nao tem permissao para pegar esse kit!"));
             event.setCancelled(true);
             return;
         }
@@ -112,7 +121,7 @@ public class ClickAndGetItem implements Listener {
         }
 
 
-        player.sendMessage(MethodsStatics.formater(PluginInfo.SERVER_NAME + "&aVoce pegou o kit &6" + StringUtils.capitalize(kitName)));
+        player.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&aVoce pegou o kit &6" + StringUtils.capitalize(kitName)));
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
         Date date = new Date();

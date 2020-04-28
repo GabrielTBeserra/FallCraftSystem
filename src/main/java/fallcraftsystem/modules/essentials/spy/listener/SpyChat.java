@@ -2,7 +2,7 @@ package fallcraftsystem.modules.essentials.spy.listener;
 
 import fallcraftsystem.core.FallCraftSystem;
 import fallcraftsystem.entities.enums.SpyStatus;
-import fallcraftsystem.utils.MethodsStatics;
+import fallcraftsystem.utils.Ultilities;
 import fallcraftsystem.utils.PluginInfo;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -36,7 +36,7 @@ public class SpyChat implements Listener {
                 if (player.hasPermission("fallcraft.module.essentials.spy")
                         && PluginInfo.players.get(player).getSpyStatus().equals(SpyStatus.ON)) {
                     player.sendMessage(
-                            MethodsStatics.formater("&c&lSPY &9&l>> &5" + sender.getName() + " &7to &5" + alvo.getName() + "&8: &7" + msg));
+                            Ultilities.formater("&c&lSPY &9&l>> &5" + sender.getName() + " &7to &5" + alvo.getName() + "&8: &7" + msg));
                 }
             }
         }

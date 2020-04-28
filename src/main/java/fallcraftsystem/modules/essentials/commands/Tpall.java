@@ -5,7 +5,7 @@
 package fallcraftsystem.modules.essentials.commands;
 
 import fallcraftsystem.core.FallCraftSystem;
-import fallcraftsystem.utils.MethodsStatics;
+import fallcraftsystem.utils.Ultilities;
 import fallcraftsystem.utils.PluginInfo;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
@@ -35,13 +35,13 @@ public class Tpall implements CommandExecutor {
             public void run() {
                 final Player PlayerSender = (Player) sender;
 
-                Bukkit.broadcastMessage(MethodsStatics.formater(PluginInfo.SERVER_NAME + "&aTeleportando todo mundo para o &e" + PlayerSender.getName() + " &aem:"));
+                Bukkit.broadcastMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&aTeleportando todo mundo para o &e" + PlayerSender.getName() + " &aem:"));
 
 
                 for (int i = 3; i >= 0; i--) {
                     try {
                         TimeUnit.SECONDS.sleep(1);
-                        Bukkit.broadcastMessage(MethodsStatics.formater(PluginInfo.SERVER_NAME + "&c" + i));
+                        Bukkit.broadcastMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&c" + i));
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }

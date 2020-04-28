@@ -5,7 +5,7 @@
 package fallcraftsystem.modules.essentials.commands;
 
 import fallcraftsystem.core.FallCraftSystem;
-import fallcraftsystem.utils.MethodsStatics;
+import fallcraftsystem.utils.Ultilities;
 import fallcraftsystem.utils.PluginInfo;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
@@ -31,29 +31,29 @@ public class Tp implements CommandExecutor {
             final Player player1 = Bukkit.getPlayer(args[0]);
             final Player player2 = Bukkit.getPlayer(args[1]);
             if (!(player1.isOnline() || player2.isOnline()) || (player1 == null || player2 == null)) {
-                sender.sendMessage(MethodsStatics.formater(PluginInfo.SERVER_NAME + "&cO player nao esta online!"));
+                sender.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&cO player nao esta online!"));
                 return true;
             }
             player1.teleport(player2.getLocation());
             for (final Player PPplayer : Bukkit.getOnlinePlayers()) {
                 if (PPplayer.hasPermission("fallcraft.module.essentials.tp")) {
-                    PPplayer.sendMessage(MethodsStatics.formater(PluginInfo.SERVER_NAME + "&6The player &c" + player1.getName() + " &6teleported to &2" + player2.getName()));
+                    PPplayer.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&6The player &c" + player1.getName() + " &6teleported to &2" + player2.getName()));
                 }
             }
         } else if (args.length == 1) {
             final Player player1 = Bukkit.getPlayer(args[0]);
             if (!player1.isOnline() || player1 == null) {
-                sender.sendMessage(MethodsStatics.formater(PluginInfo.SERVER_NAME + "&cO player nao esta online!"));
+                sender.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&cO player nao esta online!"));
                 return true;
             }
             PlayerSender.teleport(player1.getLocation());
             for (final Player PPplayer2 : Bukkit.getOnlinePlayers()) {
                 if (PPplayer2.hasPermission("fallcraft.module.essentials.tp")) {
-                    PPplayer2.sendMessage(MethodsStatics.formater(PluginInfo.SERVER_NAME + "&6The player &c" + PlayerSender.getName() + " &6teleported to &2" + player1.getName()));
+                    PPplayer2.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&6The player &c" + PlayerSender.getName() + " &6teleported to &2" + player1.getName()));
                 }
             }
         } else {
-            sender.sendMessage(MethodsStatics.formater(PluginInfo.SERVER_NAME + "&2&l/tp <Player1> <Player2>!"));
+            sender.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&2&l/tp <Player1> <Player2>!"));
         }
         return true;
     }

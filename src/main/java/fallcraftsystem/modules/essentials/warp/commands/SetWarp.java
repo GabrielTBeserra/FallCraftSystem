@@ -3,9 +3,8 @@ package fallcraftsystem.modules.essentials.warp.commands;
 import fallcraftsystem.core.FallCraftSystem;
 import fallcraftsystem.modules.essentials.warp.utils.STATIC;
 import fallcraftsystem.modules.essentials.warp.utils.WarpFile;
-import fallcraftsystem.utils.MethodsStatics;
+import fallcraftsystem.utils.Ultilities;
 import fallcraftsystem.utils.PluginInfo;
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -13,8 +12,6 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.material.MaterialData;
 
 public class SetWarp implements CommandExecutor {
     public FallCraftSystem plugin;
@@ -32,24 +29,24 @@ public class SetWarp implements CommandExecutor {
             return true;
         }
         if (args.length == 0) {
-            sender.sendMessage(MethodsStatics.formater(PluginInfo.SERVER_NAME + "&c&lUse /setwarp <Name> <Position> [Permission] to set the new warp!"));
+            sender.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&c&lUse /setwarp <Name> <Position> [Permission] to set the new warp!"));
             return true;
         }
         if (args.length == 1) {
-            sender.sendMessage(MethodsStatics.formater(PluginInfo.SERVER_NAME + "&c&lVoce precisa informar a posicao do item!"));
+            sender.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&c&lVoce precisa informar a posicao do item!"));
             return true;
         }
         final Player player = (Player) sender;
         int iconPos = 0;
-        final String warpName = ChatColor.stripColor(MethodsStatics.formater(args[0])).toUpperCase();
+        final String warpName = ChatColor.stripColor(Ultilities.formater(args[0])).toUpperCase();
         try {
             iconPos = Integer.parseInt(args[1]);
         } catch (Exception e) {
-            sender.sendMessage(MethodsStatics.formater(PluginInfo.SERVER_NAME + "&c&lVoce precisa informar a posicao do item!"));
+            sender.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&c&lVoce precisa informar a posicao do item!"));
             return true;
         }
         if (iconPos > STATIC.MENU_SIZE) {
-            sender.sendMessage(MethodsStatics.formater(PluginInfo.SERVER_NAME + "&c&lVoce precisa informar um numero menor que " + STATIC.MENU_SIZE));
+            sender.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&c&lVoce precisa informar um numero menor que " + STATIC.MENU_SIZE));
             return true;
         }
         final String title = args[0];
@@ -76,7 +73,7 @@ public class SetWarp implements CommandExecutor {
             this.locationFile.set("warps." + warpName + ".PERMISSION", "fallcraft.warp." + args[2]);
         }
         WarpFile.save();
-        sender.sendMessage(MethodsStatics.formater("&A&lWarp setted"));
+        sender.sendMessage(Ultilities.formater("&A&lWarp setted"));
         return true;
     }
 }

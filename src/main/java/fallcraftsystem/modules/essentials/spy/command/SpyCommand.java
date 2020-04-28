@@ -3,7 +3,7 @@ package fallcraftsystem.modules.essentials.spy.command;
 import fallcraftsystem.core.FallCraftSystem;
 import fallcraftsystem.entities.GamePlayer;
 import fallcraftsystem.entities.enums.SpyStatus;
-import fallcraftsystem.utils.MethodsStatics;
+import fallcraftsystem.utils.Ultilities;
 import fallcraftsystem.utils.PluginInfo;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -35,10 +35,10 @@ public class SpyCommand implements CommandExecutor {
 
 
         if (PluginInfo.players.get(p).getSpyStatus().equals(SpyStatus.ON)) {
-            sender.sendMessage(MethodsStatics.formater(PluginInfo.SERVER_NAME + "&cSpy disable"));
+            sender.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&cSpy disable"));
             PluginInfo.players.get(p).setSpyStatus(SpyStatus.OFF);
         } else if (PluginInfo.players.get(p).getSpyStatus().equals(SpyStatus.OFF)) {
-            sender.sendMessage(MethodsStatics.formater(PluginInfo.SERVER_NAME + "&aSpy enable"));
+            sender.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&aSpy enable"));
             PluginInfo.players.get(p).setSpyStatus(SpyStatus.ON);
         }
 

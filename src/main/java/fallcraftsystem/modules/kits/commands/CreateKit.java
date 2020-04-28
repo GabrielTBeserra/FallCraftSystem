@@ -2,7 +2,7 @@ package fallcraftsystem.modules.kits.commands;
 
 import fallcraftsystem.core.FallCraftSystem;
 import fallcraftsystem.modules.kits.core.KitInv;
-import fallcraftsystem.utils.MethodsStatics;
+import fallcraftsystem.utils.Ultilities;
 import fallcraftsystem.utils.PluginInfo;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -62,13 +62,13 @@ public class CreateKit implements CommandExecutor {
             iconPos = Integer.parseInt(args[1]);
             time = Integer.parseInt(args[2]);
         } catch (Exception e) {
-            sender.sendMessage(MethodsStatics.formater(PluginInfo.SERVER_NAME + "&c&lVoce precisa informar a posicao do item!"));
+            sender.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&c&lVoce precisa informar a posicao do item!"));
             return true;
         }
 
         ListInvsKits.put(kitName, new KitInv(kitName, kitPerm, enchant, itemName, type, iconPos, time));
 
-        Inventory inv = Bukkit.createInventory(player, 27, MethodsStatics.formater("KIT." + kitName));
+        Inventory inv = Bukkit.createInventory(player, 27, Ultilities.formater("KIT." + kitName));
         player.openInventory(inv);
 
         return true;

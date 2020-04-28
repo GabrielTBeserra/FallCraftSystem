@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.lang.reflect.Field;
 import java.net.URL;
 
-public class MethodsStatics {
+public class Ultilities {
     public static String formater(final String s) {
         return ChatColor.translateAlternateColorCodes('&', s);
     }
@@ -75,6 +75,28 @@ public class MethodsStatics {
             e.printStackTrace();
         }
         con.sendPacket(packet);
+    }
+
+
+    public static void sendHeaderAndFooter(Player p, String head, String foot) {
+        PlayerConnection connection = ((CraftPlayer) p).getHandle().playerConnection;
+        IChatBaseComponent header = IChatBaseComponent.ChatSerializer.a("{'color':'', 'text':'" + head + "'}");
+        IChatBaseComponent footer = IChatBaseComponent.ChatSerializer.a("{'color':'', 'text':'" + foot + "'}");
+        PacketPlayOutPlayerListHeaderFooter packet = new PacketPlayOutPlayerListHeaderFooter();
+        try {
+            Field headerField = packet.getClass().getDeclaredField("a");
+            headerField.setAccessible(true);
+            headerField.set(packet, header);
+            headerField.setAccessible(!headerField.isAccessible());
+
+            Field footerField = packet.getClass().getDeclaredField("b");
+            footerField.setAccessible(true);
+            footerField.set(packet, footer);
+            footerField.setAccessible(!footerField.isAccessible());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        connection.sendPacket(packet);
     }
 
 }

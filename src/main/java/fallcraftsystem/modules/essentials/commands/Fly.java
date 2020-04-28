@@ -7,6 +7,7 @@ package fallcraftsystem.modules.essentials.commands;
 import fallcraftsystem.core.FallCraftSystem;
 import fallcraftsystem.entities.GamePlayer;
 import fallcraftsystem.entities.enums.FlyStatus;
+import fallcraftsystem.utils.Ultilities;
 import fallcraftsystem.utils.PluginInfo;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -31,12 +32,12 @@ public class Fly implements CommandExecutor {
         GamePlayer gm = PluginInfo.players.get(player);
 
         if (gm.getFlyStatus().equals(FlyStatus.NOT_FLYING)) {
-            player.sendMessage("Voce esta voando agora");
+            player.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&aVoo habilitado"));
             player.setAllowFlight(true);
             PluginInfo.players.get(player).setFlyStatus(FlyStatus.FLYING);
         } else {
             player.setAllowFlight(false);
-            player.sendMessage("Voce esta nao voando agora");
+            player.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&cVoo desabilitado"));
             PluginInfo.players.get(player).setFlyStatus(FlyStatus.NOT_FLYING);
         }
 

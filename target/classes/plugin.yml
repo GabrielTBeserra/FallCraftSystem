@@ -68,6 +68,22 @@ commands:
     description: Deleta um kit.
     permission: fallcraft.module.delkit
     usage: Use /delkit <nome>.
+  home:
+    description: Deleta um kit.
+    permission: fallcraft.module.home
+    usage: Use /home <Home_Name>.
+  delhome:
+    description: Deleta um kit.
+    permission: fallcraft.module.delhome
+    usage: Use /delhome <nome>.
+  sethome:
+    description: Deleta um kit.
+    permission: fallcraft.module.sethome
+    usage: Use /sethome <nome>.
+  homelist:
+    description: Deleta um kit.
+    permission: fallcraft.module.homelist
+    usage: Use /homelist.
 permissions:
   fallcraft.module.warp.*:
     description: Da acesso a todos comandos do Warp

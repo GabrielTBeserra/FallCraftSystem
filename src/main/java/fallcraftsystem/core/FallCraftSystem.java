@@ -6,10 +6,11 @@ import fallcraftsystem.modules.essentials.spawn.LoadEssentialSpawnModule;
 import fallcraftsystem.modules.essentials.spy.core.LoadSpyModule;
 import fallcraftsystem.modules.essentials.warp.LoadEssentialWarpModule;
 import fallcraftsystem.modules.heathbar.core.ModuleHearthBar;
+import fallcraftsystem.modules.home.core.LoadHomeModule;
 import fallcraftsystem.modules.kits.core.LoadKitModules;
 import fallcraftsystem.modules.npc.core.LoadNpcModule;
 import fallcraftsystem.modules.scoreboard.core.LoadScoreboard;
-import fallcraftsystem.utils.MethodsStatics;
+import fallcraftsystem.utils.Ultilities;
 import fallcraftsystem.utils.PluginInfo;
 import fallcraftsystem.utils.dependencies.ChatVault;
 import fallcraftsystem.utils.dependencies.PEX;
@@ -23,30 +24,30 @@ public final class FallCraftSystem extends JavaPlugin {
     @Override
     public void onEnable() {
 
-        Bukkit.getServer().getConsoleSender().sendMessage(MethodsStatics.formater("&a======================================================="));
-        Bukkit.getServer().getConsoleSender().sendMessage(MethodsStatics.formater("&a=     ########### ########## #          #             ="));
-        Bukkit.getServer().getConsoleSender().sendMessage(MethodsStatics.formater("&a=     #           #        # #          #             ="));
-        Bukkit.getServer().getConsoleSender().sendMessage(MethodsStatics.formater("&a=     #           #        # #          #             ="));
-        Bukkit.getServer().getConsoleSender().sendMessage(MethodsStatics.formater("&a=     ########    ########## #          #             ="));
-        Bukkit.getServer().getConsoleSender().sendMessage(MethodsStatics.formater("&a=     #           #        # #          #             ="));
-        Bukkit.getServer().getConsoleSender().sendMessage(MethodsStatics.formater("&a=     #           #        # #          #             ="));
-        Bukkit.getServer().getConsoleSender().sendMessage(MethodsStatics.formater("&a=     #           #        # ########## ##########    ="));
-        Bukkit.getServer().getConsoleSender().sendMessage(MethodsStatics.formater("&a======================================================="));
+        Bukkit.getServer().getConsoleSender().sendMessage(Ultilities.formater("&a======================================================="));
+        Bukkit.getServer().getConsoleSender().sendMessage(Ultilities.formater("&a=     ########### ########## #          #             ="));
+        Bukkit.getServer().getConsoleSender().sendMessage(Ultilities.formater("&a=     #           #        # #          #             ="));
+        Bukkit.getServer().getConsoleSender().sendMessage(Ultilities.formater("&a=     #           #        # #          #             ="));
+        Bukkit.getServer().getConsoleSender().sendMessage(Ultilities.formater("&a=     ########    ########## #          #             ="));
+        Bukkit.getServer().getConsoleSender().sendMessage(Ultilities.formater("&a=     #           #        # #          #             ="));
+        Bukkit.getServer().getConsoleSender().sendMessage(Ultilities.formater("&a=     #           #        # #          #             ="));
+        Bukkit.getServer().getConsoleSender().sendMessage(Ultilities.formater("&a=     #           #        # ########## ##########    ="));
+        Bukkit.getServer().getConsoleSender().sendMessage(Ultilities.formater("&a======================================================="));
 
         loadModules();
     }
 
     @Override
     public void onDisable() {
-        Bukkit.getServer().getConsoleSender().sendMessage(MethodsStatics.formater("&c======================================================="));
-        Bukkit.getServer().getConsoleSender().sendMessage(MethodsStatics.formater("&c=     ########### ########## #          #             ="));
-        Bukkit.getServer().getConsoleSender().sendMessage(MethodsStatics.formater("&c=     #           #        # #          #             ="));
-        Bukkit.getServer().getConsoleSender().sendMessage(MethodsStatics.formater("&c=     #           #        # #          #             ="));
-        Bukkit.getServer().getConsoleSender().sendMessage(MethodsStatics.formater("&c=     ########    ########## #          #             ="));
-        Bukkit.getServer().getConsoleSender().sendMessage(MethodsStatics.formater("&c=     #           #        # #          #             ="));
-        Bukkit.getServer().getConsoleSender().sendMessage(MethodsStatics.formater("&c=     #           #        # #          #             ="));
-        Bukkit.getServer().getConsoleSender().sendMessage(MethodsStatics.formater("&c=     #           #        # ########## ##########    ="));
-        Bukkit.getServer().getConsoleSender().sendMessage(MethodsStatics.formater("&c======================================================="));
+        Bukkit.getServer().getConsoleSender().sendMessage(Ultilities.formater("&c======================================================="));
+        Bukkit.getServer().getConsoleSender().sendMessage(Ultilities.formater("&c=     ########### ########## #          #             ="));
+        Bukkit.getServer().getConsoleSender().sendMessage(Ultilities.formater("&c=     #           #        # #          #             ="));
+        Bukkit.getServer().getConsoleSender().sendMessage(Ultilities.formater("&c=     #           #        # #          #             ="));
+        Bukkit.getServer().getConsoleSender().sendMessage(Ultilities.formater("&c=     ########    ########## #          #             ="));
+        Bukkit.getServer().getConsoleSender().sendMessage(Ultilities.formater("&c=     #           #        # #          #             ="));
+        Bukkit.getServer().getConsoleSender().sendMessage(Ultilities.formater("&c=     #           #        # #          #             ="));
+        Bukkit.getServer().getConsoleSender().sendMessage(Ultilities.formater("&c=     #           #        # ########## ##########    ="));
+        Bukkit.getServer().getConsoleSender().sendMessage(Ultilities.formater("&c======================================================="));
     }
 
     private void loadModules() {
@@ -56,6 +57,7 @@ public final class FallCraftSystem extends JavaPlugin {
         new LoadNpcModule(this);
         new PluginInfo();
         new LoadKitModules(this);
+        new LoadHomeModule(this);
         new LoadEssentialWarpModule(this);
         new LoadEssentialSpawnModule(this);
         new LoadEssentialCommandsModule(this);

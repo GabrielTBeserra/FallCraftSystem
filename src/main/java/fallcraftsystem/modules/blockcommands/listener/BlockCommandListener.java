@@ -2,7 +2,7 @@ package fallcraftsystem.modules.blockcommands.listener;
 
 import fallcraftsystem.core.FallCraftSystem;
 import fallcraftsystem.modules.blockcommands.core.BlocksCommands;
-import fallcraftsystem.utils.MethodsStatics;
+import fallcraftsystem.utils.Ultilities;
 import fallcraftsystem.utils.PluginInfo;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -21,7 +21,7 @@ public class BlockCommandListener implements Listener {
     public void onPlayerCommandPreprocess(final PlayerCommandPreprocessEvent event) {
         final String[] message = event.getMessage().toLowerCase().split(" ");
         if (BlocksCommands.blockedCommands.contains(message[0])) {
-            event.getPlayer().sendMessage(MethodsStatics.formater(PluginInfo.SERVER_NAME + "&cYou don`t have permission for this!"));
+            event.getPlayer().sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&cYou don`t have permission for this!"));
             event.setCancelled(true);
         }
     }

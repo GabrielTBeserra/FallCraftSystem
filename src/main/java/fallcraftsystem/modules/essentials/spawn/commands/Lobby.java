@@ -2,7 +2,7 @@ package fallcraftsystem.modules.essentials.spawn.commands;
 
 import fallcraftsystem.core.FallCraftSystem;
 import fallcraftsystem.modules.essentials.spawn.utils.SpawnFile;
-import fallcraftsystem.utils.MethodsStatics;
+import fallcraftsystem.utils.Ultilities;
 import fallcraftsystem.utils.PluginInfo;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
@@ -37,7 +37,7 @@ public class Lobby implements CommandExecutor {
 
         p.teleport(l);
 
-        MethodsStatics.send(sender, PluginInfo.SERVER_NAME + "&8Teleported");
+        Ultilities.send(sender, PluginInfo.SERVER_NAME + "&8Teleported");
 
 
         return true;

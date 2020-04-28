@@ -5,7 +5,7 @@
 package fallcraftsystem.modules.essentials.commands;
 
 import fallcraftsystem.core.FallCraftSystem;
-import fallcraftsystem.utils.MethodsStatics;
+import fallcraftsystem.utils.Ultilities;
 import fallcraftsystem.utils.PluginInfo;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
@@ -28,18 +28,18 @@ public class Reloadall implements CommandExecutor {
         final Player PlayerSender = (Player) sender;
 
 
-        Bukkit.broadcastMessage(MethodsStatics.formater(PluginInfo.SERVER_NAME + "&aReiniciando o servidor em em:"));
+        Bukkit.broadcastMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&aReiniciando o servidor em em:"));
 
         for (int i = 3; i >= 0; i--) {
             try {
                 TimeUnit.SECONDS.sleep(1);
-                Bukkit.broadcastMessage(MethodsStatics.formater(PluginInfo.SERVER_NAME + "&c" + i));
+                Bukkit.broadcastMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&c" + i));
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
         for (Player pl : Bukkit.getOnlinePlayers()) {
-            pl.kickPlayer(MethodsStatics.formater("&cServer is restarting..."));
+            pl.kickPlayer(Ultilities.formater("&cServer is restarting..."));
         }
 
         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "reload");

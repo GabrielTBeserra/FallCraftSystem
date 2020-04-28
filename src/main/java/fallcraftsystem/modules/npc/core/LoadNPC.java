@@ -3,7 +3,6 @@ package fallcraftsystem.modules.npc.core;
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.properties.Property;
 import fallcraftsystem.core.FallCraftSystem;
-import fallcraftsystem.utils.MethodsStatics;
 import net.minecraft.server.v1_8_R3.*;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;

@@ -1,8 +1,7 @@
 package fallcraftsystem.modules.kits.commands;
 
-import fallcraftsystem.modules.essentials.warp.utils.STATIC;
 import fallcraftsystem.modules.kits.utils.KitDbConfig;
-import fallcraftsystem.utils.MethodsStatics;
+import fallcraftsystem.utils.Ultilities;
 import fallcraftsystem.utils.PluginInfo;
 import fallcraftsystem.utils.TimeCalculator;
 import org.apache.commons.lang.StringUtils;
@@ -23,12 +22,24 @@ import java.util.List;
 
 public class KitMenu {
     public static <TimeStamp> void openInv(final Player player, final FileConfiguration locationFile) throws Exception {
-        Inventory inventory = Bukkit.createInventory(player, STATIC.MENU_SIZE, MethodsStatics.formater("&9&lKits"));
+        Inventory inventory = Bukkit.createInventory(player, 45, Ultilities.formater("&9&lKits"));
 
         if (!locationFile.contains("kit")) {
-            player.sendMessage(MethodsStatics.formater(PluginInfo.SERVER_NAME + "&c&lNenhum kit definido"));
+            player.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&c&lNenhum kit definido"));
             return;
         }
+
+        ItemStack background = new ItemStack(Material.STAINED_GLASS_PANE);
+        background.setDurability((short) 9);
+        ItemMeta backMeta = background.getItemMeta();
+        backMeta.setDisplayName(Ultilities.formater(" "));
+        background.setItemMeta(backMeta);
+
+
+        for(int i = 0 ; i < 45 ; i++){
+            inventory.setItem(i , background);
+        }
+
 
         ConfigurationSection sec = locationFile.getConfigurationSection("kit");
         ArrayList<ItemStack> itensList = new ArrayList<ItemStack>();
@@ -76,13 +87,13 @@ public class KitMenu {
 
                     if (minutosRestantes <= 0 && horas <= 0 && minutosRestantes <= 0) {
                         List<String> lore = new ArrayList<String>();
-                        lore.add(MethodsStatics.formater("&aItem disponivel"));
+                        lore.add(Ultilities.formater("&aItem disponivel"));
                         itemMeta.setLore(lore);
                     } else {
                         List<String> lore = new ArrayList<String>();
-                        lore.add(MethodsStatics.formater("&cItem nao disponivel"));
-                        lore.add(MethodsStatics.formater("&ADisponivel nos proximos"));
-                        lore.add(MethodsStatics.formater("&6" + minutosRestantes / 1440 + " Dias " + horas + " Horas e " + minutosRestantes % 60 + " minutos"));
+                        lore.add(Ultilities.formater("&cKit nao disponivel"));
+                        lore.add(Ultilities.formater("&ADisponivel nos proximos"));
+                        lore.add(Ultilities.formater("&6" + minutosRestantes / 1440 + " Dias " + horas + " Horas e " + minutosRestantes % 60 + " minutos"));
                         itemMeta.setLore(lore);
                     }
 
@@ -90,18 +101,18 @@ public class KitMenu {
 
                 } else {
                     List<String> lore = new ArrayList<String>();
-                    lore.add(MethodsStatics.formater("&aItem disponivel"));
+                    lore.add(Ultilities.formater("&aItem disponivel"));
                     itemMeta.setLore(lore);
                 }
 
             if (!player.hasPermission(locationFile.getString("kit." + key + ".perm"))) {
                 List<String> lore = new ArrayList<String>();
-                lore.add(MethodsStatics.formater("&cVoce nao tem permissao para pegar esse kit!"));
+                lore.add(Ultilities.formater("&cVoce nao tem permissao para pegar esse kit!"));
                 itemMeta.setLore(lore);
             }
 
 
-                itemMeta.setDisplayName(MethodsStatics.formater(itemName));
+                itemMeta.setDisplayName(Ultilities.formater(itemName));
 
 
                 item.setItemMeta(itemMeta);

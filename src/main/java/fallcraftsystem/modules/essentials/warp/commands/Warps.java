@@ -1,7 +1,7 @@
 package fallcraftsystem.modules.essentials.warp.commands;
 
 import fallcraftsystem.modules.essentials.warp.utils.STATIC;
-import fallcraftsystem.utils.MethodsStatics;
+import fallcraftsystem.utils.Ultilities;
 import fallcraftsystem.utils.PluginInfo;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -17,9 +17,9 @@ import java.util.ArrayList;
 
 public class Warps {
     public static void openInv(final Player player, final FileConfiguration locationFile) {
-        final Inventory inventory = Bukkit.createInventory(player, STATIC.MENU_SIZE, MethodsStatics.formater("&9&lWARPS"));
+        final Inventory inventory = Bukkit.createInventory(player, STATIC.MENU_SIZE, Ultilities.formater("&9&lWARPS"));
         if (!locationFile.contains("warps")) {
-            player.sendMessage(MethodsStatics.formater(PluginInfo.SERVER_NAME + "&c&lNot warp setted"));
+            player.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&c&lNot warp setted"));
             return;
         }
         final ConfigurationSection sec = locationFile.getConfigurationSection("warps");
@@ -34,7 +34,7 @@ public class Warps {
                     item.addEnchantment(Enchantment.DURABILITY, 1);
                 }
                 final ItemMeta itemMeta = item.getItemMeta();
-                itemMeta.setDisplayName(MethodsStatics.formater(locationFile.getString("warps." + key + ".TITLE")));
+                itemMeta.setDisplayName(Ultilities.formater(locationFile.getString("warps." + key + ".TITLE")));
                 item.setItemMeta(itemMeta);
                 inventory.setItem(locationFile.getInt("warps." + key + ".POS"), item);
             }

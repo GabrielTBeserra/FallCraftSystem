@@ -1,9 +1,8 @@
 package fallcraftsystem.modules.essentials.warp.commands;
 
 import fallcraftsystem.core.FallCraftSystem;
-import fallcraftsystem.modules.essentials.warp.utils.STATIC;
 import fallcraftsystem.modules.essentials.warp.utils.WarpFile;
-import fallcraftsystem.utils.MethodsStatics;
+import fallcraftsystem.utils.Ultilities;
 import fallcraftsystem.utils.PluginInfo;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -37,7 +36,7 @@ public class Warp implements CommandExecutor {
         }
         args[0] = args[0].toUpperCase();
         if (!this.locationFile.contains("warps." + args[0])) {
-            sender.sendMessage(MethodsStatics.formater(PluginInfo.SERVER_NAME + "&c&lThis warp not exists!"));
+            sender.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&c&lThis warp not exists!"));
             return true;
         }
         final Double X = Double.parseDouble(this.locationFile.getString("warps." + args[0] + ".X"));
@@ -46,11 +45,11 @@ public class Warp implements CommandExecutor {
         final String world = this.locationFile.getString("warps." + args[0] + ".WOLRD");
         final String permission = this.locationFile.getString("warps." + args[0] + ".PERMISSION");
         if (!player.hasPermission(permission)) {
-            sender.sendMessage(MethodsStatics.formater(PluginInfo.SERVER_NAME + "&c&lYou don`t have permission for this warp!"));
+            sender.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&c&lYou don`t have permission for this warp!"));
             return true;
         }
         final Location loc = new Location(Bukkit.getWorld(world), X, Y, Z);
-        sender.sendMessage(MethodsStatics.formater(PluginInfo.SERVER_NAME + "&c&lTeleported to: &6" + args[0].toUpperCase()));
+        sender.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&c&lTeleported to: &6" + args[0].toUpperCase()));
         player.teleport(loc);
         player.playSound(loc, Sound.ENDERMAN_TELEPORT, 1.0f, 1.0f);
         return true;

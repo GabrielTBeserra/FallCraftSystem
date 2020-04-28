@@ -10,7 +10,7 @@ import com.sk89q.worldguard.protection.managers.RegionManager;
 import fallcraftsystem.core.FallCraftSystem;
 import fallcraftsystem.entities.GamePlayer;
 import fallcraftsystem.entities.enums.PvpStatus;
-import fallcraftsystem.utils.MethodsStatics;
+import fallcraftsystem.utils.Ultilities;
 import fallcraftsystem.utils.PluginInfo;
 import fallcraftsystem.utils.SendTitle;
 import fallcraftsystem.utils.dependencies.ChatVault;
@@ -39,10 +39,15 @@ public class GeneralEvents implements Listener {
         GamePlayer gm = new GamePlayer(event.getPlayer());
 
         PluginInfo.players.put(event.getPlayer(), gm);
-        event.setJoinMessage(MethodsStatics.formater("&a+&f &8" + event.getPlayer().getName()));
+        event.setJoinMessage(Ultilities.formater("&a+&f &8" + event.getPlayer().getName()));
 
 
         MPlayer mplayer = MPlayer.get(event.getPlayer());
+
+
+        Ultilities.sendHeaderAndFooter(event.getPlayer(), Ultilities.formater("&b&lFall&f&lCraft\n\n")
+                , Ultilities.formater("\n\n&e&lLoja:&5 http://fallcraft.buycraft.net/\n&6&lPLAY.FALLCRAFT.COM.BR"));
+
 
         String facName = "";
 
@@ -53,7 +58,7 @@ public class GeneralEvents implements Listener {
 
 
         event.getPlayer().setPlayerListName(
-                MethodsStatics.formater(
+                Ultilities.formater(
                         ChatVault.getChat().getPlayerPrefix(event.getPlayer()) + facName + "&7" + event.getPlayer().getName()));
     }
 
@@ -63,7 +68,7 @@ public class GeneralEvents implements Listener {
         m = null;
 
         PluginInfo.players.remove(event.getPlayer());
-        event.setQuitMessage(MethodsStatics.formater("&c-&f &8" + event.getPlayer().getName()));
+        event.setQuitMessage(Ultilities.formater("&c-&f &8" + event.getPlayer().getName()));
     }
 
 
@@ -86,11 +91,11 @@ public class GeneralEvents implements Listener {
         if (applicableRegionSet.queryState(null, DefaultFlag.PVP) == StateFlag.State.DENY) {
             if (PluginInfo.players.get(p).getPvpStatus().equals(PvpStatus.ON)) {
                 PluginInfo.players.get(p).setPvpStatus(PvpStatus.OFF);
-                SendTitle.send(p, MethodsStatics.formater("&cPVP OFF"), "", 5, 5, 5);
+                SendTitle.send(p, Ultilities.formater("&cPVP OFF"), "", 5, 5, 5);
             }
         } else {
             if (PluginInfo.players.get(p).getPvpStatus().equals(PvpStatus.OFF)) {
-                SendTitle.send(p, MethodsStatics.formater("&aPVP ON"), "", 5, 5, 5);
+                SendTitle.send(p, Ultilities.formater("&aPVP ON"), "", 5, 5, 5);
                 PluginInfo.players.get(p).setPvpStatus(PvpStatus.ON);
             }
         }
