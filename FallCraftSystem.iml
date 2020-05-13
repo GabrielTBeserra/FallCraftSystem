@@ -46,5 +46,6 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.sk89q.lib:jlibnoise:1.0.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.sk89q:jchronic:0.2.4a" level="project" />
     <orderEntry type="library" name="Maven: net.citizensnpcs:citizensapi:2.0.20-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.xerial:sqlite-jdbc:3.31.1" level="project" />
   </component>
 </module>

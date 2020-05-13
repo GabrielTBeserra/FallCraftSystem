@@ -3,10 +3,10 @@ package fallcraftsystem.modules.kits.listeners;
 import fallcraftsystem.core.FallCraftSystem;
 import fallcraftsystem.modules.kits.utils.KitConfig;
 import fallcraftsystem.modules.kits.utils.KitDbConfig;
-import fallcraftsystem.utils.Ultilities;
 import fallcraftsystem.utils.PluginInfo;
 import fallcraftsystem.utils.SaveInventory;
 import fallcraftsystem.utils.TimeCalculator;
+import fallcraftsystem.utils.Ultilities;
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -18,6 +18,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.util.Date;
 
 public class ClickAndGetItem implements Listener {
@@ -47,7 +48,7 @@ public class ClickAndGetItem implements Listener {
 
         event.setCancelled(true);
 
-        if(kit.equals("")){
+        if (kit.equals("")) {
             return;
         }
         // Pega o nome do kit no arquivo de configuracoes
@@ -60,7 +61,6 @@ public class ClickAndGetItem implements Listener {
         Player player = (Player) event.getWhoClicked();
 
 
-
         if (KitDbConfig.getDBKItFile().contains(player.getUniqueId() + "." + kit)) {
             try {
                 String hora = KitDbConfig.getDBKItFile().getString(player.getUniqueId() + "." + kit + ".time");
@@ -69,7 +69,6 @@ public class ClickAndGetItem implements Listener {
                 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
                 Date date = new Date();
-
 
                 int difEmMin = (int) TimeCalculator.diferencaEmMinutos(date1, date);
                 int horaTotal = KitConfig.getKitFIle().getInt("kit." + kit + ".time");
@@ -81,17 +80,19 @@ public class ClickAndGetItem implements Listener {
                     horas = (((horaTotal - (horaTotal - (minutosRestantes / 1440)))) * 60 - (minutosRestantes % 60)) / 60;
                 }
 
+                Duration duracao = Duration.ofMinutes(minutosRestantes);
 
-               if(!(player.isOp() || player.hasPermission("fallcraft.kit.bypass"))){
-                   if (!(minutosRestantes <= 0 && horas <= 0 && minutosRestantes <= 0)) {
-                       player.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&cVoce ja pegou esse item!"));
-                       event.setCancelled(true);
-                       return;
-                   }
-               }
+                long diasRestantesFinal = duracao.toDays();
+                long horasRestantesFianl = duracao.toHours() % 24;
+                long minutosRestantesFinal = duracao.toMinutes() % 60;
 
-
-
+                if (!(player.isOp() || player.hasPermission("fallcraft.kit.bypass"))) {
+                    if (diasRestantesFinal > 0 || horasRestantesFianl > 0 || minutosRestantesFinal > 0) {
+                        player.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&cVoce ja pegou esse item!"));
+                        event.setCancelled(true);
+                        return;
+                    }
+                }
 
                 //int dia = (int) TimeCalculator.diferencaEmDias(date1, date);
                 //int horas = (int) TimeCalculator.diferencaEmHoras(date1, date);
@@ -103,7 +104,6 @@ public class ClickAndGetItem implements Listener {
             }
 
         }
-
 
         if (!player.hasPermission(KitConfig.getKitFIle().getString("kit." + kit + ".perm"))) {
             player.sendMessage(Ultilities.formater("&cVoce nao tem permissao para pegar esse kit!"));

@@ -37,6 +37,10 @@ commands:
     description: Alterna entre voar e nao voar.
     permission: fallcraft.module.essentials.fly
     usage: Use /fly para alternar.
+  inv:
+    description: Alterna entre visivel e invisivel.
+    permission: fallcraft.module.essentials.inv
+    usage: Use /inv para alternar.
   gm:
     description: Define o modo de jogo.
     permission: fallcraft.module.essentials.gm
@@ -84,6 +88,12 @@ commands:
     description: Deleta um kit.
     permission: fallcraft.module.homelist
     usage: Use /homelist.
+  discord:
+    description: Get discord.
+    usage: Use /discord.
+  coin:
+    description: Use Coin System
+    usage: Use /coin
 permissions:
   fallcraft.module.warp.*:
     description: Da acesso a todos comandos do Warp

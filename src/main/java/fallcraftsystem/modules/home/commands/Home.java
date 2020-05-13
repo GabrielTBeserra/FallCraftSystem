@@ -37,7 +37,7 @@ public class Home implements CommandExecutor {
             return true;
         }
 
-        System.out.println(HomeDB.getHomeFile().contains(player.getUniqueId() + ".home." + args[0]));
+        
 
         if (!HomeDB.getHomeFile().contains(player.getUniqueId() + ".home." + args[0])) {
             player.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&cVoce nao possui essa home!"));

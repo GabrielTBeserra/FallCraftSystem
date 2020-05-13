@@ -1,6 +1,9 @@
 package fallcraftsystem.core;
 
+import fallcraftsystem.modules.automessages.core.AutoMessage;
 import fallcraftsystem.modules.blockcommands.core.LoadBlockCommandModule;
+import fallcraftsystem.modules.coin.core.LoadCoinModule;
+import fallcraftsystem.modules.coin.database.ConnectionFactory;
 import fallcraftsystem.modules.essentials.commands.LoadEssentialCommandsModule;
 import fallcraftsystem.modules.essentials.spawn.LoadEssentialSpawnModule;
 import fallcraftsystem.modules.essentials.spy.core.LoadSpyModule;
@@ -19,10 +22,15 @@ import fallcraftsystem.utils.generalevents.GeneralEvents;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class FallCraftSystem extends JavaPlugin {
+import java.sql.Connection;
+
+public class FallCraftSystem extends JavaPlugin {
+    public static FallCraftSystem plugin;
 
     @Override
     public void onEnable() {
+        plugin = this;
+
 
         Bukkit.getServer().getConsoleSender().sendMessage(Ultilities.formater("&a======================================================="));
         Bukkit.getServer().getConsoleSender().sendMessage(Ultilities.formater("&a=     ########### ########## #          #             ="));
@@ -55,7 +63,9 @@ public final class FallCraftSystem extends JavaPlugin {
         PEX.setupPEX(this);
         VaultEconomy.setupEconomy(this);
         new LoadNpcModule(this);
+        new LoadCoinModule(this);
         new PluginInfo();
+        new AutoMessage(this);
         new LoadKitModules(this);
         new LoadHomeModule(this);
         new LoadEssentialWarpModule(this);

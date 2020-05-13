@@ -94,6 +94,29 @@ public class NpcsEvents implements Listener {
             NpcFile.save();
         }
 
+        boolean isInSpawn = false;
+        if (event.getMessage().contains("/f proteger") || event.getMessage().contains("/f claim")) {
+            Player p = event.getPlayer();
+            LocalPlayer localPlayer = WG.getWorldGuardPlugin(plugin).wrapPlayer(p);
+            Vector playerVector = localPlayer.getPosition();
+            RegionManager regionManager = WG.getWorldGuardPlugin(plugin).getRegionManager(p.getWorld());
+            ApplicableRegionSet applicableRegionSet = regionManager.getApplicableRegions(playerVector);
+
+            for (ProtectedRegion a : applicableRegionSet) {
+                if (a.getId().equals("spawn")) {
+                    isInSpawn = true;
+                    break;
+                }
+            }
+
+
+            if (isInSpawn) {
+                event.setCancelled(true);
+                p.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&cVoce nao pode construir aqui"));
+            }
+        }
+
+
 
     }
 

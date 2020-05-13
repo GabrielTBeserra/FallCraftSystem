@@ -7,8 +7,9 @@ package fallcraftsystem.modules.essentials.commands;
 import fallcraftsystem.core.FallCraftSystem;
 import fallcraftsystem.entities.GamePlayer;
 import fallcraftsystem.entities.enums.FlyStatus;
-import fallcraftsystem.utils.Ultilities;
 import fallcraftsystem.utils.PluginInfo;
+import fallcraftsystem.utils.Ultilities;
+import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -27,7 +28,23 @@ public class Fly implements CommandExecutor {
             sender.sendMessage("Command for only players!");
             return true;
         }
-        final Player player = (Player) sender;
+        Player player = (Player) sender;
+
+        if (args.length == 1) {
+            if (player.hasPermission("fallcraft.module.essentials.fly.admin")) {
+                if (Bukkit.getPlayer(args[0]) != null) {
+                    player = Bukkit.getPlayer(args[0]);
+                    sender.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&aModo de voo alterado para o player " + player.getName()));
+                } else {
+                    sender.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&cO player nao esta online"));
+                }
+            } else {
+                sender.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&cYou don`t have permission for this!"));
+                return true;
+            }
+
+        }
+
 
         GamePlayer gm = PluginInfo.players.get(player);
 

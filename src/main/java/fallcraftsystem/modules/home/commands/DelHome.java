@@ -13,7 +13,10 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import java.util.logging.Logger;
+
 public class DelHome implements CommandExecutor {
+    private final static Logger LOGGER = Logger.getLogger(DelHome.class.getName());
     public FallCraftSystem plugin;
 
     public DelHome(final FallCraftSystem plugin) {
@@ -43,6 +46,7 @@ public class DelHome implements CommandExecutor {
         HomeDB.getHomeFile().set(player.getUniqueId() + ".home." + args[0], null);
         HomeDB.save();
         player.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&aHome excluida!"));
+        LOGGER.info(player.getName() + " execute a /delhome");
         return true;
     }
 }

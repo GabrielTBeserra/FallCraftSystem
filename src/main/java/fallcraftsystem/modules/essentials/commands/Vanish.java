@@ -7,8 +7,8 @@ package fallcraftsystem.modules.essentials.commands;
 import fallcraftsystem.core.FallCraftSystem;
 import fallcraftsystem.entities.GamePlayer;
 import fallcraftsystem.entities.enums.VanishStatus;
-import fallcraftsystem.utils.Ultilities;
 import fallcraftsystem.utils.PluginInfo;
+import fallcraftsystem.utils.Ultilities;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -43,6 +43,7 @@ public class Vanish implements CommandExecutor {
             player.setPlayerListName(Ultilities.formater("&4" + player.getName()));
             Bukkit.broadcastMessage(Ultilities.formater("&c-&f &8" + player.getPlayer().getName()));
             player.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&cVoce está invisível"));
+            PluginInfo.vanishList.add(player);
             PluginInfo.players.get(player).setVanishStatus(VanishStatus.INVISIBLE);
         } else {
             for (final Player playerTarget : this.plugin.getServer().getOnlinePlayers()) {
@@ -50,7 +51,7 @@ public class Vanish implements CommandExecutor {
 
             }
             player.setPlayerListName(Ultilities.formater("&f" + player.getName()));
-
+            PluginInfo.vanishList.remove(player);
             player.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&aVoce está visível"));
             Bukkit.broadcastMessage(Ultilities.formater("&a+&f &8" + player.getPlayer().getName()));
             PluginInfo.players.get(player).setVanishStatus(VanishStatus.VISIBLE);

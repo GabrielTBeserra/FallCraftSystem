@@ -10,14 +10,16 @@ public class GamePlayer {
     private VanishStatus vanishStatus;
     private FlyStatus flyStatus;
     private PvpStatus pvpStatus;
+    private InvStatus invStatus;
 
-    public GamePlayer(Player player, PlayerStatus playerStatus, VanishStatus vanishStatus, FlyStatus fLyStatus, PvpStatus pvpStatus, SpyStatus spyStatus) {
+    public GamePlayer(SpyStatus spyStatus, Player player, PlayerStatus playerStatus, VanishStatus vanishStatus, FlyStatus flyStatus, PvpStatus pvpStatus, InvStatus invStatus) {
+        this.spyStatus = spyStatus;
         this.player = player;
         this.playerStatus = playerStatus;
         this.vanishStatus = vanishStatus;
-        this.flyStatus = fLyStatus;
+        this.flyStatus = flyStatus;
         this.pvpStatus = pvpStatus;
-        this.spyStatus = spyStatus;
+        this.invStatus = invStatus;
     }
 
     public GamePlayer(Player player) {
@@ -27,6 +29,7 @@ public class GamePlayer {
         this.flyStatus = FlyStatus.NOT_FLYING;
         this.pvpStatus = PvpStatus.OFF;
         this.spyStatus = SpyStatus.OFF;
+        this.invStatus = InvStatus.VISIBLE;
     }
 
 
@@ -79,15 +82,16 @@ public class GamePlayer {
         this.pvpStatus = pvpStatus;
     }
 
+    public InvStatus getInvStatus() {
+        return invStatus;
+    }
+
+    public void setInvStatus(InvStatus invStatus) {
+        this.invStatus = invStatus;
+    }
+
     @Override
     public String toString() {
-        return "GamePlayer{" +
-                "spyStatus=" + spyStatus +
-                ", player=" + player +
-                ", playerStatus=" + playerStatus +
-                ", vanishStatus=" + vanishStatus +
-                ", flyStatus=" + flyStatus +
-                ", pvpStatus=" + pvpStatus +
-                '}';
+        return super.toString();
     }
 }
