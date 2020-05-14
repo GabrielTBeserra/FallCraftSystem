@@ -38,7 +38,6 @@ public class Coin implements CommandExecutor {
             return true;
         } else if (args[0].equalsIgnoreCase("help")) {
             sender.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&aCoin Help"));
-            //sender.sendMessage(Ultilities.formater("&9/coin pay PLAYER &0- &6Tranferir coins para outro player"));
             sender.sendMessage(Ultilities.formater("&9/coin &0- &6Mostrar quantidade de coins"));
         } else if (args[0].equalsIgnoreCase("add") && sender.hasPermission("fallcraft.coin.admin.add")) {
             if (Bukkit.getPlayer(args[1]) != null) {

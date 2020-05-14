@@ -20,6 +20,7 @@ import fallcraftsystem.utils.dependencies.PEX;
 import fallcraftsystem.utils.dependencies.VaultEconomy;
 import fallcraftsystem.utils.generalevents.GeneralEvents;
 import org.bukkit.Bukkit;
+import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.sql.Connection;
@@ -30,7 +31,6 @@ public class FallCraftSystem extends JavaPlugin {
     @Override
     public void onEnable() {
         plugin = this;
-
 
         Bukkit.getServer().getConsoleSender().sendMessage(Ultilities.formater("&a======================================================="));
         Bukkit.getServer().getConsoleSender().sendMessage(Ultilities.formater("&a=     ########### ########## #          #             ="));
@@ -56,6 +56,8 @@ public class FallCraftSystem extends JavaPlugin {
         Bukkit.getServer().getConsoleSender().sendMessage(Ultilities.formater("&c=     #           #        # #          #             ="));
         Bukkit.getServer().getConsoleSender().sendMessage(Ultilities.formater("&c=     #           #        # ########## ##########    ="));
         Bukkit.getServer().getConsoleSender().sendMessage(Ultilities.formater("&c======================================================="));
+
+        HandlerList.unregisterAll(this);
     }
 
     private void loadModules() {

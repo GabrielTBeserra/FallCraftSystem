@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CreateKit implements CommandExecutor {
-    public static Map<String, KitInv> ListInvsKits = new HashMap<String, KitInv>();
+    public static Map<String, KitInv> listInvsKits = new HashMap<String, KitInv>();
     public FallCraftSystem plugin;
 
     public CreateKit(FallCraftSystem plugin) {
@@ -66,7 +66,7 @@ public class CreateKit implements CommandExecutor {
             return true;
         }
 
-        ListInvsKits.put(kitName, new KitInv(kitName, kitPerm, enchant, itemName, type, iconPos, time));
+        listInvsKits.put(kitName, new KitInv(kitName, kitPerm, enchant, itemName, type, iconPos, time));
 
         Inventory inv = Bukkit.createInventory(player, 27, Ultilities.formater("KIT." + kitName));
         player.openInventory(inv);

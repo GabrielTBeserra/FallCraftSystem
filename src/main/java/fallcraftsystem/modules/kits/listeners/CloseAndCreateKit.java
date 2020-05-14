@@ -31,7 +31,7 @@ public class CloseAndCreateKit implements Listener {
         String[] names = event.getInventory().getName().split("\\.");
         String name = names[1];
 
-        KitInv kit = CreateKit.ListInvsKits.get(name);
+        KitInv kit = CreateKit.listInvsKits.get(name);
         Inventory inventory = event.getInventory();
 
 
