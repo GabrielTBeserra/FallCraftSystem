@@ -1,13 +1,17 @@
 package fallcraftsystem.utils;
 
+import fallcraftsystem.core.FallCraftSystem;
 import net.minecraft.server.v1_8_R3.IChatBaseComponent;
 import net.minecraft.server.v1_8_R3.PacketPlayOutPlayerListHeaderFooter;
 import net.minecraft.server.v1_8_R3.PlayerConnection;
 import org.apache.commons.io.IOUtils;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Sound;
 import org.bukkit.command.CommandSender;
 import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.entity.Player;
+import org.bukkit.scheduler.BukkitRunnable;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 
@@ -97,6 +101,39 @@ public class Ultilities {
             e.printStackTrace();
         }
         connection.sendPacket(packet);
+    }
+
+    public static void teleportTimer() {
+        new BukkitRunnable() {
+            public void run() {
+                for (Player p : Bukkit.getOnlinePlayers()) {
+                    if (ServerUtils.teleportMap.containsKey(p)) {
+                        if (ServerUtils.teleportMap.get(p).getLocation().equals(p.getLocation())) {
+                            if (!p.hasPermission("fallcraft.teleport.bypass")) {
+                                if (ServerUtils.teleportMap.get(p).getTime() > 0) {
+                                    p.sendMessage(Ultilities.formater("&6&lTELEPORT &9>> &CTeleportando em " + ServerUtils.teleportMap.get(p).getTime()));
+                                    ServerUtils.teleportMap.get(p).setTime(ServerUtils.teleportMap.get(p).getTime() - 1);
+
+                                } else if (ServerUtils.teleportMap.get(p).getTime() == 0) {
+                                    p.sendMessage(Ultilities.formater("&6&lTELEPORT &9>> &CTeleportando!"));
+                                    p.playSound(ServerUtils.teleportMap.get(p).getToLoc(), Sound.ENDERMAN_TELEPORT, 1.0f, 1.0f);
+                                    p.teleport(ServerUtils.teleportMap.get(p).getToLoc());
+                                    ServerUtils.teleportMap.remove(p);
+                                }
+                            } else {
+                                p.sendMessage(Ultilities.formater("&6&lTELEPORT &9>> &CTeleportando!"));
+                                p.playSound(ServerUtils.teleportMap.get(p).getToLoc(), Sound.ENDERMAN_TELEPORT, 1.0f, 1.0f);
+                                p.teleport(ServerUtils.teleportMap.get(p).getToLoc());
+                                ServerUtils.teleportMap.remove(p);
+                            }
+                        } else {
+                            p.sendMessage(Ultilities.formater("&6&lTELEPORT &9>> &CVoce se mexeu, cancelando teleport!"));
+                            ServerUtils.teleportMap.remove(p);
+                        }
+                    }
+                }
+            }
+        }.runTaskTimerAsynchronously(FallCraftSystem.plugin, 20L, 20L);
     }
 
 }

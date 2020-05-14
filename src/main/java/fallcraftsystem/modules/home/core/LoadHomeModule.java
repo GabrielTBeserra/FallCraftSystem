@@ -8,7 +8,7 @@ import fallcraftsystem.modules.home.commands.SetHome;
 import fallcraftsystem.modules.home.utils.HomeConfig;
 import fallcraftsystem.modules.home.utils.HomeDB;
 import fallcraftsystem.utils.Ultilities;
-import fallcraftsystem.utils.PluginInfo;
+import fallcraftsystem.utils.ServerUtils;
 
 public class LoadHomeModule {
     public LoadHomeModule(FallCraftSystem pl) {
@@ -20,9 +20,9 @@ public class LoadHomeModule {
             new HomeList(pl);
             new DelHome(pl);
 
-            pl.getServer().getConsoleSender().sendMessage(Ultilities.formater(PluginInfo.PLUGIN_NAME + "&cModule &f>> &aHome load"));
+            pl.getServer().getConsoleSender().sendMessage(Ultilities.formater(ServerUtils.PLUGIN_NAME + "&cModule &f>> &aHome load"));
         } catch (Exception e) {
-            pl.getServer().getConsoleSender().sendMessage(Ultilities.formater(PluginInfo.PLUGIN_NAME + "&cModule &f>> &cHome not load"));
+            pl.getServer().getConsoleSender().sendMessage(Ultilities.formater(ServerUtils.PLUGIN_NAME + "&cModule &f>> &cHome not load"));
         }
     }
 }

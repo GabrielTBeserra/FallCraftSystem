@@ -4,7 +4,7 @@ import fallcraftsystem.core.FallCraftSystem;
 import fallcraftsystem.modules.essentials.warp.commands.*;
 import fallcraftsystem.modules.essentials.warp.utils.WarpFile;
 import fallcraftsystem.utils.Ultilities;
-import fallcraftsystem.utils.PluginInfo;
+import fallcraftsystem.utils.ServerUtils;
 
 public class LoadEssentialWarpModule {
     public LoadEssentialWarpModule(FallCraftSystem fallCraftSystem) {
@@ -16,9 +16,9 @@ public class LoadEssentialWarpModule {
             new WarpList(fallCraftSystem);
 
             fallCraftSystem.getServer().getPluginManager().registerEvents(new ClickItemTeleport(), fallCraftSystem);
-            fallCraftSystem.getServer().getConsoleSender().sendMessage(Ultilities.formater(PluginInfo.PLUGIN_NAME + "&cModule &f>> &aWarp load"));
+            fallCraftSystem.getServer().getConsoleSender().sendMessage(Ultilities.formater(ServerUtils.PLUGIN_NAME + "&cModule &f>> &aWarp load"));
         } catch (Exception e) {
-            fallCraftSystem.getServer().getConsoleSender().sendMessage(Ultilities.formater(PluginInfo.PLUGIN_NAME + "&cModule &f>> &cWarp not load"));
+            fallCraftSystem.getServer().getConsoleSender().sendMessage(Ultilities.formater(ServerUtils.PLUGIN_NAME + "&cModule &f>> &cWarp not load"));
         }
 
     }

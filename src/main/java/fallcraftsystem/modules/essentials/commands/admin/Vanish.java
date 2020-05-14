@@ -2,12 +2,12 @@
 // Decompiled by Procyon v0.5.36
 // 
 
-package fallcraftsystem.modules.essentials.commands;
+package fallcraftsystem.modules.essentials.commands.admin;
 
 import fallcraftsystem.core.FallCraftSystem;
 import fallcraftsystem.entities.GamePlayer;
 import fallcraftsystem.entities.enums.VanishStatus;
-import fallcraftsystem.utils.PluginInfo;
+import fallcraftsystem.utils.ServerUtils;
 import fallcraftsystem.utils.Ultilities;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
@@ -31,7 +31,7 @@ public class Vanish implements CommandExecutor {
         final Player player = (Player) sender;
 
 
-        GamePlayer gm = PluginInfo.players.get(player);
+        GamePlayer gm = ServerUtils.players.get(player);
 
         if (gm.getVanishStatus().equals(VanishStatus.VISIBLE)) {
             for (final Player playerTarget : this.plugin.getServer().getOnlinePlayers()) {
@@ -42,19 +42,19 @@ public class Vanish implements CommandExecutor {
             }
             player.setPlayerListName(Ultilities.formater("&4" + player.getName()));
             Bukkit.broadcastMessage(Ultilities.formater("&c-&f &8" + player.getPlayer().getName()));
-            player.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&cVoce está invisível"));
-            PluginInfo.vanishList.add(player);
-            PluginInfo.players.get(player).setVanishStatus(VanishStatus.INVISIBLE);
+            player.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cVoce está invisível"));
+            ServerUtils.vanishList.add(player);
+            ServerUtils.players.get(player).setVanishStatus(VanishStatus.INVISIBLE);
         } else {
             for (final Player playerTarget : this.plugin.getServer().getOnlinePlayers()) {
                 playerTarget.showPlayer(player);
 
             }
             player.setPlayerListName(Ultilities.formater("&f" + player.getName()));
-            PluginInfo.vanishList.remove(player);
-            player.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&aVoce está visível"));
+            ServerUtils.vanishList.remove(player);
+            player.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&aVoce está visível"));
             Bukkit.broadcastMessage(Ultilities.formater("&a+&f &8" + player.getPlayer().getName()));
-            PluginInfo.players.get(player).setVanishStatus(VanishStatus.VISIBLE);
+            ServerUtils.players.get(player).setVanishStatus(VanishStatus.VISIBLE);
         }
 
 

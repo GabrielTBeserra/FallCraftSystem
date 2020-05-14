@@ -2,7 +2,7 @@ package fallcraftsystem.utils.dependencies;
 
 import fallcraftsystem.core.FallCraftSystem;
 import fallcraftsystem.utils.Ultilities;
-import fallcraftsystem.utils.PluginInfo;
+import fallcraftsystem.utils.ServerUtils;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.plugin.RegisteredServiceProvider;
 
@@ -11,10 +11,10 @@ public class VaultEconomy {
 
     public static boolean setupEconomy(final FallCraftSystem plugin) {
         if (plugin.getServer().getPluginManager().getPlugin("Vault") == null) {
-            plugin.getServer().getConsoleSender().sendMessage(Ultilities.formater(PluginInfo.PLUGIN_NAME + "&cVault is requeried!"));
+            plugin.getServer().getConsoleSender().sendMessage(Ultilities.formater(ServerUtils.PLUGIN_NAME + "&cVault is requeried!"));
             return false;
         }
-        plugin.getServer().getConsoleSender().sendMessage(Ultilities.formater(PluginInfo.PLUGIN_NAME + "&aVault is loaded!"));
+        plugin.getServer().getConsoleSender().sendMessage(Ultilities.formater(ServerUtils.PLUGIN_NAME + "&aVault is loaded!"));
         final RegisteredServiceProvider<Economy> rsp = (RegisteredServiceProvider<Economy>) plugin.getServer().getServicesManager().getRegistration((Class) Economy.class);
         if (rsp == null) {
             return false;

@@ -1,9 +1,10 @@
 package fallcraftsystem.modules.essentials.spawn.commands;
 
 import fallcraftsystem.core.FallCraftSystem;
+import fallcraftsystem.entities.PlayerTeleport;
 import fallcraftsystem.modules.essentials.spawn.utils.SpawnFile;
 import fallcraftsystem.utils.Ultilities;
-import fallcraftsystem.utils.PluginInfo;
+import fallcraftsystem.utils.ServerUtils;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -35,10 +36,10 @@ public class Lobby implements CommandExecutor {
 
         Location l = new Location(plugin.getServer().getWorld(world), X, Y, Z);
 
-        p.teleport(l);
 
-        Ultilities.send(sender, PluginInfo.SERVER_NAME + "&8Teleported");
 
+        p.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&6Teleportado aguarde! &c(NAO SE MEXA)"));
+        ServerUtils.teleportMap.put(p, new PlayerTeleport(3, p.getLocation(), l));
 
         return true;
     }

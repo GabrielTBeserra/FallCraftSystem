@@ -5,9 +5,10 @@
 package fallcraftsystem.modules.home.commands;
 
 import fallcraftsystem.core.FallCraftSystem;
+import fallcraftsystem.entities.PlayerTeleport;
 import fallcraftsystem.modules.home.utils.HomeDB;
+import fallcraftsystem.utils.ServerUtils;
 import fallcraftsystem.utils.Ultilities;
-import fallcraftsystem.utils.PluginInfo;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -15,6 +16,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.scheduler.BukkitRunnable;
 
 public class Home implements CommandExecutor {
     public FallCraftSystem plugin;
@@ -23,6 +25,8 @@ public class Home implements CommandExecutor {
         this.plugin = plugin;
         plugin.getCommand("home").setExecutor(this);
     }
+
+
 
     public boolean onCommand(final CommandSender sender, final Command command, final String label, final String[] args) {
         if (!(sender instanceof Player)) {
@@ -33,14 +37,13 @@ public class Home implements CommandExecutor {
 
 
         if (args.length < 1) {
-            player.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&cInforme o nome da home!"));
+            player.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cInforme o nome da home!"));
             return true;
         }
 
-        
 
         if (!HomeDB.getHomeFile().contains(player.getUniqueId() + ".home." + args[0])) {
-            player.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&cVoce nao possui essa home!"));
+            player.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cVoce nao possui essa home!"));
             return true;
         }
 
@@ -48,10 +51,13 @@ public class Home implements CommandExecutor {
         int Y = HomeDB.getHomeFile().getInt(player.getUniqueId() + ".home." + args[0] + ".Y");
         int Z = HomeDB.getHomeFile().getInt(player.getUniqueId() + ".home." + args[0] + ".Z");
         String WORLD = HomeDB.getHomeFile().getString(player.getUniqueId() + ".home." + args[0] + ".WORLD");
-        World wolrd = Bukkit.getWorld(WORLD);
-        Location loc = new Location(wolrd, X, Y, Z);
-        player.teleport(loc);
-        player.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&6Teleportado!"));
+        World world = Bukkit.getWorld(WORLD);
+        Location loc = new Location(world, X, Y, Z);
+
+        ServerUtils.teleportMap.put(player, new PlayerTeleport(3, player.getLocation(), loc));
+
+
+        player.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&6Teleportado aguarde! &c(NAO SE MEXA)"));
 
         return true;
     }

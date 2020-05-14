@@ -2,12 +2,12 @@
 // Decompiled by Procyon v0.5.36
 // 
 
-package fallcraftsystem.modules.essentials.commands;
+package fallcraftsystem.modules.essentials.commands.admin;
 
 import fallcraftsystem.core.FallCraftSystem;
 import fallcraftsystem.entities.GamePlayer;
 import fallcraftsystem.entities.enums.FlyStatus;
-import fallcraftsystem.utils.PluginInfo;
+import fallcraftsystem.utils.ServerUtils;
 import fallcraftsystem.utils.Ultilities;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
@@ -34,28 +34,28 @@ public class Fly implements CommandExecutor {
             if (player.hasPermission("fallcraft.module.essentials.fly.admin")) {
                 if (Bukkit.getPlayer(args[0]) != null) {
                     player = Bukkit.getPlayer(args[0]);
-                    sender.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&aModo de voo alterado para o player " + player.getName()));
+                    sender.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&aModo de voo alterado para o player " + player.getName()));
                 } else {
-                    sender.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&cO player nao esta online"));
+                    sender.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cO player nao esta online"));
                 }
             } else {
-                sender.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&cYou don`t have permission for this!"));
+                sender.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cYou don`t have permission for this!"));
                 return true;
             }
 
         }
 
 
-        GamePlayer gm = PluginInfo.players.get(player);
+        GamePlayer gm = ServerUtils.players.get(player);
 
         if (gm.getFlyStatus().equals(FlyStatus.NOT_FLYING)) {
-            player.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&aVoo habilitado"));
+            player.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&aVoo habilitado"));
             player.setAllowFlight(true);
-            PluginInfo.players.get(player).setFlyStatus(FlyStatus.FLYING);
+            ServerUtils.players.get(player).setFlyStatus(FlyStatus.FLYING);
         } else {
             player.setAllowFlight(false);
-            player.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&cVoo desabilitado"));
-            PluginInfo.players.get(player).setFlyStatus(FlyStatus.NOT_FLYING);
+            player.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cVoo desabilitado"));
+            ServerUtils.players.get(player).setFlyStatus(FlyStatus.NOT_FLYING);
         }
 
 

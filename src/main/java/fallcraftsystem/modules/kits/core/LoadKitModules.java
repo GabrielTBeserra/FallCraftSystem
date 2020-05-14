@@ -9,7 +9,7 @@ import fallcraftsystem.modules.kits.listeners.CloseAndCreateKit;
 import fallcraftsystem.modules.kits.utils.KitConfig;
 import fallcraftsystem.modules.kits.utils.KitDbConfig;
 import fallcraftsystem.utils.Ultilities;
-import fallcraftsystem.utils.PluginInfo;
+import fallcraftsystem.utils.ServerUtils;
 
 public class LoadKitModules {
     public LoadKitModules(FallCraftSystem pl) {
@@ -21,9 +21,9 @@ public class LoadKitModules {
             new DeleteKit(pl);
             new CloseAndCreateKit(pl);
             new ClickAndGetItem(pl);
-            pl.getServer().getConsoleSender().sendMessage(Ultilities.formater(PluginInfo.PLUGIN_NAME + "&cModule &f>> &aKits load"));
+            pl.getServer().getConsoleSender().sendMessage(Ultilities.formater(ServerUtils.PLUGIN_NAME + "&cModule &f>> &aKits load"));
         } catch (Exception e) {
-            pl.getServer().getConsoleSender().sendMessage(Ultilities.formater(PluginInfo.PLUGIN_NAME + "&cModule &f>> &cKits not load"));
+            pl.getServer().getConsoleSender().sendMessage(Ultilities.formater(ServerUtils.PLUGIN_NAME + "&cModule &f>> &cKits not load"));
         }
     }
 }

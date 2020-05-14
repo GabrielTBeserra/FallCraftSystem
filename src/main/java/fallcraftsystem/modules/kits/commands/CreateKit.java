@@ -3,7 +3,7 @@ package fallcraftsystem.modules.kits.commands;
 import fallcraftsystem.core.FallCraftSystem;
 import fallcraftsystem.modules.kits.core.KitInv;
 import fallcraftsystem.utils.Ultilities;
-import fallcraftsystem.utils.PluginInfo;
+import fallcraftsystem.utils.ServerUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -62,7 +62,7 @@ public class CreateKit implements CommandExecutor {
             iconPos = Integer.parseInt(args[1]);
             time = Integer.parseInt(args[2]);
         } catch (Exception e) {
-            sender.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&c&lVoce precisa informar a posicao do item!"));
+            sender.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&c&lVoce precisa informar a posicao do item!"));
             return true;
         }
 

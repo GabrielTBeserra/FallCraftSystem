@@ -4,16 +4,16 @@ import fallcraftsystem.core.FallCraftSystem;
 import fallcraftsystem.modules.essentials.spy.command.SpyCommand;
 import fallcraftsystem.modules.essentials.spy.listener.SpyChat;
 import fallcraftsystem.utils.Ultilities;
-import fallcraftsystem.utils.PluginInfo;
+import fallcraftsystem.utils.ServerUtils;
 
 public class LoadSpyModule {
     public LoadSpyModule(FallCraftSystem plugin) {
         try{
         new SpyChat(plugin);
         new SpyCommand(plugin);
-            plugin.getServer().getConsoleSender().sendMessage(Ultilities.formater(PluginInfo.PLUGIN_NAME + "&cModule &f>> &aSpy load"));
+            plugin.getServer().getConsoleSender().sendMessage(Ultilities.formater(ServerUtils.PLUGIN_NAME + "&cModule &f>> &aSpy load"));
     } catch (Exception e) {
-            plugin.getServer().getConsoleSender().sendMessage(Ultilities.formater(PluginInfo.PLUGIN_NAME + "&cModule &f>> &cSpy not load"));
+            plugin.getServer().getConsoleSender().sendMessage(Ultilities.formater(ServerUtils.PLUGIN_NAME + "&cModule &f>> &cSpy not load"));
     }
     }
 }

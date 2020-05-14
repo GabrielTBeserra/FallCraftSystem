@@ -3,7 +3,7 @@ package fallcraftsystem.modules.kits.listeners;
 import fallcraftsystem.core.FallCraftSystem;
 import fallcraftsystem.modules.kits.utils.KitConfig;
 import fallcraftsystem.modules.kits.utils.KitDbConfig;
-import fallcraftsystem.utils.PluginInfo;
+import fallcraftsystem.utils.ServerUtils;
 import fallcraftsystem.utils.SaveInventory;
 import fallcraftsystem.utils.TimeCalculator;
 import fallcraftsystem.utils.Ultilities;
@@ -88,7 +88,7 @@ public class ClickAndGetItem implements Listener {
 
                 if (!(player.isOp() || player.hasPermission("fallcraft.kit.bypass"))) {
                     if (diasRestantesFinal > 0 || horasRestantesFianl > 0 || minutosRestantesFinal > 0) {
-                        player.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&cVoce ja pegou esse item!"));
+                        player.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cVoce ja pegou esse item!"));
                         event.setCancelled(true);
                         return;
                     }
@@ -121,7 +121,7 @@ public class ClickAndGetItem implements Listener {
         }
 
 
-        player.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&aVoce pegou o kit &6" + StringUtils.capitalize(kitName)));
+        player.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&aVoce pegou o kit &6" + StringUtils.capitalize(kitName)));
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
         Date date = new Date();

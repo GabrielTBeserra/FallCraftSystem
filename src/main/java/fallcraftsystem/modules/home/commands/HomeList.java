@@ -3,7 +3,7 @@ package fallcraftsystem.modules.home.commands;
 import fallcraftsystem.core.FallCraftSystem;
 import fallcraftsystem.modules.home.utils.HomeDB;
 import fallcraftsystem.utils.Ultilities;
-import fallcraftsystem.utils.PluginInfo;
+import fallcraftsystem.utils.ServerUtils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -27,7 +27,7 @@ public class HomeList implements CommandExecutor {
 
 
         StringBuilder stringBuilder = new StringBuilder();
-        player.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&aTodas suas homes!"));
+        player.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&aTodas suas homes!"));
         if (HomeDB.getHomeFile().contains(player.getUniqueId() + ".home")) {
             ConfigurationSection neg = HomeDB.getHomeFile().getConfigurationSection(player.getUniqueId() + ".home");
 

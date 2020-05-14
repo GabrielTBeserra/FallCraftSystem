@@ -7,7 +7,7 @@ import fallcraftsystem.entities.enums.InvStatus;
 import fallcraftsystem.entities.enums.SpyStatus;
 import fallcraftsystem.entities.enums.VanishStatus;
 import fallcraftsystem.modules.coin.database.CoinData;
-import fallcraftsystem.utils.PluginInfo;
+import fallcraftsystem.utils.ServerUtils;
 import fallcraftsystem.utils.Ultilities;
 import fallcraftsystem.utils.dependencies.ChatVault;
 import fallcraftsystem.utils.dependencies.VaultEconomy;
@@ -54,14 +54,14 @@ public class GameScoreboard implements Listener {
         Score score5 = objective.getScore(Ultilities.formater("&f Money: &a$" + VaultEconomy.getVault().getBalance(player)));
         Score score6 = objective.getScore(Ultilities.formater("&f Coins: &2¢" + String.format("%.1f", CoinData.getCoins(player))));
         Score score7 = objective.getScore("    ");
-        Score score8 = objective.getScore(Ultilities.formater("&f PVP: " + Ultilities.formater("&6" + PluginInfo.players.get(player).getPvpStatus().toString())));
+        Score score8 = objective.getScore(Ultilities.formater("&f PVP: " + Ultilities.formater("&6" + ServerUtils.players.get(player).getPvpStatus().toString())));
         Score score9 = objective.getScore("     ");
         Score score10 = objective.getScore(Ultilities.formater("&6 === STAFF === "));
         Score score11 = objective.getScore("       ");
-        Score score12 = objective.getScore(Ultilities.formater("&f Invisibilidade: " + (PluginInfo.players.get(player).getInvStatus().equals(InvStatus.INVISIBLE) ? "&aON" : "&cOFF")));
-        Score score13 = objective.getScore(Ultilities.formater("&f Vanish: &c" + (PluginInfo.players.get(player).getVanishStatus().equals(VanishStatus.INVISIBLE) ? "&aON" : "&cOFF")));
-        Score score14 = objective.getScore(Ultilities.formater("&f Spy: &c" + (PluginInfo.players.get(player).getSpyStatus().equals(SpyStatus.ON) ? "&aON" : "&cOFF")));
-        Score score15 = objective.getScore(Ultilities.formater("&f Fly: &c" + (PluginInfo.players.get(player).getFlyStatus().equals(FlyStatus.FLYING) ? "&aON" : "&cOFF")));
+        Score score12 = objective.getScore(Ultilities.formater("&f Invisibilidade: " + (ServerUtils.players.get(player).getInvStatus().equals(InvStatus.INVISIBLE) ? "&aON" : "&cOFF")));
+        Score score13 = objective.getScore(Ultilities.formater("&f Vanish: &c" + (ServerUtils.players.get(player).getVanishStatus().equals(VanishStatus.INVISIBLE) ? "&aON" : "&cOFF")));
+        Score score14 = objective.getScore(Ultilities.formater("&f Spy: &c" + (ServerUtils.players.get(player).getSpyStatus().equals(SpyStatus.ON) ? "&aON" : "&cOFF")));
+        Score score15 = objective.getScore(Ultilities.formater("&f Fly: &c" + (ServerUtils.players.get(player).getFlyStatus().equals(FlyStatus.FLYING) ? "&aON" : "&cOFF")));
         Score score16 = objective.getScore(Ultilities.formater("                 "));
 
 
@@ -121,7 +121,7 @@ public class GameScoreboard implements Listener {
         Score score5 = objective.getScore(Ultilities.formater("&f Money: &a$" + VaultEconomy.getVault().getBalance(player)));
         Score score6 = objective.getScore(Ultilities.formater("&f Coins: &2¢" + String.format("%.1f", CoinData.getCoins(player))));
         Score score7 = objective.getScore("    ");
-        Score score8 = objective.getScore(Ultilities.formater("&f PVP: " + Ultilities.formater("&6" + PluginInfo.players.get(player).getPvpStatus().toString())));
+        Score score8 = objective.getScore(Ultilities.formater("&f PVP: " + Ultilities.formater("&6" + ServerUtils.players.get(player).getPvpStatus().toString())));
         Score score9 = objective.getScore("     ");
 
         score1.setScore(10);

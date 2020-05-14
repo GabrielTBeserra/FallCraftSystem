@@ -1,8 +1,9 @@
 package fallcraftsystem.modules.essentials.warp.commands;
 
+import fallcraftsystem.entities.PlayerTeleport;
 import fallcraftsystem.modules.essentials.warp.utils.WarpFile;
 import fallcraftsystem.utils.Ultilities;
-import fallcraftsystem.utils.PluginInfo;
+import fallcraftsystem.utils.ServerUtils;
 import org.bukkit.*;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
@@ -39,8 +40,9 @@ public class ClickItemTeleport implements Listener {
         event.setCancelled(true);
         final Player player = (Player) event.getWhoClicked();
         player.closeInventory();
-        player.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&c&lTeleported to: &6" + warpName));
-        player.teleport(loc);
-        player.playSound(loc, Sound.ENDERMAN_TELEPORT, 1.0f, 1.0f);
+        ServerUtils.teleportMap.put(player, new PlayerTeleport(3, player.getLocation(), loc));
+
+
+        player.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&6Teleportado aguarde! &c(NAO SE MEXA)"));
     }
 }

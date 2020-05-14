@@ -10,7 +10,7 @@ import com.sk89q.worldguard.protection.managers.RegionManager;
 import fallcraftsystem.core.FallCraftSystem;
 import fallcraftsystem.entities.GamePlayer;
 import fallcraftsystem.entities.enums.PvpStatus;
-import fallcraftsystem.utils.PluginInfo;
+import fallcraftsystem.utils.ServerUtils;
 import fallcraftsystem.utils.SendTitle;
 import fallcraftsystem.utils.Ultilities;
 import fallcraftsystem.utils.dependencies.ChatVault;
@@ -42,14 +42,14 @@ public class GeneralEvents implements Listener {
 
         Player p = event.getPlayer();
 
-        for (Player ol : PluginInfo.vanishList) {
+        for (Player ol : ServerUtils.vanishList) {
             if (!p.hasPermission("fallcraft.module.essentials.v")) {
                 p.hidePlayer(ol);
             }
 
         }
 
-        PluginInfo.players.put(event.getPlayer(), gm);
+        ServerUtils.players.put(event.getPlayer(), gm);
         event.setJoinMessage(Ultilities.formater("&a+&f &8" + event.getPlayer().getName()));
 
 
@@ -75,7 +75,7 @@ public class GeneralEvents implements Listener {
 
     @EventHandler
     public void onPlayerQuit(PlayerQuitEvent event) {
-        GamePlayer m = PluginInfo.players.get(event.getPlayer());
+        GamePlayer m = ServerUtils.players.get(event.getPlayer());
         m = null;
 
         if (event.getPlayer().hasPermission("fallcraft.module.essentials.inv")) {
@@ -83,9 +83,9 @@ public class GeneralEvents implements Listener {
         }
 
 
-        PluginInfo.vanishList.remove(event.getPlayer());
+        ServerUtils.vanishList.remove(event.getPlayer());
 
-        PluginInfo.players.remove(event.getPlayer());
+        ServerUtils.players.remove(event.getPlayer());
         event.setQuitMessage(Ultilities.formater("&c-&f &8" + event.getPlayer().getName()));
     }
 
@@ -95,9 +95,9 @@ public class GeneralEvents implements Listener {
         Player p = event.getPlayer();
 
 
-        if (!PluginInfo.players.containsKey(p)) {
+        if (!ServerUtils.players.containsKey(p)) {
             GamePlayer gm = new GamePlayer(event.getPlayer());
-            PluginInfo.players.put(event.getPlayer(), gm);
+            ServerUtils.players.put(event.getPlayer(), gm);
         }
 
 
@@ -107,14 +107,14 @@ public class GeneralEvents implements Listener {
         ApplicableRegionSet applicableRegionSet = regionManager.getApplicableRegions(playerVector);
 
         if (applicableRegionSet.queryState(null, DefaultFlag.PVP) == StateFlag.State.DENY) {
-            if (PluginInfo.players.get(p).getPvpStatus().equals(PvpStatus.ON)) {
-                PluginInfo.players.get(p).setPvpStatus(PvpStatus.OFF);
+            if (ServerUtils.players.get(p).getPvpStatus().equals(PvpStatus.ON)) {
+                ServerUtils.players.get(p).setPvpStatus(PvpStatus.OFF);
                 SendTitle.send(p, Ultilities.formater("&cPVP OFF"), "", 5, 5, 5);
             }
         } else {
-            if (PluginInfo.players.get(p).getPvpStatus().equals(PvpStatus.OFF)) {
+            if (ServerUtils.players.get(p).getPvpStatus().equals(PvpStatus.OFF)) {
                 SendTitle.send(p, Ultilities.formater("&aPVP ON"), "", 5, 5, 5);
-                PluginInfo.players.get(p).setPvpStatus(PvpStatus.ON);
+                ServerUtils.players.get(p).setPvpStatus(PvpStatus.ON);
             }
         }
     }

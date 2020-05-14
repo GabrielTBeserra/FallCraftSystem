@@ -1,7 +1,7 @@
 package fallcraftsystem.modules.kits.commands;
 
 import fallcraftsystem.modules.kits.utils.KitDbConfig;
-import fallcraftsystem.utils.PluginInfo;
+import fallcraftsystem.utils.ServerUtils;
 import fallcraftsystem.utils.TimeCalculator;
 import fallcraftsystem.utils.Ultilities;
 import org.apache.commons.lang.StringUtils;
@@ -26,7 +26,7 @@ public class KitMenu {
         Inventory inventory = Bukkit.createInventory(player, 45, Ultilities.formater("&9&lKits"));
 
         if (!locationFile.contains("kit")) {
-            player.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&c&lNenhum kit definido"));
+            player.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&c&lNenhum kit definido"));
             return;
         }
 

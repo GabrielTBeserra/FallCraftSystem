@@ -4,7 +4,7 @@ import fallcraftsystem.core.FallCraftSystem;
 import fallcraftsystem.entities.GamePlayer;
 import fallcraftsystem.entities.enums.SpyStatus;
 import fallcraftsystem.utils.Ultilities;
-import fallcraftsystem.utils.PluginInfo;
+import fallcraftsystem.utils.ServerUtils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -28,18 +28,18 @@ public class SpyCommand implements CommandExecutor {
 
         Player p = (Player) sender;
 
-        if (!PluginInfo.players.containsKey(p)) {
+        if (!ServerUtils.players.containsKey(p)) {
             GamePlayer gm = new GamePlayer(p);
-            PluginInfo.players.put(p, gm);
+            ServerUtils.players.put(p, gm);
         }
 
 
-        if (PluginInfo.players.get(p).getSpyStatus().equals(SpyStatus.ON)) {
-            sender.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&cSpy disable"));
-            PluginInfo.players.get(p).setSpyStatus(SpyStatus.OFF);
-        } else if (PluginInfo.players.get(p).getSpyStatus().equals(SpyStatus.OFF)) {
-            sender.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&aSpy enable"));
-            PluginInfo.players.get(p).setSpyStatus(SpyStatus.ON);
+        if (ServerUtils.players.get(p).getSpyStatus().equals(SpyStatus.ON)) {
+            sender.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cSpy disable"));
+            ServerUtils.players.get(p).setSpyStatus(SpyStatus.OFF);
+        } else if (ServerUtils.players.get(p).getSpyStatus().equals(SpyStatus.OFF)) {
+            sender.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&aSpy enable"));
+            ServerUtils.players.get(p).setSpyStatus(SpyStatus.ON);
         }
 
 

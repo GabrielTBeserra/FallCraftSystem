@@ -4,7 +4,7 @@ import fallcraftsystem.core.FallCraftSystem;
 import fallcraftsystem.modules.home.utils.HomeConfig;
 import fallcraftsystem.modules.home.utils.HomeDB;
 import fallcraftsystem.utils.Ultilities;
-import fallcraftsystem.utils.PluginInfo;
+import fallcraftsystem.utils.ServerUtils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -28,7 +28,7 @@ public class SetHome implements CommandExecutor {
 
 
         if (args.length < 1) {
-            player.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&cInforme o nome da home!"));
+            player.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cInforme o nome da home!"));
             return true;
         }
 
@@ -49,7 +49,7 @@ public class SetHome implements CommandExecutor {
 
             if (neg.getKeys(false).size() >= maxValue
                     && !HomeDB.getHomeFile().contains(player.getUniqueId() + ".home." + args[0])) {
-                player.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&cVoce ja atingiu o seu limite de &6" + maxValue + "&c home!"));
+                player.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cVoce ja atingiu o seu limite de &6" + maxValue + "&c home!"));
                 return true;
             }
         }
@@ -62,7 +62,7 @@ public class SetHome implements CommandExecutor {
         HomeDB.save();
 
 
-        player.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&aNova home definida!"));
+        player.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&aNova home definida!"));
 
 
         return true;

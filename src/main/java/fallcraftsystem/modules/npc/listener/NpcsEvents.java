@@ -9,7 +9,7 @@ import com.sk89q.worldguard.protection.regions.ProtectedRegion;
 import fallcraftsystem.core.FallCraftSystem;
 import fallcraftsystem.modules.npc.utils.Falas;
 import fallcraftsystem.modules.npc.utils.NpcFile;
-import fallcraftsystem.utils.PluginInfo;
+import fallcraftsystem.utils.ServerUtils;
 import fallcraftsystem.utils.Ultilities;
 import fallcraftsystem.utils.dependencies.WG;
 import net.citizensnpcs.api.event.NPCRightClickEvent;
@@ -40,7 +40,7 @@ public class NpcsEvents implements Listener {
                 p.sendMessage(Ultilities.formater("&e" + Falas.getFala(p, 1)));
             } else {
                 if (NpcFile.getNpcFile().getBoolean(p.getUniqueId() + ".conversado")) {
-                    p.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&cVoce ja falou com esse npc"));
+                    p.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cVoce ja falou com esse npc"));
                 } else {
                     NpcFile.getNpcFile().set(p.getUniqueId() + ".conversado", true);
                     int i = NpcFile.getNpcFile().getInt(p.getUniqueId() + ".num");
@@ -77,16 +77,16 @@ public class NpcsEvents implements Listener {
 
             if (!isInGuild) {
                 event.setCancelled(true);
-                p.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&cVoce precisa esta no guild hall para criar sua faction"));
+                p.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cVoce precisa esta no guild hall para criar sua faction"));
             } else {
                 if (NpcFile.getNpcFile().contains(p.getUniqueId() + "")) {
                     if (!NpcFile.getNpcFile().getBoolean(p.getUniqueId() + ".conversado")) {
                         event.setCancelled(true);
-                        p.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&cVoce precisa conversar com o Zaphyr no guild hall para dar continuidade"));
+                        p.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cVoce precisa conversar com o Zaphyr no guild hall para dar continuidade"));
                     }
                 } else {
                     event.setCancelled(true);
-                    p.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&cVoce precisa conversar com o Zaphyr no guild hall para dar continuidade"));
+                    p.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cVoce precisa conversar com o Zaphyr no guild hall para dar continuidade"));
                 }
 
             }
@@ -112,7 +112,7 @@ public class NpcsEvents implements Listener {
 
             if (isInSpawn) {
                 event.setCancelled(true);
-                p.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&cVoce nao pode construir aqui"));
+                p.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cVoce nao pode construir aqui"));
             }
         }
 
@@ -137,16 +137,16 @@ public class NpcsEvents implements Listener {
         }
         if (!isInGuild) {
             event.setCancelled(true);
-            p.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&cVoce precisa esta no guild hall para criar sua faction"));
+            p.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cVoce precisa esta no guild hall para criar sua faction"));
         } else {
             if (NpcFile.getNpcFile().contains(p.getUniqueId() + "")) {
                 if (!NpcFile.getNpcFile().getBoolean(p.getUniqueId() + ".conversado")) {
                     event.setCancelled(true);
-                    p.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&cVoce precisa conversar com o Zaphyr no guild hall para dar continuidade"));
+                    p.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cVoce precisa conversar com o Zaphyr no guild hall para dar continuidade"));
                 }
             } else {
                 event.setCancelled(true);
-                p.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&cVoce precisa conversar com o Zaphyr no guild hall para dar continuidade"));
+                p.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cVoce precisa conversar com o Zaphyr no guild hall para dar continuidade"));
             }
         }
 

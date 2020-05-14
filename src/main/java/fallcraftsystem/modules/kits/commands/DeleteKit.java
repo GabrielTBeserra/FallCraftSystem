@@ -3,7 +3,7 @@ package fallcraftsystem.modules.kits.commands;
 import fallcraftsystem.core.FallCraftSystem;
 import fallcraftsystem.modules.kits.utils.KitConfig;
 import fallcraftsystem.utils.Ultilities;
-import fallcraftsystem.utils.PluginInfo;
+import fallcraftsystem.utils.ServerUtils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -26,14 +26,14 @@ public class DeleteKit implements CommandExecutor {
         }
 
         if (args.length == 0) {
-            sender.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&c&lEsse kit nao existe!"));
+            sender.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&c&lEsse kit nao existe!"));
             return true;
         }
 
 
         KitConfig.getKitFIle().set("kit." + args[0].toLowerCase(), null);
         KitConfig.save();
-        sender.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&c&lKit deletado!"));
+        sender.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&c&lKit deletado!"));
         return true;
     }
 }

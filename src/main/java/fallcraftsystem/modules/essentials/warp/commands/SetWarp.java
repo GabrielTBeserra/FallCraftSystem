@@ -4,7 +4,7 @@ import fallcraftsystem.core.FallCraftSystem;
 import fallcraftsystem.modules.essentials.warp.utils.STATIC;
 import fallcraftsystem.modules.essentials.warp.utils.WarpFile;
 import fallcraftsystem.utils.Ultilities;
-import fallcraftsystem.utils.PluginInfo;
+import fallcraftsystem.utils.ServerUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -29,11 +29,11 @@ public class SetWarp implements CommandExecutor {
             return true;
         }
         if (args.length == 0) {
-            sender.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&c&lUse /setwarp <Name> <Position> [Permission] to set the new warp!"));
+            sender.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&c&lUse /setwarp <Name> <Position> [Permission] to set the new warp!"));
             return true;
         }
         if (args.length == 1) {
-            sender.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&c&lVoce precisa informar a posicao do item!"));
+            sender.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&c&lVoce precisa informar a posicao do item!"));
             return true;
         }
         final Player player = (Player) sender;
@@ -42,11 +42,11 @@ public class SetWarp implements CommandExecutor {
         try {
             iconPos = Integer.parseInt(args[1]);
         } catch (Exception e) {
-            sender.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&c&lVoce precisa informar a posicao do item!"));
+            sender.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&c&lVoce precisa informar a posicao do item!"));
             return true;
         }
         if (iconPos > STATIC.MENU_SIZE) {
-            sender.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&c&lVoce precisa informar um numero menor que " + STATIC.MENU_SIZE));
+            sender.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&c&lVoce precisa informar um numero menor que " + STATIC.MENU_SIZE));
             return true;
         }
         final String title = args[0];

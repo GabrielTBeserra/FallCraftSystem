@@ -1,8 +1,8 @@
-package fallcraftsystem.modules.essentials.commands;
+package fallcraftsystem.modules.essentials.commands.admin;
 
 import fallcraftsystem.core.FallCraftSystem;
 import fallcraftsystem.utils.Ultilities;
-import fallcraftsystem.utils.PluginInfo;
+import fallcraftsystem.utils.ServerUtils;
 import org.bukkit.GameMode;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -55,7 +55,7 @@ public class Gm implements CommandExecutor {
                 break;
             }
         }
-        sender.sendMessage(Ultilities.formater( PluginInfo.SERVER_NAME +"&2Modo de jogo atualizado para: &6&l" + player.getGameMode().toString()));
+        sender.sendMessage(Ultilities.formater( ServerUtils.SERVER_NAME +"&2Modo de jogo atualizado para: &6&l" + player.getGameMode().toString()));
         return true;
     }
 }

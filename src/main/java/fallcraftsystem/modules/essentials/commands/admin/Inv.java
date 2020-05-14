@@ -1,9 +1,9 @@
-package fallcraftsystem.modules.essentials.commands;
+package fallcraftsystem.modules.essentials.commands.admin;
 
 import fallcraftsystem.core.FallCraftSystem;
 import fallcraftsystem.entities.GamePlayer;
 import fallcraftsystem.entities.enums.InvStatus;
-import fallcraftsystem.utils.PluginInfo;
+import fallcraftsystem.utils.ServerUtils;
 import fallcraftsystem.utils.Ultilities;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
@@ -33,31 +33,31 @@ public class Inv implements CommandExecutor {
             if (player.hasPermission("fallcraft.module.essentials.inv.admin")) {
                 if (Bukkit.getPlayer(args[0]) != null) {
                     player = Bukkit.getPlayer(args[0]);
-                    sender.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&aModo de invibilidade alterado para o player " + player.getName()));
+                    sender.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&aModo de invibilidade alterado para o player " + player.getName()));
                 } else {
-                    sender.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&cO player nao esta online"));
+                    sender.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cO player nao esta online"));
                 }
             } else {
-                sender.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&cYou don`t have permission for this!"));
+                sender.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cYou don`t have permission for this!"));
                 return true;
             }
 
         }
 
 
-        GamePlayer gm = PluginInfo.players.get(player);
+        GamePlayer gm = ServerUtils.players.get(player);
 
         if (gm.getInvStatus().equals(InvStatus.VISIBLE)) {
-            player.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&aInivisibilidade ligada"));
+            player.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&aInivisibilidade ligada"));
             player.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 18000 * 120, 254, false, false));
 
-            PluginInfo.players.get(player).setInvStatus(InvStatus.INVISIBLE);
+            ServerUtils.players.get(player).setInvStatus(InvStatus.INVISIBLE);
         } else {
 
             player.removePotionEffect(PotionEffectType.INVISIBILITY);
 
-            player.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&cInvisibilidade desligada"));
-            PluginInfo.players.get(player).setInvStatus(InvStatus.VISIBLE);
+            player.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cInvisibilidade desligada"));
+            ServerUtils.players.get(player).setInvStatus(InvStatus.VISIBLE);
         }
         return true;
     }

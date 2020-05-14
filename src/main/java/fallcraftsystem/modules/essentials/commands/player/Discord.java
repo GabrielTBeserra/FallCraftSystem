@@ -1,9 +1,8 @@
-package fallcraftsystem.modules.essentials.commands;
+package fallcraftsystem.modules.essentials.commands.player;
 
 import fallcraftsystem.core.FallCraftSystem;
-import fallcraftsystem.utils.PluginInfo;
+import fallcraftsystem.utils.ServerUtils;
 import fallcraftsystem.utils.Ultilities;
-import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -23,7 +22,7 @@ public class Discord implements CommandExecutor {
             return true;
         }
 
-        sender.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&6Nosso discord: &9https://discord.gg/Rh63Fjz"));
+        sender.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&6Nosso discord: &9https://discord.gg/Rh63Fjz"));
 
         return true;
     }

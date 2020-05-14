@@ -7,7 +7,7 @@ package fallcraftsystem.modules.home.commands;
 import fallcraftsystem.core.FallCraftSystem;
 import fallcraftsystem.modules.home.utils.HomeDB;
 import fallcraftsystem.utils.Ultilities;
-import fallcraftsystem.utils.PluginInfo;
+import fallcraftsystem.utils.ServerUtils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -33,19 +33,19 @@ public class DelHome implements CommandExecutor {
 
 
         if (args.length < 1) {
-            player.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&cInforme o nome da home!"));
+            player.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cInforme o nome da home!"));
             return true;
         }
 
         System.out.println(HomeDB.getHomeFile().contains(player.getUniqueId() + ".home." + args[0]));
 
         if (!HomeDB.getHomeFile().contains(player.getUniqueId() + ".home." + args[0])) {
-            player.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&cVoce nao possui essa home!"));
+            player.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cVoce nao possui essa home!"));
             return true;
         }
         HomeDB.getHomeFile().set(player.getUniqueId() + ".home." + args[0], null);
         HomeDB.save();
-        player.sendMessage(Ultilities.formater(PluginInfo.SERVER_NAME + "&aHome excluida!"));
+        player.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&aHome excluida!"));
         LOGGER.info(player.getName() + " execute a /delhome");
         return true;
     }
