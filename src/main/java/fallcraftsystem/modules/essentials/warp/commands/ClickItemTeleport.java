@@ -2,9 +2,12 @@ package fallcraftsystem.modules.essentials.warp.commands;
 
 import fallcraftsystem.entities.PlayerTeleport;
 import fallcraftsystem.modules.essentials.warp.utils.WarpFile;
-import fallcraftsystem.utils.Ultilities;
 import fallcraftsystem.utils.ServerUtils;
-import org.bukkit.*;
+import fallcraftsystem.utils.Ultilities;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -12,7 +15,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 
 public class ClickItemTeleport implements Listener {
-    private FileConfiguration locationFile;
+    private final FileConfiguration locationFile;
 
     public ClickItemTeleport() {
         this.locationFile = WarpFile.getWarpFile();
@@ -35,8 +38,9 @@ public class ClickItemTeleport implements Listener {
         final double X = Double.parseDouble(this.locationFile.getString("warps." + warp + ".X"));
         final double Y = Double.parseDouble(this.locationFile.getString("warps." + warp + ".Y"));
         final double Z = Double.parseDouble(this.locationFile.getString("warps." + warp + ".Z"));
-        final String world = this.locationFile.getString("warps." + warp + ".WOLRD");
-        final Location loc = new Location(Bukkit.getWorld(world), X, Y, Z);
+        String world = this.locationFile.getString("warps." + warp + ".WOLRD");
+        Location loc = new Location(Bukkit.getWorld(world), X, Y, Z);
+        loc.setWorld(Bukkit.getWorld(world));
         event.setCancelled(true);
         final Player player = (Player) event.getWhoClicked();
         player.closeInventory();
