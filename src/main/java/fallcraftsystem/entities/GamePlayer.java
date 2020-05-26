@@ -11,6 +11,7 @@ public class GamePlayer {
     private FlyStatus flyStatus;
     private PvpStatus pvpStatus;
     private InvStatus invStatus;
+    private LuzStatus luzStatus;
 
     public GamePlayer(SpyStatus spyStatus, Player player, PlayerStatus playerStatus, VanishStatus vanishStatus, FlyStatus flyStatus, PvpStatus pvpStatus, InvStatus invStatus) {
         this.spyStatus = spyStatus;
@@ -20,6 +21,7 @@ public class GamePlayer {
         this.flyStatus = flyStatus;
         this.pvpStatus = pvpStatus;
         this.invStatus = invStatus;
+        this.luzStatus = luzStatus;
     }
 
     public GamePlayer(Player player) {
@@ -30,6 +32,7 @@ public class GamePlayer {
         this.pvpStatus = PvpStatus.OFF;
         this.spyStatus = SpyStatus.OFF;
         this.invStatus = InvStatus.VISIBLE;
+        this.luzStatus = LuzStatus.OFF;
     }
 
 
@@ -89,6 +92,10 @@ public class GamePlayer {
     public void setInvStatus(InvStatus invStatus) {
         this.invStatus = invStatus;
     }
+
+    public LuzStatus getLuzStatus() { return luzStatus; }
+
+    public void setLuzStatus(LuzStatus luzStatus) {this.luzStatus = luzStatus; }
 
     @Override
     public String toString() {
