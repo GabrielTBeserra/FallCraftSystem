@@ -75,6 +75,7 @@
             <id>everything</id>
             <url>http://repo.citizensnpcs.co/</url>
         </repository>
+            
     </repositories>
 
     <dependencies>
@@ -121,6 +122,8 @@
             <artifactId>sqlite-jdbc</artifactId>
             <version>3.31.1</version>
         </dependency>
+
+
 
     </dependencies>
 </project>

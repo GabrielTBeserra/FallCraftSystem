@@ -109,8 +109,8 @@ public class Ultilities {
                 for (Player p : Bukkit.getOnlinePlayers()) {
                     try {
                         if (ServerUtils.teleportMap.containsKey(p)) {
-                            if (ServerUtils.teleportMap.get(p).getLocation().equals(p.getLocation())) {
-                                if (!p.hasPermission("fallcraft.teleport.bypass")) {
+                            if (!p.hasPermission("fallcraft.teleport.bypass")) {
+                                if (ServerUtils.teleportMap.get(p).getLocation().equals(p.getLocation())) {
                                     if (ServerUtils.teleportMap.get(p).getTime() > 0) {
                                         p.sendMessage(Ultilities.formater("&6&lTELEPORT &9>> &CTeleportando em " + ServerUtils.teleportMap.get(p).getTime()));
                                         ServerUtils.teleportMap.get(p).setTime(ServerUtils.teleportMap.get(p).getTime() - 1);
@@ -122,13 +122,13 @@ public class Ultilities {
                                         ServerUtils.teleportMap.remove(p);
                                     }
                                 } else {
-                                    p.sendMessage(Ultilities.formater("&6&lTELEPORT &9>> &CTeleportando!"));
-                                    p.playSound(ServerUtils.teleportMap.get(p).getToLoc(), Sound.ENDERMAN_TELEPORT, 1.0f, 1.0f);
-                                    p.teleport(ServerUtils.teleportMap.get(p).getToLoc());
+                                    p.sendMessage(Ultilities.formater("&6&lTELEPORT &9>> &CVoce se mexeu, cancelando teleport!"));
                                     ServerUtils.teleportMap.remove(p);
                                 }
                             } else {
-                                p.sendMessage(Ultilities.formater("&6&lTELEPORT &9>> &CVoce se mexeu, cancelando teleport!"));
+                                p.sendMessage(Ultilities.formater("&6&lTELEPORT &9>> &CTeleportando!"));
+                                p.playSound(ServerUtils.teleportMap.get(p).getToLoc(), Sound.ENDERMAN_TELEPORT, 1.0f, 1.0f);
+                                p.teleport(ServerUtils.teleportMap.get(p).getToLoc());
                                 ServerUtils.teleportMap.remove(p);
                             }
                         }

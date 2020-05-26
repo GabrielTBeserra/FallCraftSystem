@@ -10,8 +10,8 @@ import com.sk89q.worldguard.protection.managers.RegionManager;
 import fallcraftsystem.core.FallCraftSystem;
 import fallcraftsystem.entities.GamePlayer;
 import fallcraftsystem.entities.enums.PvpStatus;
-import fallcraftsystem.utils.ServerUtils;
 import fallcraftsystem.utils.SendTitle;
+import fallcraftsystem.utils.ServerUtils;
 import fallcraftsystem.utils.Ultilities;
 import fallcraftsystem.utils.dependencies.ChatVault;
 import fallcraftsystem.utils.dependencies.WG;
@@ -25,6 +25,10 @@ import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.potion.PotionEffectType;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 
 public class GeneralEvents implements Listener {
     public FallCraftSystem plugin;
@@ -36,10 +40,7 @@ public class GeneralEvents implements Listener {
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
-
         GamePlayer gm = new GamePlayer(event.getPlayer());
-
-
         Player p = event.getPlayer();
 
         for (Player ol : ServerUtils.vanishList) {
@@ -48,14 +49,10 @@ public class GeneralEvents implements Listener {
             }
 
         }
-
         ServerUtils.players.put(event.getPlayer(), gm);
         event.setJoinMessage(Ultilities.formater("&a+&f &8" + event.getPlayer().getName()));
 
-
         MPlayer mplayer = MPlayer.get(event.getPlayer());
-
-
         Ultilities.sendHeaderAndFooter(event.getPlayer(), Ultilities.formater("&b&lFall&f&lCraft\n&d&lBETA\n\n")
                 , Ultilities.formater("\n\n&e&lLoja:&5 http://fallcraft.buycraft.net/\n&6&lPLAY.FALLCRAFT.COM.BR"));
 
@@ -122,6 +119,14 @@ public class GeneralEvents implements Listener {
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onPlayerKill(PlayerDeathEvent event) {
         event.setDeathMessage("");
+    }
+
+
+    @EventHandler
+    public void onJoin(PlayerJoinEvent e) {
+        List<AntiLabyMod.LabyMod> mods = new ArrayList<>();
+        Collections.addAll(mods, AntiLabyMod.LabyMod.values());
+        AntiLabyMod.disableMod(e.getPlayer(), mods);
     }
 
 }

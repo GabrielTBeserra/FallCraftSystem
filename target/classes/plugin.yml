@@ -92,12 +92,19 @@ commands:
     description: Deleta um kit.
     permission: fallcraft.module.homelist
     usage: Use /homelist.
+  reloadfall:
+    description: Restarta todos arquivos de configuracao
+    permission: fallcraft.admin.reloadfall
+    usage: Use /reloadfall
   discord:
     description: Get discord.
     usage: Use /discord.
   coin:
     description: Use Coin System
     usage: Use /coin
+  ajudastaff:
+    description: Chat de ajuda
+    usage: Use /ajudastaff
 permissions:
   fallcraft.module.warp.*:
     description: Da acesso a todos comandos do Warp

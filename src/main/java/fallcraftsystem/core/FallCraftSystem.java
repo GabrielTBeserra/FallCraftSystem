@@ -1,7 +1,9 @@
 package fallcraftsystem.core;
 
+import fallcraftsystem.modules.ajudastaff.core.LoadAjudaStaffModules;
 import fallcraftsystem.modules.automessages.core.AutoMessage;
 import fallcraftsystem.modules.blockcommands.core.LoadBlockCommandModule;
+import fallcraftsystem.modules.blockcommands.utils.OptionBlockFile;
 import fallcraftsystem.modules.coin.core.LoadCoinModule;
 import fallcraftsystem.modules.essentials.commands.LoadEssentialCommandsModule;
 import fallcraftsystem.modules.essentials.spawn.LoadEssentialSpawnModule;
@@ -62,7 +64,9 @@ public class FallCraftSystem extends JavaPlugin {
         ChatVault.setupChat(this);
         PEX.setupPEX(this);
         VaultEconomy.setupEconomy(this);
+        OptionBlockFile.setupOptionBlock(this);
         new LoadNpcModule(this);
+        new ReloadFall(this);
         new LoadCoinModule(this);
         new ServerUtils();
         new AutoMessage(this);
@@ -75,6 +79,7 @@ public class FallCraftSystem extends JavaPlugin {
         new LoadSpyModule(this);
         new LoadScoreboard(this);
         new GeneralEvents(this);
+        new LoadAjudaStaffModules(this);
         new LoadBlockCommandModule(this);
 
 

@@ -16,7 +16,6 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.scheduler.BukkitRunnable;
 
 public class Home implements CommandExecutor {
     public FallCraftSystem plugin;
@@ -25,7 +24,6 @@ public class Home implements CommandExecutor {
         this.plugin = plugin;
         plugin.getCommand("home").setExecutor(this);
     }
-
 
 
     public boolean onCommand(final CommandSender sender, final Command command, final String label, final String[] args) {
@@ -41,16 +39,27 @@ public class Home implements CommandExecutor {
             return true;
         }
 
+        String uuidP = player.getUniqueId() + "";
+        if (args.length == 2) {
+            if (player.hasPermission("fallcraft.home.admin")) {
+                String uuid = Ultilities.getUuid(args[1]);
+                uuid = uuid.replaceAll(
+                        "(\\w{8})(\\w{4})(\\w{4})(\\w{4})(\\w{12})",
+                        "$1-$2-$3-$4-$5");
+                uuidP = uuid;
+            }
+        }
 
-        if (!HomeDB.getHomeFile().contains(player.getUniqueId() + ".home." + args[0])) {
+
+        if (!HomeDB.getHomeFile().contains(uuidP + ".home." + args[0])) {
             player.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cVoce nao possui essa home!"));
             return true;
         }
 
-        int X = HomeDB.getHomeFile().getInt(player.getUniqueId() + ".home." + args[0] + ".X");
-        int Y = HomeDB.getHomeFile().getInt(player.getUniqueId() + ".home." + args[0] + ".Y");
-        int Z = HomeDB.getHomeFile().getInt(player.getUniqueId() + ".home." + args[0] + ".Z");
-        String WORLD = HomeDB.getHomeFile().getString(player.getUniqueId() + ".home." + args[0] + ".WORLD");
+        int X = HomeDB.getHomeFile().getInt(uuidP + ".home." + args[0] + ".X");
+        int Y = HomeDB.getHomeFile().getInt(uuidP + ".home." + args[0] + ".Y");
+        int Z = HomeDB.getHomeFile().getInt(uuidP + ".home." + args[0] + ".Z");
+        String WORLD = HomeDB.getHomeFile().getString(uuidP + ".home." + args[0] + ".WORLD");
         World world = Bukkit.getWorld(WORLD);
         Location loc = new Location(world, X, Y, Z);
 
