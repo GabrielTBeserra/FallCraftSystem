@@ -92,19 +92,83 @@ commands:
     description: Deleta um kit.
     permission: fallcraft.module.homelist
     usage: Use /homelist.
-  reloadfall:
-    description: Restarta todos arquivos de configuracao
-    permission: fallcraft.admin.reloadfall
-    usage: Use /reloadfall
   discord:
     description: Get discord.
     usage: Use /discord.
   coin:
     description: Use Coin System
     usage: Use /coin
+
+
+  #Pedro
   ajudastaff:
-    description: Chat de ajuda
-    usage: Use /ajudastaff
+    description: Envia uma mensagem privada à staff
+    usage: Use /ajudastaff <mensagem>
+
+
+  echest:
+    description: Abre o enderchest
+    permission: fallcraft.module.echest_use
+    usage: §cUse /echest
+    aliases:
+      - ec
+      - enderchest
+  chest:
+    description: Abre um baú virtual
+    permission: fallcraft.chest.open
+    usage: §cUse /chest
+  itemajuda:
+    permission: fallcraft.modules.item.ajuda
+    aliases:
+      - iajuda
+      - item
+  itemnome:
+    description: Muda o nome do item segurado (aceita cores)
+    permission: fallcraft.modules.item.nome
+    usage: §7Use §9/itemnome <nome> §7com um item na mão.
+    aliases:
+      - inome
+      - iname
+      - itemname
+  itemdesc:
+    description: Muda a lore (descrição) de um item (aceita cores)
+    permission: fallcraft.modules.item.desc
+    usage: §7Use §9/itemdesc <linha> <frase> §c(recomendado usar o /itemname primeiro)
+    aliases:
+      - idesc
+      - itdesc
+  itemenchant:
+    description: Encanta o item segurado
+    permission: fallcraft.modules.item.enchant
+    usage: §7Use §9/itemenchant <nome> <valor> §7 (<nome> pode ser 'all') // §9/itemenchant remover <nome>
+    aliases:
+      - itenchant
+      - ienchant
+      - iench
+      - itench
+  editar:
+    description: Edita a placa olhada
+  craftingtable:
+    description: Abre uma crafting table virtual
+    permission: fallcraft.modules.craftingtable
+    usage: §7Use /craftingtable
+    aliases:
+      - ct
+      - workbench
+      - wb
+      - craft
+  luz:
+    description: Ativa visão noturna.
+    permission: fallcraft.modules.luz
+    usage: Use /luz.
+  blocks:
+    description: Transforma minérios em blocos
+    permission: fallcraft.modules.blocks
+    usage: Use /block
+    aliases:
+      - compactar
+      - compact
+
 permissions:
   fallcraft.module.warp.*:
     description: Da acesso a todos comandos do Warp
