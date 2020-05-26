@@ -5,119 +5,54 @@
       <artifact name="FallCraftSystem:jar" />
     </artifacts-to-build>
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:upstream" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="3c811c06-88ae-4391-aae1-b69ffd2ec5dc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/core/ReloadFall.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/ajudastaff/commands/AjudaStaff.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/ajudastaff/core/LoadAjudaStaffModules.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/blockcommands/utils/OptionBlockFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/utils/generalevents/AntiLabyMod.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/option.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/entities/enums/LuzStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/blocks/commands/Blocks.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/blocks/core/LoadBlockModules.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/blocks/utils/Utilities.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/chest/command/ChestCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/chest/command/EChest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/chest/core/LoadChestModules.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/chest/events/InventoryClick.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/chest/events/InventoryClose.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/chest/utils/ChestConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/chest/utils/ChestCreator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/chest/utils/ChestsList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/chest/utils/EnderChest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/chest/utils/ToBase64.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/craftingtable/command/CraftingTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/craftingtable/core/LoadCraftingTableModules.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/luz/commands/Luz.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/luz/core/LoadLuzModules.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/chestlist.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/chests-config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FallCraftSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/FallCraftSystem.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fallcraftsystem/core/FallCraftSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/core/FallCraftSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/coin/commands/players/Coin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/coin/commands/players/Coin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/home/commands/DelHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/home/commands/DelHome.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/home/commands/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/home/commands/Home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/home/commands/HomeList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/home/commands/HomeList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/home/commands/SetHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/home/commands/SetHome.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fallcraftsystem/utils/Ultilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/utils/Ultilities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fallcraftsystem/utils/generalevents/GeneralEvents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/utils/generalevents/GeneralEvents.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fallcraftsystem/entities/GamePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/entities/GamePlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/FallCraftSystem.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/core/FallCraftSystem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/entities/GamePlayer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/entities/PlayerTeleport.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/entities/enums/BattleLogStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/entities/enums/FlyStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/entities/enums/InvStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/entities/enums/PlayerStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/entities/enums/PvpStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/entities/enums/SpyStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/entities/enums/VanishStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/automessages/core/AutoMessage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/automessages/core/AutoMessageMessages.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/blockcommands/core/BlocksCommands.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/blockcommands/core/LoadBlockCommandModule.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/blockcommands/listener/BlockCommandListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/coin/commands/admins/Add.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/coin/commands/admins/Take.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/coin/commands/players/Coin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/coin/commands/players/Pay.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/coin/core/LoadCoinModule.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/coin/database/CoinData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/coin/database/ConnectionFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/coin/database/LoadTables.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/coin/listener/AddPlayer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/essentials/commands/LoadEssentialCommandsModule.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/essentials/commands/admin/AvisoComm.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/essentials/commands/admin/Fly.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/essentials/commands/admin/Gm.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/essentials/commands/admin/Inv.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/essentials/commands/admin/Reloadall.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/essentials/commands/admin/Tp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/essentials/commands/admin/Tpall$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/essentials/commands/admin/Tpall.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/essentials/commands/admin/Vanish.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/essentials/commands/player/Discord.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/essentials/spawn/LoadEssentialSpawnModule.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/essentials/spawn/commands/Lobby.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/essentials/spawn/commands/SetLobby.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/essentials/spawn/utils/SpawnFile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/essentials/spy/command/SpyCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/essentials/spy/core/LoadSpyModule.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/essentials/spy/listener/SpyChat.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/essentials/warp/LoadEssentialWarpModule.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/essentials/warp/commands/ClickItemTeleport.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/essentials/warp/commands/DelWarp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/essentials/warp/commands/SetWarp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/essentials/warp/commands/Warp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/essentials/warp/commands/WarpList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/essentials/warp/commands/Warps.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/essentials/warp/utils/STATIC.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/essentials/warp/utils/WarpFile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/heathbar/core/ModuleHearthBar.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/heathbar/listener/AddHearthBarToPlayer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/home/commands/DelHome.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/home/commands/Home.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/home/commands/HomeList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/home/commands/SetHome.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/home/core/LoadHomeModule.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/home/utils/HomeConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/home/utils/HomeDB.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/kits/commands/CreateKit.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/kits/commands/DeleteKit.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/kits/commands/Kit.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/kits/commands/KitMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/kits/core/KitInv.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/kits/core/LoadKitModules.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/kits/listeners/ClickAndGetItem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/kits/listeners/CloseAndCreateKit.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/kits/utils/KitConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/kits/utils/KitDbConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/npc/core/LoadNPC.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/npc/core/LoadNpcModule.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/npc/listener/NpcsEvents.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/npc/utils/Falas.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/npc/utils/NpcFile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/scoreboard/core/LoadScoreboard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/scoreboard/listener/GameScoreboard$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/scoreboard/listener/GameScoreboard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/utils/SaveInventory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/utils/SendTitle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/utils/ServerUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/utils/TimeCalculator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/utils/Ultilities$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/utils/Ultilities.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/utils/dependencies/ChatVault.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/utils/dependencies/PEX.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/utils/dependencies/VaultEconomy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/utils/dependencies/WG.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/utils/generalevents/GeneralEvents.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +94,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../QCoin/target/QCoin-1.0-SNAPSHOT.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -168,11 +103,12 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\gabri\IdeaProjects\FallCraftSystem\src\main\java\fallcraftsystem\modules" />
-      <recent name="C:\Users\gabri\IdeaProjects\FallCraftSystem\src\main\java\fallcraftsystem\modules\essentials\commands\admin" />
-      <recent name="C:\Users\gabri\IdeaProjects\FallCraftSystem\src\main\java\fallcraftsystem\entities\enums" />
-      <recent name="C:\Users\gabri\IdeaProjects\FallCraftSystem\src\main\java\fallcraftsystem" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\gabri\IdeaProjects\FallCraftSystem\src\main\java\fallcraftsystem\modules\home\commands" />
+      <recent name="C:\Users\gabri\IdeaProjects\FallCraftSystem\src\main\resources" />
+      <recent name="C:\Users\gabri\IdeaProjects\FallCraftSystem\src\main\java\fallcraftsystem\modules\essentials\commands" />
+      <recent name="C:\Users\gabri\IdeaProjects\FallCraftSystem\src\main\resources\warps" />
+      <recent name="C:\Users\gabri\IdeaProjects\FallCraftSystem\src\main\java\fallcraftsystem\modules\essentials\admin" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="fallcraftsystem.modules.blockcommands.utils" />
@@ -181,12 +117,12 @@
       <recent name="fallcraftsystem.modules.kits.utils" />
       <recent name="fallcraftsystem.utils" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\gabri\IdeaProjects\FallCraftSystem\src\main\java\fallcraftsystem\modules\home\commands" />
-      <recent name="C:\Users\gabri\IdeaProjects\FallCraftSystem\src\main\resources" />
-      <recent name="C:\Users\gabri\IdeaProjects\FallCraftSystem\src\main\java\fallcraftsystem\modules\essentials\commands" />
-      <recent name="C:\Users\gabri\IdeaProjects\FallCraftSystem\src\main\resources\warps" />
-      <recent name="C:\Users\gabri\IdeaProjects\FallCraftSystem\src\main\java\fallcraftsystem\modules\essentials\admin" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="P:\Java\Minecraft\IntelliJ\Arquivos\FCS\FallCraftSystem-1\src\main\java\fallcraftsystem\modules" />
+      <recent name="P:\Java\Minecraft\IntelliJ\Arquivos\FCS\FallCraftSystem-1\src\main\resources" />
+      <recent name="C:\Users\gabri\IdeaProjects\FallCraftSystem\src\main\java\fallcraftsystem\modules" />
+      <recent name="C:\Users\gabri\IdeaProjects\FallCraftSystem\src\main\java\fallcraftsystem\modules\essentials\commands\admin" />
+      <recent name="C:\Users\gabri\IdeaProjects\FallCraftSystem\src\main\java\fallcraftsystem\entities\enums" />
     </key>
   </component>
   <component name="RunManager">
@@ -352,6 +288,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="578" y="117" key="#FallCraftSystem_[clean,package]" timestamp="1586408869101">
