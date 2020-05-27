@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="MambaFactions_Premium">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../../Mine1.8/plugins/MambaFactions_Premium.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

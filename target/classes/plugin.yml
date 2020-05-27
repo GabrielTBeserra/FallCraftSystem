@@ -168,6 +168,13 @@ commands:
     aliases:
       - compactar
       - compact
+  spycommands:
+    description: Um /spy mas com comandos
+    permission: fallcraft.modules.spyc
+    usage:
+    aliases:
+      - spyc
+      - spycom
 permissions:
   fallcraft.module.warp.*:
     description: Da acesso a todos comandos do Warp

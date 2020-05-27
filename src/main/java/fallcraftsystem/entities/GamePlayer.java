@@ -12,8 +12,9 @@ public class GamePlayer {
     private PvpStatus pvpStatus;
     private InvStatus invStatus;
     private LuzStatus luzStatus;
+    private SpyCStatus spyCStatus;
 
-    public GamePlayer(SpyStatus spyStatus, Player player, PlayerStatus playerStatus, VanishStatus vanishStatus, FlyStatus flyStatus, PvpStatus pvpStatus, InvStatus invStatus) {
+    public GamePlayer(SpyStatus spyStatus, Player player, PlayerStatus playerStatus, VanishStatus vanishStatus, FlyStatus flyStatus, PvpStatus pvpStatus, InvStatus invStatus, SpyCStatus spyCStatus) {
         this.spyStatus = spyStatus;
         this.player = player;
         this.playerStatus = playerStatus;
@@ -22,6 +23,7 @@ public class GamePlayer {
         this.pvpStatus = pvpStatus;
         this.invStatus = invStatus;
         this.luzStatus = luzStatus;
+        this.spyCStatus = spyCStatus;
     }
 
     public GamePlayer(Player player) {
@@ -33,6 +35,7 @@ public class GamePlayer {
         this.spyStatus = SpyStatus.OFF;
         this.invStatus = InvStatus.VISIBLE;
         this.luzStatus = LuzStatus.OFF;
+        this.spyCStatus = SpyCStatus.OFF;
     }
 
 
@@ -96,6 +99,14 @@ public class GamePlayer {
     public LuzStatus getLuzStatus() { return luzStatus; }
 
     public void setLuzStatus(LuzStatus luzStatus) {this.luzStatus = luzStatus; }
+
+    public SpyCStatus getSpyCStatus() {
+        return spyCStatus;
+    }
+
+    public void setSpyCStatus(SpyCStatus spyCStatus) {
+        this.spyCStatus = spyCStatus;
+    }
 
     @Override
     public String toString() {

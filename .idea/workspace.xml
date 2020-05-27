@@ -30,11 +30,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3c811c06-88ae-4391-aae1-b69ffd2ec5dc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Citizens.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/MambaFactions_Premium.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/MambaMassiveCore_Premium.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/entities/enums/SpyCStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/spycommands/commands/SpyC.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/spycommands/core/LoadSpyCommandsModules.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/spycommands/events/ChatEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/spycommands/events/CommandEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/FallCraftSystem_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/FallCraftSystem_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FallCraftSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/FallCraftSystem.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fallcraftsystem/core/FallCraftSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/core/FallCraftSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/coin/commands/players/Coin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/coin/commands/players/Coin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fallcraftsystem/entities/GamePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/entities/GamePlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/core/FallCraftSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fallcraftsystem/core/FallCraftSystem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/entities/GamePlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fallcraftsystem/entities/GamePlayer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/coin/commands/players/Coin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/coin/commands/players/Coin.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +80,6 @@
   <component name="ProjectId" id="1aH5cZHaslarAQoweR0Qru6ZZ8l" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -76,9 +88,9 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Mine1.8/plugins/Citizens.jar!/" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.48681056" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -290,6 +302,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="578" y="117" key="#FallCraftSystem_[clean,package]/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1586408869101" />
+    <state x="1807" y="88" key="#Project_Structure" timestamp="1590612820241">
+      <screen x="1366" y="0" width="1920" height="999" />
+    </state>
+    <state x="1807" y="88" key="#Project_Structure/0.0.1366.728/1366.0.1920.999@1366.0.1920.999" timestamp="1590612820241" />
     <state x="349" y="366" key="#SQL_Dialects" timestamp="1588764889956">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -298,9 +314,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="734" y="323" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1590320563094" />
-    <state x="765" y="234" key="#com.intellij.ide.util.MemberChooser" timestamp="1589537855885">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="2131" y="223" key="#com.intellij.ide.util.MemberChooser" timestamp="1590617148392">
+      <screen x="1366" y="0" width="1920" height="999" />
     </state>
+    <state x="2131" y="223" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728/1366.0.1920.999@1366.0.1920.999" timestamp="1590617148392" />
     <state x="765" y="234" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1589537855885" />
     <state x="690" y="308" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1586382965042">
       <screen x="0" y="0" width="1920" height="1050" />
@@ -334,9 +351,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="718" y="387" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1586408957940" />
-    <state x="740" y="266" key="FileChooserDialogImpl" timestamp="1590240852678">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="2106" y="253" key="FileChooserDialogImpl" timestamp="1590613178395">
+      <screen x="1366" y="0" width="1920" height="999" />
     </state>
+    <state x="2106" y="253" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1920.999@1366.0.1920.999" timestamp="1590613178395" />
     <state x="740" y="266" key="FileChooserDialogImpl/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1590240852678" />
     <state width="1877" height="278" key="GridCell.Tab.0.bottom" timestamp="1590540854121">
       <screen x="0" y="0" width="1920" height="1050" />
@@ -358,9 +376,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="490" y="180" key="Maven.ArtifactSearchDialog/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1586386902750" />
-    <state x="440" y="99" width="1252" height="790" key="SettingsEditor" timestamp="1590240854615">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="1806" y="94" width="1252" height="790" key="SettingsEditor" timestamp="1590613181796">
+      <screen x="1366" y="0" width="1920" height="999" />
     </state>
+    <state x="1806" y="94" key="SettingsEditor/0.0.1366.728/1366.0.1920.999@1366.0.1920.999" timestamp="1590613181796" />
     <state x="440" y="99" width="1252" height="790" key="SettingsEditor/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1590240854615" />
     <state x="656" y="349" key="com.intellij.ide.util.TipDialog" timestamp="1586379776757">
       <screen x="0" y="0" width="1920" height="1050" />

@@ -17,6 +17,7 @@ import fallcraftsystem.modules.kits.core.LoadKitModules;
 import fallcraftsystem.modules.luz.core.LoadLuzModules;
 import fallcraftsystem.modules.npc.core.LoadNpcModule;
 import fallcraftsystem.modules.scoreboard.core.LoadScoreboard;
+import fallcraftsystem.modules.spycommands.core.LoadSpyCommandsModules;
 import fallcraftsystem.utils.ServerUtils;
 import fallcraftsystem.utils.Ultilities;
 import fallcraftsystem.utils.dependencies.ChatVault;
@@ -87,6 +88,7 @@ public class FallCraftSystem extends JavaPlugin {
         new LoadLuzModules(this);
         new LoadBlockModules(this);
         new LoadCraftingTableModules(this);
+        new LoadSpyCommandsModules(this);
 
 
 
