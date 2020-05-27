@@ -30,29 +30,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3c811c06-88ae-4391-aae1-b69ffd2ec5dc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/entities/enums/LuzStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/blocks/commands/Blocks.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/blocks/core/LoadBlockModules.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/blocks/utils/Utilities.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/chest/command/ChestCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/chest/command/EChest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/chest/core/LoadChestModules.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/chest/events/InventoryClick.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/chest/events/InventoryClose.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/chest/utils/ChestConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/chest/utils/ChestCreator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/chest/utils/ChestsList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/chest/utils/EnderChest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/chest/utils/ToBase64.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/craftingtable/command/CraftingTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/craftingtable/core/LoadCraftingTableModules.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/luz/commands/Luz.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/luz/core/LoadLuzModules.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/chestlist.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/chests-config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fallcraftsystem/entities/GamePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/entities/GamePlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fallcraftsystem/core/FallCraftSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/core/FallCraftSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/coin/commands/players/Coin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/coin/commands/players/Coin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -283,6 +265,8 @@
       <workItem from="1590230961356" duration="6788000" />
       <workItem from="1590320541007" duration="830000" />
       <workItem from="1590322506645" duration="82000" />
+      <workItem from="1590535581068" duration="1387000" />
+      <workItem from="1590611539891" duration="70000" />
     </task>
     <servers />
   </component>
@@ -299,6 +283,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="578" y="117" key="#FallCraftSystem_[clean,package]" timestamp="1586408869101">
@@ -353,22 +338,22 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="740" y="266" key="FileChooserDialogImpl/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1590240852678" />
-    <state width="1877" height="278" key="GridCell.Tab.0.bottom" timestamp="1590242012925">
+    <state width="1877" height="278" key="GridCell.Tab.0.bottom" timestamp="1590540854121">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1590242012925" />
-    <state width="1877" height="278" key="GridCell.Tab.0.center" timestamp="1590242012925">
+    <state width="1877" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1590540854121" />
+    <state width="1877" height="278" key="GridCell.Tab.0.center" timestamp="1590540854121">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="278" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1590242012925" />
-    <state width="1877" height="278" key="GridCell.Tab.0.left" timestamp="1590242012925">
+    <state width="1877" height="278" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1590540854121" />
+    <state width="1877" height="278" key="GridCell.Tab.0.left" timestamp="1590540854121">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="278" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1590242012925" />
-    <state width="1877" height="278" key="GridCell.Tab.0.right" timestamp="1590242012925">
+    <state width="1877" height="278" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1590540854121" />
+    <state width="1877" height="278" key="GridCell.Tab.0.right" timestamp="1590540854121">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="278" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1590242012925" />
+    <state width="1877" height="278" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1590540854121" />
     <state x="490" y="180" key="Maven.ArtifactSearchDialog" timestamp="1586386902750">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

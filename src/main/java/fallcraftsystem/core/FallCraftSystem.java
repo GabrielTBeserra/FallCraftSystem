@@ -4,7 +4,9 @@ import fallcraftsystem.modules.ajudastaff.core.LoadAjudaStaffModules;
 import fallcraftsystem.modules.automessages.core.AutoMessage;
 import fallcraftsystem.modules.blockcommands.core.LoadBlockCommandModule;
 import fallcraftsystem.modules.blockcommands.utils.OptionBlockFile;
+import fallcraftsystem.modules.blocks.core.LoadBlockModules;
 import fallcraftsystem.modules.coin.core.LoadCoinModule;
+import fallcraftsystem.modules.craftingtable.core.LoadCraftingTableModules;
 import fallcraftsystem.modules.essentials.commands.LoadEssentialCommandsModule;
 import fallcraftsystem.modules.essentials.spawn.LoadEssentialSpawnModule;
 import fallcraftsystem.modules.essentials.spy.core.LoadSpyModule;
@@ -12,6 +14,7 @@ import fallcraftsystem.modules.essentials.warp.LoadEssentialWarpModule;
 import fallcraftsystem.modules.heathbar.core.ModuleHearthBar;
 import fallcraftsystem.modules.home.core.LoadHomeModule;
 import fallcraftsystem.modules.kits.core.LoadKitModules;
+import fallcraftsystem.modules.luz.core.LoadLuzModules;
 import fallcraftsystem.modules.npc.core.LoadNpcModule;
 import fallcraftsystem.modules.scoreboard.core.LoadScoreboard;
 import fallcraftsystem.utils.ServerUtils;
@@ -81,6 +84,10 @@ public class FallCraftSystem extends JavaPlugin {
         new GeneralEvents(this);
         new LoadAjudaStaffModules(this);
         new LoadBlockCommandModule(this);
+        new LoadLuzModules(this);
+        new LoadBlockModules(this);
+        new LoadCraftingTableModules(this);
+
 
 
     }

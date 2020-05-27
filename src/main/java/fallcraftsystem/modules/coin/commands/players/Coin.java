@@ -1,6 +1,5 @@
 package fallcraftsystem.modules.coin.commands.players;
 
-import com.quantum.qcoin.api.QCoinAPI;
 import fallcraftsystem.core.FallCraftSystem;
 import fallcraftsystem.modules.coin.database.CoinData;
 import fallcraftsystem.utils.ServerUtils;
@@ -85,8 +84,6 @@ public class Coin implements CommandExecutor {
             sender.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cO player pode nao estar online ou nao existir!"));
         }
 
-
-        
 
         return true;
     }
