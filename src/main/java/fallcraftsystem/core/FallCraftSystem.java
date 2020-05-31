@@ -87,8 +87,5 @@ public class FallCraftSystem extends JavaPlugin {
         new LoadLuzModules(this);
         new LoadBlockModules(this);
         new LoadCraftingTableModules(this);
-
-
-
     }
 }
