@@ -110,7 +110,7 @@ public class Ultilities {
                     try {
                         if (ServerUtils.teleportMap.containsKey(p)) {
                             if (!p.hasPermission("fallcraft.teleport.bypass")) {
-                                if (ServerUtils.teleportMap.get(p).getLocation().equals(p.getLocation())) {
+                                if (ServerUtils.teleportMap.get(p).getLocation().equals(p.getLocation()) || ServerUtils.teleportMap.get(p).isTeleported()) {
                                     if (ServerUtils.teleportMap.get(p).getTime() > 0) {
                                         p.sendMessage(Ultilities.formater("&6&lTELEPORT &9>> &CTeleportando em " + ServerUtils.teleportMap.get(p).getTime()));
                                         ServerUtils.teleportMap.get(p).setTime(ServerUtils.teleportMap.get(p).getTime() - 1);
@@ -119,7 +119,15 @@ public class Ultilities {
                                         p.sendMessage(Ultilities.formater("&6&lTELEPORT &9>> &CTeleportando!"));
                                         p.playSound(ServerUtils.teleportMap.get(p).getToLoc(), Sound.ENDERMAN_TELEPORT, 1.0f, 1.0f);
                                         p.teleport(ServerUtils.teleportMap.get(p).getToLoc());
-                                        ServerUtils.teleportMap.remove(p);
+
+                                        if (ServerUtils.teleportMap.get(p).getInvincibility() < 0) {
+                                            ServerUtils.teleportMap.get(p).setTeleported(true);
+                                            ServerUtils.teleportMap.get(p).setInvincibility(2);
+                                        } else if (ServerUtils.teleportMap.get(p).getInvincibility() > 0) {
+                                            ServerUtils.teleportMap.get(p).setInvincibility(ServerUtils.teleportMap.get(p).getInvincibility() - 1);
+                                        } else if (ServerUtils.teleportMap.get(p).getInvincibility() == 0) {
+                                            ServerUtils.teleportMap.remove(p);
+                                        }
                                     }
                                 } else {
                                     p.sendMessage(Ultilities.formater("&6&lTELEPORT &9>> &CVoce se mexeu, cancelando teleport!"));

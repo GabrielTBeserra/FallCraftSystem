@@ -19,6 +19,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
+import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
@@ -53,7 +54,7 @@ public class GeneralEvents implements Listener {
         event.setJoinMessage(Ultilities.formater("&a+&f &8" + event.getPlayer().getName()));
 
         MPlayer mplayer = MPlayer.get(event.getPlayer());
-        Ultilities.sendHeaderAndFooter(event.getPlayer(), Ultilities.formater("&b&lFall&f&lCraft\n&d&lBETA\n\n")
+        Ultilities.sendHeaderAndFooter(event.getPlayer(), Ultilities.formater("&b&lFall&f&lCraft\n&c&lV1.0\n&6&9&lSeja muito bem vindo!\n\n")
                 , Ultilities.formater("\n\n&e&lLoja:&5 http://fallcraft.buycraft.net/\n&6&lPLAY.FALLCRAFT.COM.BR"));
 
 
@@ -127,6 +128,19 @@ public class GeneralEvents implements Listener {
         List<AntiLabyMod.LabyMod> mods = new ArrayList<>();
         Collections.addAll(mods, AntiLabyMod.LabyMod.values());
         AntiLabyMod.disableMod(e.getPlayer(), mods);
+    }
+
+    @EventHandler(priority = EventPriority.HIGHEST)
+    public void removeEntityDamage(EntityDamageEvent event) {
+        if (event.getEntity() instanceof Player) {
+            Player p = (Player) event.getEntity();
+            if (ServerUtils.teleportMap.containsKey(p)) {
+                if (ServerUtils.teleportMap.get(p).getInvincibility() > 0) {
+                    event.setCancelled(true);
+                }
+            }
+        }
+
     }
 
 }

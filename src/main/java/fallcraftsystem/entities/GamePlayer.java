@@ -13,7 +13,7 @@ public class GamePlayer {
     private InvStatus invStatus;
     private LuzStatus luzStatus;
 
-    public GamePlayer(SpyStatus spyStatus, Player player, PlayerStatus playerStatus, VanishStatus vanishStatus, FlyStatus flyStatus, PvpStatus pvpStatus, InvStatus invStatus) {
+    public GamePlayer(SpyStatus spyStatus, Player player, PlayerStatus playerStatus, VanishStatus vanishStatus, FlyStatus flyStatus, PvpStatus pvpStatus, InvStatus invStatus, LuzStatus luzStatus) {
         this.spyStatus = spyStatus;
         this.player = player;
         this.playerStatus = playerStatus;
@@ -93,12 +93,25 @@ public class GamePlayer {
         this.invStatus = invStatus;
     }
 
-    public LuzStatus getLuzStatus() { return luzStatus; }
+    public LuzStatus getLuzStatus() {
+        return luzStatus;
+    }
 
-    public void setLuzStatus(LuzStatus luzStatus) {this.luzStatus = luzStatus; }
+    public void setLuzStatus(LuzStatus luzStatus) {
+        this.luzStatus = luzStatus;
+    }
 
     @Override
     public String toString() {
-        return super.toString();
+        return "GamePlayer{" +
+                "spyStatus=" + spyStatus +
+                ", player=" + player +
+                ", playerStatus=" + playerStatus +
+                ", vanishStatus=" + vanishStatus +
+                ", flyStatus=" + flyStatus +
+                ", pvpStatus=" + pvpStatus +
+                ", invStatus=" + invStatus +
+                ", luzStatus=" + luzStatus +
+                '}';
     }
 }

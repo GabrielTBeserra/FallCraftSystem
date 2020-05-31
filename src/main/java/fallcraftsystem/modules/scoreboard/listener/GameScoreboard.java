@@ -11,6 +11,7 @@ import fallcraftsystem.utils.ServerUtils;
 import fallcraftsystem.utils.Ultilities;
 import fallcraftsystem.utils.dependencies.ChatVault;
 import fallcraftsystem.utils.dependencies.VaultEconomy;
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -29,23 +30,26 @@ public class GameScoreboard implements Listener {
     }
 
     private static void adminPlayerScoreboard(Player player) throws SQLException {
+        String[] colors = {"&a", "&b", "&c", "&d", "&e", "&f", "&1", "&2", "&3", "&4", "&5", "&6", "&7", "&8", "&9"};
+
         ScoreboardManager scoreboardManager = FallCraftSystem.plugin.getServer().getScoreboardManager();
         Scoreboard scoreboard = scoreboardManager.getNewScoreboard();
         Objective objective = scoreboard.registerNewObjective(Ultilities.formater("&5&l" + player.getName()), "MENU");
         objective.setDisplaySlot(DisplaySlot.SIDEBAR);
 
         MPlayer mplayer = MPlayer.get(player);
-
+        double x = (Math.random() * ((((colors.length) - 1)) + 1));
+        int ale = (int) x;
 
         String facName = "";
 
-        Score score1 = objective.getScore(" ");
+        Score score1 = objective.getScore(ChatColor.RESET + Ultilities.formater(colors[ale] + "&m&l----------  -----------------"));
         Score score2 = objective.getScore(Ultilities.formater("&f Facção: &8Sem facção"));
 
 
         if (!(mplayer.getFactionTag().equals("") || mplayer.getFactionTag().equals(" "))) {
             score2 = objective.getScore(Ultilities.formater("&f Facção: &e" + mplayer.getFactionName()));
-            
+
         }
 
 
@@ -55,14 +59,14 @@ public class GameScoreboard implements Listener {
         Score score6 = objective.getScore(Ultilities.formater("&f Coins: &2¢" + String.format("%.1f", CoinData.getCoins(player))));
         Score score7 = objective.getScore("    ");
         Score score8 = objective.getScore(Ultilities.formater("&f PVP: " + Ultilities.formater("&6" + ServerUtils.players.get(player).getPvpStatus().toString())));
-        Score score9 = objective.getScore("     ");
+        Score score9 = objective.getScore(ChatColor.RESET + Ultilities.formater(colors[ale] + "&m&l-----------------------------"));
         Score score10 = objective.getScore(Ultilities.formater("&6 === STAFF === "));
         Score score11 = objective.getScore("       ");
         Score score12 = objective.getScore(Ultilities.formater("&f Invisibilidade: " + (ServerUtils.players.get(player).getInvStatus().equals(InvStatus.INVISIBLE) ? "&aON" : "&cOFF")));
         Score score13 = objective.getScore(Ultilities.formater("&f Vanish: &c" + (ServerUtils.players.get(player).getVanishStatus().equals(VanishStatus.INVISIBLE) ? "&aON" : "&cOFF")));
         Score score14 = objective.getScore(Ultilities.formater("&f Spy: &c" + (ServerUtils.players.get(player).getSpyStatus().equals(SpyStatus.ON) ? "&aON" : "&cOFF")));
         Score score15 = objective.getScore(Ultilities.formater("&f Fly: &c" + (ServerUtils.players.get(player).getFlyStatus().equals(FlyStatus.FLYING) ? "&aON" : "&cOFF")));
-        Score score16 = objective.getScore(Ultilities.formater("                 "));
+        Score score16 = objective.getScore(ChatColor.RESET + Ultilities.formater(Ultilities.formater(colors[ale] + "&m&l------------   ---------------")));
 
 
         score1.setScore(20);
@@ -96,7 +100,7 @@ public class GameScoreboard implements Listener {
 
 
     private static void normalPlayerScoreboard(Player player) throws SQLException {
-
+        String[] colors = {"&a", "&b", "&c", "&d", "&e", "&f", "&1", "&2", "&3", "&4", "&5", "&6", "&7", "&8", "&9"};
         ScoreboardManager scoreboardManager = FallCraftSystem.plugin.getServer().getScoreboardManager();
         Scoreboard scoreboard = scoreboardManager.getNewScoreboard();
         Objective objective = scoreboard.registerNewObjective(Ultilities.formater("&5&l" + player.getName()), "MENU");
@@ -107,7 +111,10 @@ public class GameScoreboard implements Listener {
 
         String facName = "";
 
-        Score score1 = objective.getScore(" ");
+        double x = (Math.random() * ((((colors.length) - 1)) + 1));
+        int ale = (int) x;
+
+        Score score1 = objective.getScore(Ultilities.formater(colors[ale] + "&m&l---------------------------"));
         Score score2 = objective.getScore(Ultilities.formater("&f Facção: &8Sem facção"));
 
 
@@ -122,7 +129,7 @@ public class GameScoreboard implements Listener {
         Score score6 = objective.getScore(Ultilities.formater("&f Coins: &2¢" + String.format("%.1f", CoinData.getCoins(player))));
         Score score7 = objective.getScore("    ");
         Score score8 = objective.getScore(Ultilities.formater("&f PVP: " + Ultilities.formater("&6" + ServerUtils.players.get(player).getPvpStatus().toString())));
-        Score score9 = objective.getScore("     ");
+        Score score9 = objective.getScore(Ultilities.formater(colors[ale] + "&m&l--------------------------- "));
 
         score1.setScore(10);
         score2.setScore(9);
@@ -153,6 +160,7 @@ public class GameScoreboard implements Listener {
         new BukkitRunnable() {
             @Override
             public void run() {
+
                 try {
                     if (player.hasPermission("admin.scoreboard")) {
                         adminPlayerScoreboard(player);
@@ -163,6 +171,8 @@ public class GameScoreboard implements Listener {
                     System.err.println("Player is null, canceling the timer");
                     this.cancel();
                 }
+
+
             }
         }.runTaskTimer(plugin, 0, 7);
 
