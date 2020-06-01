@@ -55,7 +55,7 @@ public class GeneralEvents implements Listener {
 
         MPlayer mplayer = MPlayer.get(event.getPlayer());
         Ultilities.sendHeaderAndFooter(event.getPlayer(), Ultilities.formater("&b&lFall&f&lCraft\n&c&lV1.0\n&6&9&lSeja muito bem vindo!\n\n")
-                , Ultilities.formater("\n\n&e&lLoja:&5 http://fallcraft.buycraft.net/\n&6&lPLAY.FALLCRAFT.COM.BR"));
+                , Ultilities.formater("\n\n&e&lLoja:&5 https://fallcraft.buycraft.net/\n&6&lPLAY.FALLCRAFT.COM.BR"));
 
 
         String facName = "";
