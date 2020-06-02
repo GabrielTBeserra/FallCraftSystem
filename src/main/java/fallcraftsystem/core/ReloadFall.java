@@ -1,6 +1,7 @@
 package fallcraftsystem.core;
 
 import fallcraftsystem.modules.blockcommands.utils.OptionBlockFile;
+import fallcraftsystem.modules.chest.utils.ChestsList;
 import fallcraftsystem.modules.essentials.spawn.utils.SpawnFile;
 import fallcraftsystem.modules.essentials.warp.utils.WarpFile;
 import fallcraftsystem.modules.home.utils.HomeConfig;
@@ -32,6 +33,7 @@ public class ReloadFall implements CommandExecutor {
         NpcFile.reload();
         WarpFile.reload();
         OptionBlockFile.reload();
+        ChestsList.reload();
 
         commandSender.sendMessage(Ultilities.formater("&aArquivos de configuracao recarregado!"));
 
