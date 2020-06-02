@@ -19,7 +19,7 @@ public class ChestCreator {
 
     public void createChest(){
         int size = 0;
-        String name = "             Sem Rank";
+        String name = "          Sem Rank";
         if (player.hasPermission("fallcraft.modules.chest.ouro")) {
             size = ChestConfig.getChestFile().getInt("config.tamanhos.ouro");
             name = "§6§l             Ouro";
@@ -30,7 +30,7 @@ public class ChestCreator {
 
         } else if (player.hasPermission("fallcraft.modules.chest.safira")) {
             size = ChestConfig.getChestFile().getInt("config.tamanhos.safira");
-            name = "§d§l            Safira";
+            name = "§d§l           Safira";
         } else {
             player.sendMessage("§cSem permissão de rank definida!");
         }

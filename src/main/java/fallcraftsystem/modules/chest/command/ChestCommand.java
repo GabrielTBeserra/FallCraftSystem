@@ -3,6 +3,7 @@ package fallcraftsystem.modules.chest.command;
 import fallcraftsystem.core.FallCraftSystem;
 import fallcraftsystem.modules.chest.utils.ChestCreator;
 import fallcraftsystem.modules.chest.utils.ChestsList;
+import fallcraftsystem.utils.Ultilities;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -52,7 +53,7 @@ public class ChestCommand implements CommandExecutor {
             chestVirtual = chest.loadChest();
         } else {
             ChestsList.getChestListFile().createSection("chests.players." + player.getName() + ".uuid");
-            ChestsList.getChestListFile().set("chests.players." + player.getName() + ".uuid", String.valueOf(player.getUniqueId()));
+            ChestsList.getChestListFile().set("chests.players." + player.getName() + ".uuid", String.valueOf(Ultilities.getUUIDFromNick(player.getName())));
         }
 
         if (staff) {
