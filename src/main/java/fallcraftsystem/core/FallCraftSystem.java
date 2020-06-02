@@ -5,6 +5,7 @@ import fallcraftsystem.modules.automessages.core.AutoMessage;
 import fallcraftsystem.modules.blockcommands.core.LoadBlockCommandModule;
 import fallcraftsystem.modules.blockcommands.utils.OptionBlockFile;
 import fallcraftsystem.modules.blocks.core.LoadBlockModules;
+import fallcraftsystem.modules.chest.core.LoadChestModules;
 import fallcraftsystem.modules.coin.core.LoadCoinModule;
 import fallcraftsystem.modules.craftingtable.core.LoadCraftingTableModules;
 import fallcraftsystem.modules.essentials.commands.LoadEssentialCommandsModule;
@@ -87,5 +88,6 @@ public class FallCraftSystem extends JavaPlugin {
         new LoadLuzModules(this);
         new LoadBlockModules(this);
         new LoadCraftingTableModules(this);
+        new LoadChestModules(this);
     }
 }
