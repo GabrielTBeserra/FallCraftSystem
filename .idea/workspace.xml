@@ -31,7 +31,15 @@
   <component name="ChangeListManager">
     <list default="true" id="3c811c06-88ae-4391-aae1-b69ffd2ec5dc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/essentials/commands/admin/Tp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/essentials/commands/admin/Tp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/home/commands/DelHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/home/commands/DelHome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/home/commands/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/home/commands/Home.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/home/commands/HomeList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/home/commands/HomeList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fallcraftsystem/utils/Ultilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/utils/Ultilities.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fallcraftsystem/utils/generalevents/GeneralEvents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/utils/generalevents/GeneralEvents.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/core/FallCraftSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fallcraftsystem/core/FallCraftSystem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/essentials/commands/admin/Tp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fallcraftsystem/modules/essentials/commands/admin/Tp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fallcraftsystem/utils/generalevents/GeneralEvents.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fallcraftsystem/utils/generalevents/GeneralEvents.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -269,7 +277,11 @@
       <workItem from="1590900025462" duration="1223000" />
       <workItem from="1590926972285" duration="163000" />
       <workItem from="1590927300101" duration="3903000" />
-      <workItem from="1591020693343" duration="17000" />
+      <workItem from="1591020693343" duration="286000" />
+      <workItem from="1591053970595" duration="150000" />
+      <workItem from="1591054134818" duration="1013000" />
+      <workItem from="1591056216727" duration="1810000" />
+      <workItem from="1591097603352" duration="2467000" />
     </task>
     <servers />
   </component>

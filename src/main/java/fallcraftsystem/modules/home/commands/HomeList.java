@@ -28,11 +28,8 @@ public class HomeList implements CommandExecutor {
         String uuidP = player.getUniqueId() + "";
         if (args.length == 1) {
             if (player.hasPermission("fallcraft.home.admin")) {
-                String uuid = Ultilities.getUuid(args[0]);
-                uuid = uuid.replaceAll(
-                        "(\\w{8})(\\w{4})(\\w{4})(\\w{4})(\\w{12})",
-                        "$1-$2-$3-$4-$5");
-                uuidP = uuid;
+                uuidP = Ultilities.getUUIDFromNick(args[0]);
+
             }
         }
 

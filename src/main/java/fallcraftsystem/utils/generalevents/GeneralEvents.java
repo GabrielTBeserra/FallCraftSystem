@@ -44,6 +44,8 @@ public class GeneralEvents implements Listener {
         GamePlayer gm = new GamePlayer(event.getPlayer());
         Player p = event.getPlayer();
 
+        Ultilities.getUUIDFromNick(event.getPlayer().getName());
+
         for (Player ol : ServerUtils.vanishList) {
             if (!p.hasPermission("fallcraft.module.essentials.v")) {
                 p.hidePlayer(ol);

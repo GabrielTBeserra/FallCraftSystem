@@ -5,8 +5,8 @@
 package fallcraftsystem.modules.essentials.commands.admin;
 
 import fallcraftsystem.core.FallCraftSystem;
-import fallcraftsystem.utils.Ultilities;
 import fallcraftsystem.utils.ServerUtils;
+import fallcraftsystem.utils.Ultilities;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -35,11 +35,9 @@ public class Tp implements CommandExecutor {
                 return true;
             }
             player1.teleport(player2.getLocation());
-            for (final Player PPplayer : Bukkit.getOnlinePlayers()) {
-                if (PPplayer.hasPermission("fallcraft.module.essentials.tp")) {
-                    PPplayer.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&6The player &c" + player1.getName() + " &6teleported to &2" + player2.getName()));
-                }
-            }
+            Bukkit.broadcast(Ultilities.formater(
+                    ServerUtils.SERVER_NAME + "&eO player &c" + PlayerSender.getName() + " &eteleportou para o player &2" + player1.getName())
+                    , "fallcraft.module.essentials.tp");
         } else if (args.length == 1) {
             final Player player1 = Bukkit.getPlayer(args[0]);
             if (!player1.isOnline() || player1 == null) {
@@ -47,11 +45,12 @@ public class Tp implements CommandExecutor {
                 return true;
             }
             PlayerSender.teleport(player1.getLocation());
-            for (final Player PPplayer2 : Bukkit.getOnlinePlayers()) {
-                if (PPplayer2.hasPermission("fallcraft.module.essentials.tp")) {
-                    PPplayer2.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&6The player &c" + PlayerSender.getName() + " &6teleported to &2" + player1.getName()));
-                }
-            }
+
+
+            Bukkit.broadcast(Ultilities.formater(
+                    ServerUtils.SERVER_NAME + "&eO player &c" + PlayerSender.getName() + " &eteleportou para o player &2" + player1.getName())
+                    , "fallcraft.module.essentials.tp");
+
         } else {
             sender.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&2&l/tp <Player1> <Player2>!"));
         }

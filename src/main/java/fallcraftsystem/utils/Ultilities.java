@@ -4,6 +4,7 @@ import fallcraftsystem.core.FallCraftSystem;
 import net.minecraft.server.v1_8_R3.IChatBaseComponent;
 import net.minecraft.server.v1_8_R3.PacketPlayOutPlayerListHeaderFooter;
 import net.minecraft.server.v1_8_R3.PlayerConnection;
+import org.apache.commons.io.Charsets;
 import org.apache.commons.io.IOUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -18,6 +19,7 @@ import org.json.simple.JSONValue;
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.net.URL;
+import java.util.UUID;
 
 public class Ultilities {
     public static String formater(final String s) {
@@ -32,55 +34,38 @@ public class Ultilities {
         player.sendMessage(ChatColor.translateAlternateColorCodes('&', message));
     }
 
-    public static String getUuid(String name) {
+    public static String getUUIDFromNick(String name) {
+        FallCraftSystem pl = FallCraftSystem.plugin;
+
+        // Verifica se o servidor esta rodando com online mode on ou off
+        if (pl.getServer().getOnlineMode()) {
+            return returnFromWebSite(name);
+        } else {
+            return UUID.nameUUIDFromBytes(("OfflinePlayer:" + name).getBytes(Charsets.UTF_8)).toString();
+        }
+    }
+
+    private static String returnFromWebSite(String name) {
         String url = "https://api.mojang.com/users/profiles/minecraft/" + name;
+        String uuidFormated = "";
+        String uuid = "";
         try {
             @SuppressWarnings("deprecation")
             String UUIDJson = IOUtils.toString(new URL(url));
             if (UUIDJson.isEmpty()) return "invalid name";
             JSONObject UUIDObject = (JSONObject) JSONValue.parseWithException(UUIDJson);
-            return UUIDObject.get("id").toString();
+            uuid = UUIDObject.get("id").toString();
         } catch (IOException | org.json.simple.parser.ParseException e) {
             e.printStackTrace();
         }
 
-        return "error";
+        uuidFormated = uuid.replaceAll(
+                "(\\w{8})(\\w{4})(\\w{4})(\\w{4})(\\w{12})",
+                "$1-$2-$3-$4-$5");
+
+
+        return uuidFormated;
     }
-
-    public static void setPlayerListHeader(Player player, String header) {
-        CraftPlayer cplayer = (CraftPlayer) player;
-        PlayerConnection connection = cplayer.getHandle().playerConnection;
-        IChatBaseComponent hj = IChatBaseComponent.ChatSerializer.a("{'text':'" + header + "'}");
-        PacketPlayOutPlayerListHeaderFooter packet = new PacketPlayOutPlayerListHeaderFooter();
-        try {
-            Field headerField = packet.getClass().getDeclaredField("a");
-            headerField.setAccessible(true);
-            headerField.set(packet, hj);
-            headerField.setAccessible(!headerField.isAccessible());
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        connection.sendPacket(packet);
-    }
-
-
-    public static void setPlayerListFooter(Player player, String footer) {
-        CraftPlayer cp = (CraftPlayer) player;
-        PlayerConnection con = cp.getHandle().playerConnection;
-        IChatBaseComponent fj = IChatBaseComponent.ChatSerializer.a("{'text':'" + footer + "'}");
-        PacketPlayOutPlayerListHeaderFooter packet = new PacketPlayOutPlayerListHeaderFooter();
-        try {
-            Field footerField = packet.getClass().getDeclaredField("b");
-            footerField.setAccessible(true);
-            footerField.set(packet, fj);
-            footerField.setAccessible(!footerField.isAccessible());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        con.sendPacket(packet);
-    }
-
 
     public static void sendHeaderAndFooter(Player p, String head, String foot) {
         PlayerConnection connection = ((CraftPlayer) p).getHandle().playerConnection;
