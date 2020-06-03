@@ -31,7 +31,11 @@ public class ChestCommand implements CommandExecutor {
         Player adm = (Player) sender;
         boolean staff = false;
 
-        if (args.length == 1 && player.hasPermission("fallcraft.modules.chest.mod")) {
+        if (args.length != 0) {
+            if ((!player.hasPermission("fallcraft.modules.chest.mod")) || args.length != 1) {
+                return false;
+            }
+
             if (plugin.getServer().getPlayer(args[0]) == null) {
                 adm.sendMessage("§cPlayer não encontrado");
                 return true;
@@ -41,7 +45,10 @@ public class ChestCommand implements CommandExecutor {
         }
 
         ChestCreator chest = new ChestCreator(player);
-        chest.createChest();
+        if (!chest.createChest()) {
+            adm.sendMessage("§cO jogador informado não possui chest");
+            return true;
+        }
         Inventory chestVirtual;
         chestVirtual = chest.getChest();
 
