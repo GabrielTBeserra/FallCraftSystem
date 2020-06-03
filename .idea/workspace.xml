@@ -7,9 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="56cfa380-ffe7-4f22-962f-fb4a01bec54d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/FallCraftSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/FallCraftSystem.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fallcraftsystem/core/ReloadFall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/core/ReloadFall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/chest/command/ChestCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/chest/command/ChestCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +48,8 @@
       <updated>1591128368029</updated>
       <workItem from="1591128369408" duration="110000" />
       <workItem from="1591128491250" duration="614000" />
-      <workItem from="1591136800472" duration="1511000" />
+      <workItem from="1591136800472" duration="2401000" />
+      <workItem from="1591147535024" duration="740000" />
     </task>
     <servers />
   </component>
