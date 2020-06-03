@@ -20,7 +20,7 @@ public class InventoryClose implements Listener {
     @EventHandler
     public void onClose(InventoryCloseEvent event){
         Player player;
-        if (event.getInventory().getName().equalsIgnoreCase("§fF§bC §5Ender Chest")) {
+        if (event.getInventory().getName().contains("§fF§bC §5Ender Chest")) {
             player = (Player) event.getInventory().getHolder();
             player.getEnderChest().setContents(event.getInventory().getContents());
             return;

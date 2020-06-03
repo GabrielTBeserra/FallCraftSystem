@@ -5,11 +5,36 @@
       <artifact name="FallCraftSystem:jar" />
     </artifacts-to-build>
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:upstream" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="56cfa380-ffe7-4f22-962f-fb4a01bec54d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FallCraftSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/FallCraftSystem.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fallcraftsystem/core/ReloadFall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/core/ReloadFall.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/chest/command/ChestCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/chest/command/ChestCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/chest/events/InventoryClose.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/chest/events/InventoryClose.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/chest/utils/ChestCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules/chest/utils/ChestCreator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,10 +58,15 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="D:/SERVER BACKUPS/Backup to host/svr1/plugins/MambaMassiveCore Premium.jar!/" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/fallcraftsystem/modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.48681056" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\pedro\OneDrive\Documentos\GitHub\FallCraftSystem\src\main\java\fallcraftsystem\modules" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -57,14 +87,27 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
-    <state x="666" y="266" key="FileChooserDialogImpl" timestamp="1591128706111">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="-1214" y="-42" key="FileChooserDialogImpl" timestamp="1591146404782">
+      <screen x="-1858" y="-316" width="1858" height="1080" />
     </state>
+    <state x="-1214" y="-42" key="FileChooserDialogImpl/0.0.1303.768/-1858.-316.1858.1080@-1858.-316.1858.1080" timestamp="1591146404782" />
     <state x="666" y="266" key="FileChooserDialogImpl/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1591128706111" />
-    <state x="440" y="99" key="SettingsEditor" timestamp="1591128706932">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="-1432" y="-214" key="SettingsEditor" timestamp="1591146422007">
+      <screen x="-1858" y="-316" width="1858" height="1080" />
     </state>
+    <state x="-1432" y="-214" key="SettingsEditor/0.0.1303.768/-1858.-316.1858.1080@-1858.-316.1858.1080" timestamp="1591146422007" />
     <state x="440" y="99" key="SettingsEditor/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1591128706932" />
   </component>
 </project>
