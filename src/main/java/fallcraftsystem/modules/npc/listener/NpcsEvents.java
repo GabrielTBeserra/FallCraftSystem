@@ -34,20 +34,47 @@ public class NpcsEvents implements Listener {
         Player p = event.getClicker();
         NPC npc = event.getNPC();
         if (npc.getId() == 4) {
-            if (!NpcFile.getNpcFile().contains(p.getUniqueId() + "")) {
-                NpcFile.getNpcFile().set(p.getUniqueId() + ".conversado", true);
-                NpcFile.getNpcFile().set(p.getUniqueId() + ".num", 0);
-                p.sendMessage(Ultilities.formater("&e" + Falas.getFala(p, 1)));
+            if (!NpcFile.getNpcFile().contains("npc.4" + p.getUniqueId() + "")) {
+                NpcFile.getNpcFile().set("npc.4" + p.getUniqueId() + ".conversado", true);
+
+                Ultilities.openBook(Falas.getFala(p, 1), p);
             } else {
-                if (NpcFile.getNpcFile().getBoolean(p.getUniqueId() + ".conversado")) {
+                if (NpcFile.getNpcFile().getBoolean("npc.4" + p.getUniqueId() + ".conversado")) {
                     p.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cVoce ja falou com esse npc"));
                 } else {
-                    NpcFile.getNpcFile().set(p.getUniqueId() + ".conversado", true);
-                    int i = NpcFile.getNpcFile().getInt(p.getUniqueId() + ".num");
+                    NpcFile.getNpcFile().set("npc.4" + p.getUniqueId() + ".conversado", true);
+                    Ultilities.openBook(Falas.getFala(p, 1), p);
 
-                    if (i == 0) {
-                        p.sendMessage(Ultilities.formater("&c&lZAPHYR &9>> &6" + Falas.getFala(p, 1).trim()));
-                    }
+                }
+            }
+            NpcFile.save();
+        } else if (npc.getId() == 13) {
+            if (!NpcFile.getNpcFile().contains("npc.13" + p.getUniqueId() + "")) {
+                NpcFile.getNpcFile().set("npc.13" + p.getUniqueId() + ".conversado", true);
+
+                Ultilities.openBook(Falas.getFala(p, 2), p);
+            } else {
+                if (NpcFile.getNpcFile().getBoolean("npc.13" + p.getUniqueId() + ".conversado")) {
+                    p.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cVoce ja falou com esse npc"));
+                } else {
+                    NpcFile.getNpcFile().set("npc.13" + p.getUniqueId() + ".conversado", true);
+                    Ultilities.openBook(Falas.getFala(p, 2), p);
+
+                }
+            }
+            NpcFile.save();
+        } else if (npc.getId() == 7) {
+            if (!NpcFile.getNpcFile().contains("npc.7" + p.getUniqueId() + "")) {
+                NpcFile.getNpcFile().set("npc.7" + p.getUniqueId() + ".conversado", true);
+
+                Ultilities.openBook(Falas.getFala(p, 3), p);
+            } else {
+                if (NpcFile.getNpcFile().getBoolean("npc.7" + p.getUniqueId() + ".conversado")) {
+                    p.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cVoce ja falou com esse npc"));
+                } else {
+                    NpcFile.getNpcFile().set("npc.7" + p.getUniqueId() + ".conversado", true);
+                    Ultilities.openBook(Falas.getFala(p, 3), p);
+
                 }
             }
             NpcFile.save();
@@ -79,14 +106,18 @@ public class NpcsEvents implements Listener {
                 event.setCancelled(true);
                 p.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cVoce precisa esta no guild hall para criar sua faction"));
             } else {
-                if (NpcFile.getNpcFile().contains(p.getUniqueId() + "")) {
-                    if (!NpcFile.getNpcFile().getBoolean(p.getUniqueId() + ".conversado")) {
+                if (NpcFile.getNpcFile().contains("npc.4" + p.getUniqueId() + "")
+                        || NpcFile.getNpcFile().contains("npc.13" + p.getUniqueId() + "")
+                        || NpcFile.getNpcFile().contains("npc.7" + p.getUniqueId() + "")) {
+                    if (!NpcFile.getNpcFile().getBoolean("npc.4" + p.getUniqueId() + ".conversado")
+                            || !NpcFile.getNpcFile().getBoolean("npc.13" + p.getUniqueId() + ".conversado")
+                            || !NpcFile.getNpcFile().getBoolean("npc.7" + p.getUniqueId() + ".conversado")) {
                         event.setCancelled(true);
-                        p.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cVoce precisa conversar com o Zaphyr no guild hall para dar continuidade"));
+                        p.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cVoce precisa conversar com todos os guardioes no guild hall para dar continuidade"));
                     }
                 } else {
                     event.setCancelled(true);
-                    p.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cVoce precisa conversar com o Zaphyr no guild hall para dar continuidade"));
+                    p.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cVoce precisa conversar com todos os guardioes no guild hall para dar continuidade"));
                 }
 
             }
@@ -117,7 +148,6 @@ public class NpcsEvents implements Listener {
         }
 
 
-
     }
 
     @EventHandler
@@ -139,14 +169,18 @@ public class NpcsEvents implements Listener {
             event.setCancelled(true);
             p.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cVoce precisa esta no guild hall para criar sua faction"));
         } else {
-            if (NpcFile.getNpcFile().contains(p.getUniqueId() + "")) {
-                if (!NpcFile.getNpcFile().getBoolean(p.getUniqueId() + ".conversado")) {
+            if (NpcFile.getNpcFile().contains("npc.4" + p.getUniqueId() + "")
+                    || NpcFile.getNpcFile().contains("npc.13" + p.getUniqueId() + "")
+                    || NpcFile.getNpcFile().contains("npc.7" + p.getUniqueId() + "")) {
+                if (!NpcFile.getNpcFile().getBoolean("npc.4" + p.getUniqueId() + ".conversado")
+                        || !NpcFile.getNpcFile().getBoolean("npc.13" + p.getUniqueId() + ".conversado")
+                        || !NpcFile.getNpcFile().getBoolean("npc.7" + p.getUniqueId() + ".conversado")) {
                     event.setCancelled(true);
-                    p.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cVoce precisa conversar com o Zaphyr no guild hall para dar continuidade"));
+                    p.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cVoce precisa conversar com todos os guardioes no guild hall para dar continuidade"));
                 }
             } else {
                 event.setCancelled(true);
-                p.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cVoce precisa conversar com o Zaphyr no guild hall para dar continuidade"));
+                p.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cVoce precisa conversar com todos os guardioes no guild hall para dar continuidade"));
             }
         }
 

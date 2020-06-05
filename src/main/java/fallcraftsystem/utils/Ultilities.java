@@ -1,17 +1,19 @@
 package fallcraftsystem.utils;
 
 import fallcraftsystem.core.FallCraftSystem;
-import net.minecraft.server.v1_8_R3.IChatBaseComponent;
-import net.minecraft.server.v1_8_R3.PacketPlayOutPlayerListHeaderFooter;
-import net.minecraft.server.v1_8_R3.PlayerConnection;
+import io.netty.buffer.Unpooled;
+import net.minecraft.server.v1_8_R3.*;
 import org.apache.commons.io.Charsets;
 import org.apache.commons.io.IOUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.command.CommandSender;
 import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
+import org.bukkit.craftbukkit.v1_8_R3.inventory.CraftItemStack;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
@@ -101,9 +103,14 @@ public class Ultilities {
                                         ServerUtils.teleportMap.get(p).setTime(ServerUtils.teleportMap.get(p).getTime() - 1);
 
                                     } else if (ServerUtils.teleportMap.get(p).getTime() == 0) {
-                                        p.sendMessage(Ultilities.formater("&6&lTELEPORT &9>> &CTeleportando!"));
-                                        p.playSound(ServerUtils.teleportMap.get(p).getToLoc(), Sound.ENDERMAN_TELEPORT, 1.0f, 1.0f);
-                                        p.teleport(ServerUtils.teleportMap.get(p).getToLoc());
+                                        if (!ServerUtils.teleportMap.get(p).isTeleported()) {
+                                            p.sendMessage(Ultilities.formater("&6&lTELEPORT &9>> &CTeleportando!"));
+                                            p.playSound(ServerUtils.teleportMap.get(p).getToLoc(), Sound.ENDERMAN_TELEPORT, 1.0f, 1.0f);
+                                            p.teleport(ServerUtils.teleportMap.get(p).getToLoc());
+                                        }
+
+                                        ServerUtils.teleportMap.get(p).setTeleported(true);
+
 
                                         if (ServerUtils.teleportMap.get(p).getInvincibility() < 0) {
                                             ServerUtils.teleportMap.get(p).setTeleported(true);
@@ -134,6 +141,31 @@ public class Ultilities {
                 }
             }
         }.runTaskTimer(FallCraftSystem.plugin, 20L, 20L);
+    }
+
+    public static ItemStack newBook(String title, String author, String... pages) {
+        ItemStack is = new ItemStack(Material.WRITTEN_BOOK, 1);
+        net.minecraft.server.v1_8_R3.ItemStack nmsis = CraftItemStack.asNMSCopy(is);
+        NBTTagCompound bd = new NBTTagCompound();
+        bd.setString("title", title);
+        bd.setString("author", author);
+        NBTTagList bp = new NBTTagList();
+        for (String text : pages) {
+            bp.add(new NBTTagString(text));
+        }
+        bd.set("pages", bp);
+        nmsis.setTag(bd);
+        is = CraftItemStack.asBukkitCopy(nmsis);
+        return is;
+    }
+
+    public static void openBook(ItemStack book, Player p) {
+        int slot = p.getInventory().getHeldItemSlot();
+        ItemStack old = p.getInventory().getItem(slot);
+        p.getInventory().setItem(slot, book);
+        PacketPlayOutCustomPayload packet = new PacketPlayOutCustomPayload("MC|BOpen", new PacketDataSerializer(Unpooled.EMPTY_BUFFER));
+        ((CraftPlayer) p).getHandle().playerConnection.sendPacket(packet);
+        p.getInventory().setItem(slot, old);
     }
 
 }

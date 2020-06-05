@@ -50,7 +50,6 @@ public class GeneralEvents implements Listener {
             if (!p.hasPermission("fallcraft.module.essentials.v")) {
                 p.hidePlayer(ol);
             }
-
         }
         ServerUtils.players.put(event.getPlayer(), gm);
         event.setJoinMessage(Ultilities.formater("&a+&f &8" + event.getPlayer().getName()));
@@ -64,13 +63,14 @@ public class GeneralEvents implements Listener {
 
 
         if (!(mplayer.getFactionTag().equals("") || mplayer.getFactionTag().equals(" "))) {
-            facName = "&5[&f" + mplayer.getFactionTag() + "&5] ";
+            facName = " &e&l" + mplayer.getFactionTag() + "";
         }
 
+        String perm = ChatVault.getChat().getPlayerPrefix(event.getPlayer()).replace("[", "")
+                .replace("]", "");
 
         event.getPlayer().setPlayerListName(
-                Ultilities.formater(
-                        ChatVault.getChat().getPlayerPrefix(event.getPlayer()) + facName + "&7" + event.getPlayer().getName()));
+                Ultilities.formater(perm  + "&7" + event.getPlayer().getName() + facName));
     }
 
     @EventHandler

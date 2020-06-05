@@ -86,15 +86,17 @@ public class GameScoreboard implements Listener {
         score15.setScore(6);
         score16.setScore(5);
 
+        String perm = ChatVault.getChat().getPlayerPrefix(player).replace("[", "")
+                .replace("]", "");
 
         if (!(mplayer.getFactionTag().equals("") || mplayer.getFactionTag().equals(" "))) {
-            facName = "&5[&f" + mplayer.getFactionTag() + "&5] ";
+            facName = " &e&l" + mplayer.getFactionTag() + "";
         }
 
 
         player.setPlayerListName(
                 Ultilities.formater(
-                        ChatVault.getChat().getPlayerPrefix(player) + facName + "&7" + player.getName()));
+                        perm + "&7" + player.getName() + facName));
         player.setScoreboard(scoreboard);
     }
 
@@ -143,13 +145,15 @@ public class GameScoreboard implements Listener {
 
 
         if (!(mplayer.getFactionTag().equals("") || mplayer.getFactionTag().equals(" "))) {
-            facName = "&5[&f" + mplayer.getFactionTag() + "&5] ";
+            facName = " &e&l" + mplayer.getFactionTag() + "";
         }
 
+        String perm = ChatVault.getChat().getPlayerPrefix(player).replace("[", "")
+                .replace("]", "");
 
         player.setPlayerListName(
                 Ultilities.formater(
-                        ChatVault.getChat().getPlayerPrefix(player) + facName + "&7" + player.getName()));
+                        perm  + "&7" + player.getName() + facName));
         player.setScoreboard(scoreboard);
     }
 

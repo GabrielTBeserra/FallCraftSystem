@@ -11,6 +11,7 @@ public class PlayerTeleport {
     private int invincibility;
     private boolean teleported;
 
+
     public PlayerTeleport(int time, Location location, Location toLoc) {
         this.time = time;
         this.location = location;
