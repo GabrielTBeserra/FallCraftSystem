@@ -168,6 +168,12 @@ commands:
     aliases:
       - compactar
       - compact
+  fcscoreboard:
+    description: liga e desliga a scoreboard.
+    usage: §cUse /fcscoreboard <on/off>
+    aliases:
+      - fcs
+      - fcscore
 permissions:
   fallcraft.module.warp.*:
     description: Da acesso a todos comandos do Warp

@@ -2,10 +2,8 @@ package fallcraftsystem.modules.scoreboard.listener;
 
 import com.massivecraft.factions.entity.MPlayer;
 import fallcraftsystem.core.FallCraftSystem;
-import fallcraftsystem.entities.enums.FlyStatus;
-import fallcraftsystem.entities.enums.InvStatus;
-import fallcraftsystem.entities.enums.SpyStatus;
-import fallcraftsystem.entities.enums.VanishStatus;
+import fallcraftsystem.entities.GamePlayer;
+import fallcraftsystem.entities.enums.*;
 import fallcraftsystem.modules.coin.database.CoinData;
 import fallcraftsystem.utils.ServerUtils;
 import fallcraftsystem.utils.Ultilities;
@@ -157,6 +155,19 @@ public class GameScoreboard implements Listener {
         player.setScoreboard(scoreboard);
     }
 
+    private static void emptyScoreboard(Player player) throws SQLException {
+        ScoreboardManager scoreboardManager = FallCraftSystem.plugin.getServer().getScoreboardManager();
+        Scoreboard scoreboard = scoreboardManager.getNewScoreboard();
+        Objective objective = scoreboard.registerNewObjective("", "");
+        objective.setDisplaySlot(DisplaySlot.SIDEBAR);
+
+        Score score1 = objective.getScore(Ultilities.formater(""));
+
+        score1.setScore(0);
+
+        player.setScoreboard(scoreboard);
+    }
+
     @EventHandler
     public void onJoinPlayer(PlayerJoinEvent event) {
         Player player = event.getPlayer();
@@ -165,12 +176,22 @@ public class GameScoreboard implements Listener {
             @Override
             public void run() {
 
+                GamePlayer gm = ServerUtils.players.get(player);
+
                 try {
-                    if (player.hasPermission("admin.scoreboard")) {
-                        adminPlayerScoreboard(player);
+                    if (gm.getFCScoreboardStatus().equals(FCScoreboardStatus.OFF)) {
+
+                        emptyScoreboard(player);
+
                     } else {
-                        normalPlayerScoreboard(player);
+
+                        if (player.hasPermission("admin.scoreboard")) {
+                            adminPlayerScoreboard(player);
+                        } else {
+                            normalPlayerScoreboard(player);
+                        }
                     }
+
                 } catch (Exception e) {
                     System.err.println("Player is null, canceling the timer");
                     this.cancel();

@@ -12,8 +12,9 @@ public class GamePlayer {
     private PvpStatus pvpStatus;
     private InvStatus invStatus;
     private LuzStatus luzStatus;
+    private FCScoreboardStatus fcScoreboardStatus;
 
-    public GamePlayer(SpyStatus spyStatus, Player player, PlayerStatus playerStatus, VanishStatus vanishStatus, FlyStatus flyStatus, PvpStatus pvpStatus, InvStatus invStatus, LuzStatus luzStatus) {
+    public GamePlayer(SpyStatus spyStatus, Player player, PlayerStatus playerStatus, VanishStatus vanishStatus, FlyStatus flyStatus, PvpStatus pvpStatus, InvStatus invStatus, LuzStatus luzStatus, FCScoreboardStatus fcScoreboardStatus) {
         this.spyStatus = spyStatus;
         this.player = player;
         this.playerStatus = playerStatus;
@@ -22,6 +23,7 @@ public class GamePlayer {
         this.pvpStatus = pvpStatus;
         this.invStatus = invStatus;
         this.luzStatus = luzStatus;
+        this.fcScoreboardStatus = fcScoreboardStatus;
     }
 
     public GamePlayer(Player player) {
@@ -33,6 +35,7 @@ public class GamePlayer {
         this.spyStatus = SpyStatus.OFF;
         this.invStatus = InvStatus.VISIBLE;
         this.luzStatus = LuzStatus.OFF;
+        this.fcScoreboardStatus = FCScoreboardStatus.ON;
     }
 
 
@@ -101,6 +104,14 @@ public class GamePlayer {
         this.luzStatus = luzStatus;
     }
 
+    public FCScoreboardStatus getFCScoreboardStatus() {
+        return fcScoreboardStatus;
+    }
+
+    public void setFcScoreboardStatus(FCScoreboardStatus fcScoreboardStatus) {
+        this.fcScoreboardStatus = fcScoreboardStatus;
+    }
+
     @Override
     public String toString() {
         return "GamePlayer{" +
@@ -112,6 +123,7 @@ public class GamePlayer {
                 ", pvpStatus=" + pvpStatus +
                 ", invStatus=" + invStatus +
                 ", luzStatus=" + luzStatus +
+                ", fcScoreboardStatus= " + fcScoreboardStatus +
                 '}';
     }
 }
