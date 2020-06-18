@@ -49,18 +49,18 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://D:/SERVER BACKUPS/teste/svr1/spigot.jar!/" />
+          <root url="jar://$MODULE_DIR$/../Mine-1.8/spigot.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES>
-          <root url="jar://D:/SERVER BACKUPS/teste/svr1/spigot.jar!/" />
+          <root url="jar://$MODULE_DIR$/../Mine-1.8/spigot.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://D:/SERVER BACKUPS/Backup to host/svr1/plugins/MambaFactions Premium.jar!/" />
+          <root url="jar://$MODULE_DIR$/../Mine-1.8/plugins/MambaMassiveCore_Premium.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -69,7 +69,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://D:/SERVER BACKUPS/Backup to host/svr1/plugins/MambaMassiveCore Premium.jar!/" />
+          <root url="jar://$MODULE_DIR$/../Mine-1.8/plugins/MambaFactions_Premium.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
