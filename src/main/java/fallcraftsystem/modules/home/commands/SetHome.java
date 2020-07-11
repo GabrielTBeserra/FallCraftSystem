@@ -56,7 +56,7 @@ public class SetHome implements CommandExecutor {
 
 
         HomeDB.getHomeFile().set(player.getUniqueId() + ".home." + args[0] + ".X", player.getLocation().getX());
-        HomeDB.getHomeFile().set(player.getUniqueId() + ".home." + args[0] + ".Y", player.getLocation().getY());
+        HomeDB.getHomeFile().set(player.getUniqueId() + ".home." + args[0] + ".Y", player.getLocation().getY() + 1);
         HomeDB.getHomeFile().set(player.getUniqueId() + ".home." + args[0] + ".Z", player.getLocation().getZ());
         HomeDB.getHomeFile().set(player.getUniqueId() + ".home." + args[0] + ".WORLD", player.getLocation().getWorld().getName());
         HomeDB.getHomeFile().set(player.getUniqueId() + ".home." + args[0] + ".DATA" , java.time.LocalDateTime.now().toString());
