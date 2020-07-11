@@ -37,51 +37,30 @@ public class NpcsEvents implements Listener {
             if (!NpcFile.getNpcFile().contains("npc.4" + p.getUniqueId() + "")) {
                 NpcFile.getNpcFile().set("npc.4" + p.getUniqueId() + ".conversado", true);
 
-                Ultilities.openBook(Falas.getFala(p, 1), p);
-            } else {
-                if (NpcFile.getNpcFile().getBoolean("npc.4" + p.getUniqueId() + ".conversado")) {
-                    p.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cVoce ja falou com esse npc"));
-                } else {
-                    NpcFile.getNpcFile().set("npc.4" + p.getUniqueId() + ".conversado", true);
-                    Ultilities.openBook(Falas.getFala(p, 1), p);
 
-                }
             }
+            Ultilities.openBook(Falas.getFala(p, 1), p);
             NpcFile.save();
         } else if (npc.getId() == 13) {
             if (!NpcFile.getNpcFile().contains("npc.13" + p.getUniqueId() + "")) {
                 NpcFile.getNpcFile().set("npc.13" + p.getUniqueId() + ".conversado", true);
 
-                Ultilities.openBook(Falas.getFala(p, 2), p);
-            } else {
-                if (NpcFile.getNpcFile().getBoolean("npc.13" + p.getUniqueId() + ".conversado")) {
-                    p.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cVoce ja falou com esse npc"));
-                } else {
-                    NpcFile.getNpcFile().set("npc.13" + p.getUniqueId() + ".conversado", true);
-                    Ultilities.openBook(Falas.getFala(p, 2), p);
 
-                }
+                NpcFile.save();
             }
-            NpcFile.save();
+            Ultilities.openBook(Falas.getFala(p, 2), p);
         } else if (npc.getId() == 7) {
             if (!NpcFile.getNpcFile().contains("npc.7" + p.getUniqueId() + "")) {
                 NpcFile.getNpcFile().set("npc.7" + p.getUniqueId() + ".conversado", true);
-
-                Ultilities.openBook(Falas.getFala(p, 3), p);
-            } else {
-                if (NpcFile.getNpcFile().getBoolean("npc.7" + p.getUniqueId() + ".conversado")) {
-                    p.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cVoce ja falou com esse npc"));
-                } else {
-                    NpcFile.getNpcFile().set("npc.7" + p.getUniqueId() + ".conversado", true);
-                    Ultilities.openBook(Falas.getFala(p, 3), p);
-
-                }
             }
+            Ultilities.openBook(Falas.getFala(p, 3), p);
             NpcFile.save();
         }
 
 
     }
+
+
 
 
     @EventHandler(priority = EventPriority.HIGHEST)
