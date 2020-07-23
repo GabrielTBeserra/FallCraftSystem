@@ -49,6 +49,13 @@ commands:
     description: Teleporta para outro player.
     permission: fallcraft.module.essentials.tp
     usage: Use /tp <player> [player].
+  tphere:
+    description: Puxa um jogador.
+    permission: fallcraft.module.essentials.tphere
+    usage: Use /tphere <Player>.
+    aliases:
+      - tph
+      - puxar
   tpall:
     description: Teleporta todos players do servidor para um unico player.
     permission: fallcraft.module.essentials.tpall
@@ -174,7 +181,18 @@ commands:
     aliases:
       - fcs
       - fcscore
-permissions:
+  invsee:
+    description: Abre o inventário de um jogador.
+    usage: Use /invsee <jogador>.
+    permission: fallcraft.module.invsee
+  reparo:
+    description: Repara seus itens
+    usage: Use /reparo <mão/tudo>
+    aliases:
+      - fix
+      - reparo
+
+  permissions:
   fallcraft.module.warp.*:
     description: Da acesso a todos comandos do Warp
     children:

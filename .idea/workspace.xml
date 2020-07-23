@@ -64,8 +64,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="D:/SERVER BACKUPS/teste/svr1/spigot.jar!/" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="P:/Java/Minecraft/IntelliJ/Arquivos/Repair" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.48681056" />
   </component>
@@ -108,29 +108,36 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1123" y="-70" key="#com.intellij.ide.util.MemberChooser" timestamp="1592171431780">
-      <screen x="-1856" y="-316" width="1856" height="1080" />
+    <state x="734" y="246" key="#com.intellij.ide.util.MemberChooser" timestamp="1595520442807">
+      <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="-1123" y="-70" key="#com.intellij.ide.util.MemberChooser/0.0.1292.768/-1856.-316.1856.1080@-1856.-316.1856.1080" timestamp="1592171431780" />
     <state x="-1123" y="-70" key="#com.intellij.ide.util.MemberChooser/0.0.1304.768/-1856.-316.1856.1080@-1856.-316.1856.1080" timestamp="1591924352780" />
+    <state x="734" y="246" key="#com.intellij.ide.util.MemberChooser/0.0.1858.1080@0.0.1858.1080" timestamp="1595520442807" />
     <state x="690" y="279" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog" timestamp="1591149182324">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="279" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1591149182324" />
-    <state x="666" y="266" key="FileChooserDialogImpl" timestamp="1592444152272">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="644" y="274" key="FileChooserDialogImpl" timestamp="1595524720932">
+      <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="448" y="195" key="FileChooserDialogImpl/0.0.1292.768/-1856.-316.1856.1080@0.0.1292.768" timestamp="1592170492377" />
+    <state x="644" y="274" key="FileChooserDialogImpl/0.0.1858.1080@0.0.1858.1080" timestamp="1595524720932" />
     <state x="666" y="266" key="FileChooserDialogImpl/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1592444152272" />
-    <state x="440" y="99" key="SettingsEditor" timestamp="1592444154023">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="426" y="102" key="SettingsEditor" timestamp="1595512504255">
+      <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="252" y="0" key="SettingsEditor/0.0.1292.768/-1856.-316.1856.1080@0.0.1292.768" timestamp="1592170495011" />
+    <state x="426" y="102" key="SettingsEditor/0.0.1858.1080@0.0.1858.1080" timestamp="1595512504255" />
     <state x="440" y="99" key="SettingsEditor/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1592444154023" />
     <state x="342" y="100" key="new project wizard" timestamp="1593006921516">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="342" y="100" key="new project wizard/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1593006921516" />
+    <state x="585" y="252" key="run.anything.popup" timestamp="1595523209888">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="585" y="252" key="run.anything.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1595523209888" />
     <state x="-1254" y="-83" width="672" height="698" key="search.everywhere.popup" timestamp="1592171885980">
       <screen x="-1856" y="-316" width="1856" height="1080" />
     </state>

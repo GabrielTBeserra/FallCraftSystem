@@ -1,0 +1,27 @@
+config:
+
+
+  precos:
+    quantidade: 4   #para cada número adicionado deve-se repetir o padrão.
+
+    1:          #Player
+      mao: 100
+      tudo: 10000
+
+    2:          #Beta
+      mao: 90
+      tudo: 9000
+
+    3:          #Ouro
+      mao: 80
+      tudo: 8000
+
+    4:          #Dima
+      mao: 70
+      tudo: 7000
+
+
+  #Permissão para uso: fallcraft.module.reparar_<número>
+  #Permissão para reparar gratuitamente: fallcraft.module.reparar_gratis
+
+  simbolo: "$"  #Exemplo: $1000
