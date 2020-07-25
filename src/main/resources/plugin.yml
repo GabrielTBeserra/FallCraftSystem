@@ -179,6 +179,13 @@ commands:
     permission: fallcraft.module.tpa_toggle
     aliases:
       - tpat
+  tpevento:
+    description: Manda um /tpahere para todos os jogadores online.
+    permission: fallcraft.module.tpevento
+    aliases:
+      - tpe
+      - tpaevento
+      - tpae
   automessage:
     description: Manda mensagens automáticamente no intervalo de tempo definido nas configs.
     permission: fallcraft.module.automessage

@@ -33,6 +33,7 @@ public class Tpahere implements CommandExecutor {
 
         Player player = (Player) sender;
 
+
         if (args.length != 1) return false;
 
         Player player2 = Bukkit.getPlayer(args[0]);
