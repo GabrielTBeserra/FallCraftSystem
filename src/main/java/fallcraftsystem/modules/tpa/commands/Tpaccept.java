@@ -2,6 +2,7 @@ package fallcraftsystem.modules.tpa.commands;
 
 import fallcraftsystem.core.FallCraftSystem;
 import fallcraftsystem.entities.PlayerTeleport;
+import fallcraftsystem.modules.tpa.utils.TpaConfig;
 import fallcraftsystem.modules.tpa.utils.Utilities;
 import fallcraftsystem.utils.ServerUtils;
 import fallcraftsystem.utils.Ultilities;
@@ -26,6 +27,7 @@ public class Tpaccept implements CommandExecutor {
         }
 
         Player player2 = (Player) sender;
+        int tempo = TpaConfig.getTpaFile().getInt("config.tempo_teleporte");
 
         if (Utilities.getTpa().containsKey(player2)) {
             Player player1 = Utilities.getTpa().get(player2);
@@ -35,7 +37,7 @@ public class Tpaccept implements CommandExecutor {
                 player2.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&6Teleportando em &c5 &6segundos..."));
                 player1.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&6Teleportando em &c5 &6segundos..."));
 
-                ServerUtils.teleportMap.put(player1, new PlayerTeleport(4, player1.getLocation(), player2.getLocation()));
+                ServerUtils.teleportMap.put(player1, new PlayerTeleport(tempo-1, player1.getLocation(), player2.getLocation()));
 
                 Utilities.getTpa().remove(player2);
             }
@@ -45,10 +47,19 @@ public class Tpaccept implements CommandExecutor {
 
             if (player1 != null && player1.isOnline()){
 
-                player2.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&6Teleportando em &c5 &6segundos..."));
-                player1.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&6Teleportando em &c5 &6segundos..."));
 
-                ServerUtils.teleportMap.put(player2, new PlayerTeleport(4, player2.getLocation(), player1.getLocation()));
+                if (player1.hasPermission("fallcraft.teleport.bypass")) {
+
+                    ServerUtils.teleportMap.put(player2, new PlayerTeleport(0, player2.getLocation(), player1.getLocation()));
+
+                } else {
+
+                    player2.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&6Teleportando em &c5 &6segundos..."));
+                    player1.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&6Teleportando em &c5 &6segundos..."));
+
+                    ServerUtils.teleportMap.put(player2, new PlayerTeleport(tempo-1, player2.getLocation(), player1.getLocation()));
+
+                }
 
                 Utilities.getTpaHere().remove(player2);
             }

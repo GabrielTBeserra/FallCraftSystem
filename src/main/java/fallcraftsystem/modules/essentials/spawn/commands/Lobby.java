@@ -50,6 +50,12 @@ public class Lobby implements CommandExecutor {
 
 
         p.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&6Teleportado aguarde! &c(NAO SE MEXA)"));
+
+        if (args.length == 1 && sender.hasPermission("fallcraft.teleport.bypass")) {
+            ServerUtils.teleportMap.put(p, new PlayerTeleport(0, p.getLocation(), l));
+            return true;
+        }
+
         ServerUtils.teleportMap.put(p, new PlayerTeleport(3, p.getLocation(), l));
 
         return true;
