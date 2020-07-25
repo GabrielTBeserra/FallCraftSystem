@@ -69,6 +69,11 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.48681056" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="fallcraftsystem.modules.automsg.utils" />
+    </key>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -108,12 +113,24 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="734" y="246" key="#com.intellij.ide.util.MemberChooser" timestamp="1595520442807">
+    <state x="734" y="246" key="#com.intellij.ide.util.MemberChooser" timestamp="1595642685045">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="-1123" y="-70" key="#com.intellij.ide.util.MemberChooser/0.0.1292.768/-1856.-316.1856.1080@-1856.-316.1856.1080" timestamp="1592171431780" />
     <state x="-1123" y="-70" key="#com.intellij.ide.util.MemberChooser/0.0.1304.768/-1856.-316.1856.1080@-1856.-316.1856.1080" timestamp="1591924352780" />
-    <state x="734" y="246" key="#com.intellij.ide.util.MemberChooser/0.0.1858.1080@0.0.1858.1080" timestamp="1595520442807" />
+    <state x="734" y="246" key="#com.intellij.ide.util.MemberChooser/0.0.1858.1080@0.0.1858.1080" timestamp="1595642685045" />
+    <state x="630" y="332" key="#com.intellij.refactoring.encapsulateFields.EncalpsulateFieldsDialog" timestamp="1595540631670">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="630" y="332" key="#com.intellij.refactoring.encapsulateFields.EncalpsulateFieldsDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1595540631670" />
+    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1595554452759">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1595554452759" />
+    <state x="660" y="292" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1595558993311">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="660" y="292" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1595558993311" />
     <state x="690" y="279" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog" timestamp="1591149182324">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -138,10 +155,11 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="585" y="252" key="run.anything.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1595523209888" />
-    <state x="-1254" y="-83" width="672" height="698" key="search.everywhere.popup" timestamp="1592171885980">
-      <screen x="-1856" y="-316" width="1856" height="1080" />
+    <state x="603" y="233" width="673" height="698" key="search.everywhere.popup" timestamp="1595638665974">
+      <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="-1254" y="-83" width="672" height="698" key="search.everywhere.popup/0.0.1292.768/-1856.-316.1856.1080@-1856.-316.1856.1080" timestamp="1592171885980" />
+    <state x="603" y="233" width="673" height="698" key="search.everywhere.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1595638665974" />
     <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1591320698883" />
   </component>
 </project>

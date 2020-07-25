@@ -80,15 +80,15 @@ commands:
     permission: fallcraft.module.delkit
     usage: Use /delkit <nome>.
   home:
-    description: Deleta um kit.
+    description: Teleporta para a casa.
     permission: fallcraft.module.home
     usage: Use /home <Home_Name>.
   delhome:
-    description: Deleta um kit.
+    description: Apaga a casa.
     permission: fallcraft.module.delhome
     usage: Use /delhome <nome>.
   sethome:
-    description: Deleta um kit.
+    description: Salva a casa.
     permission: fallcraft.module.sethome
     usage: Use /sethome <nome>.
   aviso:
@@ -96,7 +96,7 @@ commands:
     permission: fallcraft.module.aviso.admin
     usage: Use /aviso <Aviso>.
   homelist:
-    description: Deleta um kit.
+    description: Lista todas as casas.
     permission: fallcraft.module.homelist
     usage: Use /homelist.
   reloadfall:
@@ -113,6 +113,10 @@ commands:
   ajudastaff:
     description: Chat de ajuda
     usage: Use /ajudastaff
+    aliases:
+      - ajuda
+      - helpop
+      - as
   echest:
     description: Abre o enderchest
     permission: fallcraft.module.echest_use
@@ -124,37 +128,6 @@ commands:
     description: Abre um baú virtual
     permission: fallcraft.chest.open
     usage: §cUse /chest
-  itemajuda:
-    permission: fallcraft.modules.item.ajuda
-    aliases:
-      - iajuda
-      - item
-  itemnome:
-    description: Muda o nome do item segurado (aceita cores)
-    permission: fallcraft.modules.item.nome
-    usage: §7Use §9/itemnome <nome> §7com um item na mão.
-    aliases:
-      - inome
-      - iname
-      - itemname
-  itemdesc:
-    description: Muda a lore (descrição) de um item (aceita cores)
-    permission: fallcraft.modules.item.desc
-    usage: §7Use §9/itemdesc <linha> <frase> §c(recomendado usar o /itemname primeiro)
-    aliases:
-      - idesc
-      - itdesc
-  itemenchant:
-    description: Encanta o item segurado
-    permission: fallcraft.modules.item.enchant
-    usage: §7Use §9/itemenchant <nome> <valor> §7 (<nome> pode ser 'all') // §9/itemenchant remover <nome>
-    aliases:
-      - itenchant
-      - ienchant
-      - iench
-      - itench
-  editar:
-    description: Edita a placa olhada
   craftingtable:
     description: Abre uma crafting table virtual
     permission: fallcraft.modules.craftingtable
@@ -191,6 +164,24 @@ commands:
     aliases:
       - fix
       - reparo
+  tpa:
+    description: Pede para teleportar para um jogador
+    usage: Use /tpa <jogador>.
+  tpahere:
+    description: Pede para teleportar um jogador para si
+    usage: Use /tpahere <jogador>.
+  tpaccept:
+    description: aceita o pedido
+  tpdeny:
+    description: rejeita o pedido
+  tpatoggle:
+    description: Liga/desliga os pedidos de teleporte
+    permission: fallcraft.module.tpa_toggle
+    aliases:
+      - tpat
+  automessage:
+    description: Manda mensagens automáticamente no intervalo de tempo definido nas configs.
+    permission: fallcraft.module.automessage
 
   permissions:
   fallcraft.module.warp.*:

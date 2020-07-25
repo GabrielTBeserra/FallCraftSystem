@@ -24,10 +24,10 @@ public class Utilities {
     public static int handOrAll(String[] args) {
         int handall = 0;
 
-        if (args[0].equalsIgnoreCase("mao") || args[0].equalsIgnoreCase("mão")) {
+        if (args[0].equalsIgnoreCase("mao") || args[0].equalsIgnoreCase("mão") || args[0].equalsIgnoreCase("hand")) {
             handall = 1;
 
-        } else if (args[0].equalsIgnoreCase("tudo")) {
+        } else if (args[0].equalsIgnoreCase("tudo") || args[0].equalsIgnoreCase("all")) {
             handall = 2;
 
         }

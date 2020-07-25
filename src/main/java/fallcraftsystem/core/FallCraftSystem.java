@@ -2,6 +2,7 @@ package fallcraftsystem.core;
 
 import fallcraftsystem.modules.ajudastaff.core.LoadAjudaStaffModules;
 import fallcraftsystem.modules.automessages.core.AutoMessage;
+import fallcraftsystem.modules.automsg.core.LoadAutoMSGModules;
 import fallcraftsystem.modules.blockcommands.core.LoadBlockCommandModule;
 import fallcraftsystem.modules.blockcommands.utils.OptionBlockFile;
 import fallcraftsystem.modules.blocks.core.LoadBlockModules;
@@ -21,6 +22,7 @@ import fallcraftsystem.modules.npc.core.LoadNpcModule;
 import fallcraftsystem.modules.reparo.core.LoadReparoModules;
 import fallcraftsystem.modules.scoreboard.core.LoadScoreboard;
 import fallcraftsystem.modules.scoreboardoff.core.LoadScoreboardOffModules;
+import fallcraftsystem.modules.tpa.core.LoadTpaModules;
 import fallcraftsystem.utils.ServerUtils;
 import fallcraftsystem.utils.Ultilities;
 import fallcraftsystem.utils.dependencies.ChatVault;
@@ -95,5 +97,7 @@ public class FallCraftSystem extends JavaPlugin {
         new LoadScoreboardOffModules(this);
         new LoadInvseeModules(this);
         new LoadReparoModules(this);
+        new LoadTpaModules(this);
+        new LoadAutoMSGModules(this);
     }
 }

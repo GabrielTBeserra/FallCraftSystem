@@ -10,6 +10,7 @@ import com.sk89q.worldguard.protection.managers.RegionManager;
 import fallcraftsystem.core.FallCraftSystem;
 import fallcraftsystem.entities.GamePlayer;
 import fallcraftsystem.entities.enums.PvpStatus;
+import fallcraftsystem.modules.tpa.utils.Utilities;
 import fallcraftsystem.utils.SendTitle;
 import fallcraftsystem.utils.ServerUtils;
 import fallcraftsystem.utils.Ultilities;
@@ -109,11 +110,11 @@ public class GeneralEvents implements Listener {
         if (applicableRegionSet.queryState(null, DefaultFlag.PVP) == StateFlag.State.DENY) {
             if (ServerUtils.players.get(p).getPvpStatus().equals(PvpStatus.ON)) {
                 ServerUtils.players.get(p).setPvpStatus(PvpStatus.OFF);
-                SendTitle.send(p, Ultilities.formater("&cPVP OFF"), "", 5, 5, 5);
+                SendTitle.send(p, Ultilities.formater("&aPVP OFF"), "", 5, 5, 5);
             }
         } else {
             if (ServerUtils.players.get(p).getPvpStatus().equals(PvpStatus.OFF)) {
-                SendTitle.send(p, Ultilities.formater("&aPVP ON"), "", 5, 5, 5);
+                SendTitle.send(p, Ultilities.formater("&cPVP ON"), "", 5, 5, 5);
                 ServerUtils.players.get(p).setPvpStatus(PvpStatus.ON);
             }
         }

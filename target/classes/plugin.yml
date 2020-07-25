@@ -191,6 +191,24 @@ commands:
     aliases:
       - fix
       - reparo
+  tpa:
+    description: Pede para teleportar para um jogador
+    usage: Use /tpa <jogador>.
+  tpahere:
+    description: Pede para teleportar um jogador para si
+    usage: Use /tpahere <jogador>.
+  tpaccept:
+    description: aceita o pedido
+  tpdeny:
+    description: rejeita o pedido
+  tpatoggle:
+    description: Liga/desliga os pedidos de teleporte
+    permission: fallcraft.module.tpa_toggle
+    aliases:
+      - tpat
+  automessage:
+    description: Manda mensagens automáticamente no intervalo de tempo definido nas configs.
+    permission: fallcraft.module.automessage
 
   permissions:
   fallcraft.module.warp.*:
