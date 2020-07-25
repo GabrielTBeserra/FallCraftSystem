@@ -1,0 +1,38 @@
+#################################################
+#                                               #
+#                Auto Messages                  #
+#                                               #
+#################################################
+
+
+# Quantidade de mensagens:
+quantidade: 3
+
+
+# Para adicionar mais repita o padrão mudando o indice de acordo com a quantidade definida acima.
+
+# Índice: ---------------------------------> serve para localizar a mensagem desejada nos comandos;
+#   texto: ---------------------------------> O texto que será repetido;
+#   tempo: ---------------------------------> Tempo, em segundos, que demora para repetir a mensagem;
+#   delay: ---------------------------------> Tempo, em segundos, que demora para começar a mensagem -> fará com que não comecem todas juntas.
+
+
+# Duas mensagens com o mesmo tempo mas delays diferentes nunca aparecerão juntas, duas mensagens com o mesmo tempos diferentes,
+# independentemente do delay, aparecerão juntas em algum momento.
+
+mensagens:
+
+  1:
+    texto: "Texto 1"
+    tempo: 10
+    delay: 5
+
+  2:
+    texto: "Texto 2"
+    tempo: 15
+    delay: 10
+
+  3:
+    texto: "Texto 3"
+    tempo: 20
+    delay: 15

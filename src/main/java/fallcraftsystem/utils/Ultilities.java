@@ -5,10 +5,9 @@ import io.netty.buffer.Unpooled;
 import net.minecraft.server.v1_8_R3.*;
 import org.apache.commons.io.Charsets;
 import org.apache.commons.io.IOUtils;
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
+import org.bukkit.*;
 import org.bukkit.Material;
-import org.bukkit.Sound;
+import org.bukkit.block.Block;
 import org.bukkit.command.CommandSender;
 import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.craftbukkit.v1_8_R3.inventory.CraftItemStack;
@@ -99,13 +98,16 @@ public class Ultilities {
                             if (!p.hasPermission("fallcraft.teleport.bypass")) {
                                 if (ServerUtils.teleportMap.get(p).getLocation().equals(p.getLocation()) || ServerUtils.teleportMap.get(p).isTeleported()) {
                                     if (ServerUtils.teleportMap.get(p).getTime() > 0) {
-                                        p.sendMessage(Ultilities.formater("&6&lTELEPORT &9>> &CTeleportando em " + ServerUtils.teleportMap.get(p).getTime()));
+                                        p.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&6Teleportando em &c" + ServerUtils.teleportMap.get(p).getTime()));
                                         ServerUtils.teleportMap.get(p).setTime(ServerUtils.teleportMap.get(p).getTime() - 1);
 
                                     } else if (ServerUtils.teleportMap.get(p).getTime() == 0) {
                                         if (!ServerUtils.teleportMap.get(p).isTeleported()) {
-                                            p.sendMessage(Ultilities.formater("&6&lTELEPORT &9>> &CTeleportando!"));
+                                            p.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cTeleportando..."));
                                             p.playSound(ServerUtils.teleportMap.get(p).getToLoc(), Sound.ENDERMAN_TELEPORT, 1.0f, 1.0f);
+                                            p.teleport(ServerUtils.teleportMap.get(p).getToLoc());
+
+                                            Thread.sleep(2000);
                                             p.teleport(ServerUtils.teleportMap.get(p).getToLoc());
                                         }
 
@@ -122,11 +124,11 @@ public class Ultilities {
                                         }
                                     }
                                 } else {
-                                    p.sendMessage(Ultilities.formater("&6&lTELEPORT &9>> &CVoce se mexeu, cancelando teleport!"));
+                                    p.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&6Você se mexeu, teleporte &ccancelado&6."));;
                                     ServerUtils.teleportMap.remove(p);
                                 }
                             } else {
-                                p.sendMessage(Ultilities.formater("&6&lTELEPORT &9>> &CTeleportando!"));
+                                p.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cTeleportando..."));
                                 p.playSound(ServerUtils.teleportMap.get(p).getToLoc(), Sound.ENDERMAN_TELEPORT, 1.0f, 1.0f);
                                 p.teleport(ServerUtils.teleportMap.get(p).getToLoc());
                                 ServerUtils.teleportMap.remove(p);

@@ -29,6 +29,17 @@ public class Lobby implements CommandExecutor {
 
         Player p = (Player) sender;
 
+        if (args.length == 1) {
+            if (!p.hasPermission("fallcraft.module.essentials.spawn_admin")) return false;
+
+            if (plugin.getServer().getPlayer(args[0]) == null) {
+                sender.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cO player não está online!"));
+                return true;
+            }
+
+            p = plugin.getServer().getPlayer(args[0]);
+        }
+
         double X = SpawnFile.getSpawnFile().getDouble("LOCALTION.X");
         double Y = SpawnFile.getSpawnFile().getDouble("LOCALTION.Y");
         double Z = SpawnFile.getSpawnFile().getDouble("LOCALTION.Z");

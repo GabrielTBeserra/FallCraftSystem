@@ -13,6 +13,7 @@ public class LoadEssentialCommandsModule {
             new Fly(fallCraftSystem);
             new Gm(fallCraftSystem);
             new Tp(fallCraftSystem);
+            new Tphere(fallCraftSystem);
             new Tpall(fallCraftSystem);
             new Reloadall(fallCraftSystem);
             new Discord(fallCraftSystem);
