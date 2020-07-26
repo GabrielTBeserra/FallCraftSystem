@@ -24,7 +24,15 @@ public class SpyChat implements Listener {
     @EventHandler(priority = EventPriority.MONITOR)
     public void onTellEvent(PlayerCommandPreprocessEvent event) {
         String[] msgArgs = event.getMessage().split(" ");
-        if (msgArgs[0].equals("/tell")) {
+        if (msgArgs[0].equalsIgnoreCase("/tell")
+                || msgArgs[0].equalsIgnoreCase("/t")
+                || msgArgs[0].equalsIgnoreCase("/msg")
+                || msgArgs[0].equalsIgnoreCase("/whisper")
+                || msgArgs[0].equalsIgnoreCase("/w")) {
+
+//            if (msgArgs.length == 1) {
+//                return;
+//            }
 
             Player sender = event.getPlayer();
             Player alvo = Bukkit.getPlayer(msgArgs[1]);
@@ -40,6 +48,7 @@ public class SpyChat implements Listener {
                 }
             }
         }
+
     }
 
 }
