@@ -1,6 +1,9 @@
 package fallcraftsystem.utils;
 
 import fallcraftsystem.core.FallCraftSystem;
+import fallcraftsystem.entities.GamePlayer;
+import fallcraftsystem.entities.enums.FlyStatus;
+import fallcraftsystem.entities.enums.NoFallSTatus;
 import io.netty.buffer.Unpooled;
 import net.minecraft.server.v1_8_R3.*;
 import org.apache.commons.io.Charsets;
@@ -96,21 +99,30 @@ public class Ultilities {
                     try {
                         if (ServerUtils.teleportMap.containsKey(p)) {
                             if (!p.hasPermission("fallcraft.teleport.bypass")) {
-                                if (ServerUtils.teleportMap.get(p).getLocation().equals(p.getLocation()) || ServerUtils.teleportMap.get(p).isTeleported()) {
+//                                GamePlayer gp = ServerUtils.players.get(p);
+                                if (ServerUtils.teleportMap.get(p).getLocation().getY() == (p.getLocation().getY()) || ServerUtils.teleportMap.get(p).isTeleported()) {
                                     if (ServerUtils.teleportMap.get(p).getTime() > 0) {
                                         p.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&6Teleportando em &c" + ServerUtils.teleportMap.get(p).getTime()));
                                         ServerUtils.teleportMap.get(p).setTime(ServerUtils.teleportMap.get(p).getTime() - 1);
 
                                     } else if (ServerUtils.teleportMap.get(p).getTime() == 0) {
                                         if (!ServerUtils.teleportMap.get(p).isTeleported()) {
+//                                            if (gp.getNoFallSTatus().equals(NoFallSTatus.OFF)) {
+//                                                gp.setNoFallSTatus(NoFallSTatus.ON);
+//                                                p.setAllowFlight(true);
+//                                            }
                                             p.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cTeleportando..."));
                                             p.playSound(ServerUtils.teleportMap.get(p).getToLoc(), Sound.ENDERMAN_TELEPORT, 1.0f, 1.0f);
                                             p.teleport(ServerUtils.teleportMap.get(p).getToLoc());
 
-                                            Thread.sleep(2000);
-                                            p.teleport(ServerUtils.teleportMap.get(p).getToLoc());
                                         }
-
+//                                        gp.setTeleports(gp.getTeleports() + 1);
+//                                        if (gp.getTeleports() == 4) {
+//                                            p.teleport(ServerUtils.teleportMap.get(p).getToLoc());
+//                                            gp.setNoFallSTatus(NoFallSTatus.OFF);
+//                                            p.setAllowFlight(true);
+//                                            gp.setTeleports(0);
+//                                        }
                                         ServerUtils.teleportMap.get(p).setTeleported(true);
 
 
@@ -121,11 +133,13 @@ public class Ultilities {
                                             ServerUtils.teleportMap.get(p).setInvincibility(ServerUtils.teleportMap.get(p).getInvincibility() - 1);
                                         } else if (ServerUtils.teleportMap.get(p).getInvincibility() == 0) {
                                             ServerUtils.teleportMap.remove(p);
+
                                         }
                                     }
                                 } else {
                                     p.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&6Você se mexeu, teleporte &ccancelado&6."));;
                                     ServerUtils.teleportMap.remove(p);
+
                                 }
                             } else {
                                 p.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cTeleportando..."));
@@ -134,6 +148,7 @@ public class Ultilities {
                                 ServerUtils.teleportMap.remove(p);
                             }
                         }
+
                     } catch (Exception e) {
                         System.out.println(e.getMessage());
                         ServerUtils.teleportMap.remove(p);

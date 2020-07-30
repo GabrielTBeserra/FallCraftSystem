@@ -24,7 +24,10 @@ public class Tphere implements CommandExecutor {
             return true;
         }
 
-        if (args.length != 1) return false;
+        if (args.length != 1) {
+            sender.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "§cUse /tph <jogador>."));
+            return true;
+        }
 
         Player admin = (Player) sender;
 

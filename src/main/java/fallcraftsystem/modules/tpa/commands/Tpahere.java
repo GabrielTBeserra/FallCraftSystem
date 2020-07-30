@@ -34,7 +34,10 @@ public class Tpahere implements CommandExecutor {
         Player player = (Player) sender;
 
 
-        if (args.length != 1) return false;
+        if (args.length != 1) {
+            sender.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "§cUse /tpahere <jogador>."));
+            return true;
+        }
 
         Player player2 = Bukkit.getPlayer(args[0]);
         if (!(player2 != null && player2.isOnline())) {

@@ -9,6 +9,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import static fallcraftsystem.modules.blocks.utils.Utilities.isIngot;
+import static fallcraftsystem.modules.blocks.utils.Utilities.isSnow;
 
 public class Blocks implements CommandExecutor {
     public FallCraftSystem plugin;
@@ -31,6 +32,7 @@ public class Blocks implements CommandExecutor {
 
         ItemStack[] contents = player.getInventory().getContents();
 
+        int numDeNeve = 0;
         int numDeCarv = 0;
         int numDeFer = 0;
         int numDeOur = 0;
@@ -56,10 +58,15 @@ public class Blocks implements CommandExecutor {
 
                     player.getInventory().setItem(index, null);
                 }
+
+                if (isSnow(type)) {
+                    numDeNeve+= amount;
+                }
             }
             index++;
         }
 
+        int blocosNeve = numDeNeve / 4;
         int blocosCarv = numDeCarv / 9;
         int blocosFer = numDeFer / 9;
         int blocosOur = numDeOur / 9;
@@ -67,6 +74,7 @@ public class Blocks implements CommandExecutor {
         int blocosDiam = numDeDiam / 9;
         int blocosEsm = numDeEsm / 9;
 
+        ItemStack blocosDeNeve = new ItemStack(Material.SNOW_BLOCK, blocosNeve);
         ItemStack blocosDeCarv = new ItemStack(Material.COAL_BLOCK, blocosCarv);
         ItemStack blocosDeFer = new ItemStack(Material.IRON_BLOCK, blocosFer);
         ItemStack blocosDeOur = new ItemStack(Material.GOLD_BLOCK, blocosOur);
@@ -74,6 +82,7 @@ public class Blocks implements CommandExecutor {
         ItemStack blocosDeDiam = new ItemStack(Material.DIAMOND_BLOCK, blocosDiam);
         ItemStack blocosDeEsm = new ItemStack(Material.EMERALD_BLOCK, blocosEsm);
 
+        if (blocosNeve != 0) player.getInventory().addItem(blocosDeNeve);
         if (blocosCarv != 0) player.getInventory().addItem(blocosDeCarv);
         if (blocosFer != 0) player.getInventory().addItem(blocosDeFer);
         if (blocosOur != 0) player.getInventory().addItem(blocosDeOur);
@@ -81,6 +90,7 @@ public class Blocks implements CommandExecutor {
         if (blocosDiam != 0) player.getInventory().addItem(blocosDeDiam);
         if (blocosEsm != 0) player.getInventory().addItem(blocosDeEsm);
 
+        numDeNeve = numDeNeve % 4;
         numDeCarv = numDeCarv % 9;
         numDeFer = numDeFer % 9;
         numDeOur = numDeOur % 9;
@@ -88,6 +98,7 @@ public class Blocks implements CommandExecutor {
         numDeDiam = numDeDiam % 9;
         numDeEsm = numDeEsm % 9;
 
+        ItemStack nev = new ItemStack(Material.SNOW_BALL, numDeNeve);
         ItemStack carv = new ItemStack(Material.COAL, numDeCarv);
         ItemStack fer = new ItemStack(Material.IRON_INGOT, numDeFer);
         ItemStack our = new ItemStack(Material.GOLD_INGOT, numDeOur);
@@ -95,6 +106,7 @@ public class Blocks implements CommandExecutor {
         ItemStack diam = new ItemStack(Material.DIAMOND, numDeDiam);
         ItemStack esm = new ItemStack(Material.EMERALD, numDeEsm);
 
+        if (numDeNeve != 0) player.getInventory().addItem(nev);
         if (numDeCarv != 0) player.getInventory().addItem(carv);
         if (numDeFer != 0) player.getInventory().addItem(fer);
         if (numDeOur != 0) player.getInventory().addItem(our);

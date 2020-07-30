@@ -9,6 +9,7 @@ import com.sk89q.worldguard.protection.flags.StateFlag;
 import com.sk89q.worldguard.protection.managers.RegionManager;
 import fallcraftsystem.core.FallCraftSystem;
 import fallcraftsystem.entities.GamePlayer;
+import fallcraftsystem.entities.enums.NoFallSTatus;
 import fallcraftsystem.entities.enums.PvpStatus;
 import fallcraftsystem.modules.tpa.utils.Utilities;
 import fallcraftsystem.utils.SendTitle;
@@ -16,6 +17,7 @@ import fallcraftsystem.utils.ServerUtils;
 import fallcraftsystem.utils.Ultilities;
 import fallcraftsystem.utils.dependencies.ChatVault;
 import fallcraftsystem.utils.dependencies.WG;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -99,6 +101,15 @@ public class GeneralEvents implements Listener {
         if (!ServerUtils.players.containsKey(p)) {
             GamePlayer gm = new GamePlayer(event.getPlayer());
             ServerUtils.players.put(event.getPlayer(), gm);
+        }
+
+
+        GamePlayer gp = ServerUtils.players.get(p);
+        org.bukkit.util.Vector vector = new org.bukkit.util.Vector();
+
+        if (gp.getNoFallSTatus().equals(NoFallSTatus.ON)) {
+            p.setVelocity(vector.zero());
+            return;
         }
 
 

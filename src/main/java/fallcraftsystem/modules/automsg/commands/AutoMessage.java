@@ -24,7 +24,8 @@ public class AutoMessage implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (args.length == 0) {
-            sender.sendMessage("<ajuda>");
+            ajuda(sender);
+            return true;
         }
 
         int quantidade = MessagesConfig.getMessagesFile().getInt("quantidade");
@@ -69,5 +70,11 @@ public class AutoMessage implements CommandExecutor {
         }
 
         return true;
+    }
+
+    public void ajuda(CommandSender sender) {
+        sender.sendMessage(Ultilities.formater("&9Ajuda do AutoMSG:\n"));
+        sender.sendMessage(Ultilities.formater("&9/amsg list: §7Lista as mensagens e seus tempos/delays;"));
+        sender.sendMessage(Ultilities.formater("&9/amsg <pause/resume>: §7Pausa e Retoma o ciclo de mensagens."));
     }
 }

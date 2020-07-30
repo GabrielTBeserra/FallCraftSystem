@@ -8,6 +8,7 @@ import fallcraftsystem.modules.blockcommands.utils.OptionBlockFile;
 import fallcraftsystem.modules.blocks.core.LoadBlockModules;
 import fallcraftsystem.modules.chest.core.LoadChestModules;
 import fallcraftsystem.modules.coin.core.LoadCoinModule;
+import fallcraftsystem.modules.coinshop.core.LoadCoinShopModules;
 import fallcraftsystem.modules.craftingtable.core.LoadCraftingTableModules;
 import fallcraftsystem.modules.essentials.commands.LoadEssentialCommandsModule;
 import fallcraftsystem.modules.essentials.spawn.LoadEssentialSpawnModule;
@@ -97,7 +98,8 @@ public class FallCraftSystem extends JavaPlugin {
         new LoadScoreboardOffModules(this);
         new LoadInvseeModules(this);
         new LoadReparoModules(this);
-        new LoadTpaModules(this);
-        new LoadAutoMSGModules(this);
+//        new LoadTpaModules(this);
+//        new LoadAutoMSGModules(this);
+        new LoadCoinShopModules(this);
     }
 }

@@ -30,9 +30,9 @@ public class SpyChat implements Listener {
                 || msgArgs[0].equalsIgnoreCase("/whisper")
                 || msgArgs[0].equalsIgnoreCase("/w")) {
 
-//            if (msgArgs.length == 1) {
-//                return;
-//            }
+            if (msgArgs.length == 1) {
+                return;
+            }
 
             Player sender = event.getPlayer();
             Player alvo = Bukkit.getPlayer(msgArgs[1]);

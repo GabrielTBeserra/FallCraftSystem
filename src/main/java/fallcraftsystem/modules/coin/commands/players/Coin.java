@@ -39,6 +39,23 @@ public class Coin implements CommandExecutor {
         } else if (args[0].equalsIgnoreCase("help")) {
             sender.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&aCoin Help"));
             sender.sendMessage(Ultilities.formater("&9/coin &0- &6Mostrar quantidade de coins"));
+        } else if (args[0].equalsIgnoreCase("pay")) {
+            if (Bukkit.getPlayer(args[1]) != null) {
+                try {
+                    Player p = Bukkit.getPlayer(args[1]);
+                    double amount = Double.parseDouble(args[2]);
+                    CoinData.addCoins(p, amount);
+                    CoinData.takeCoins((Player) sender, amount);
+                    sender.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&aPago ¢" + amount + " coins para o player " + p.getName()));
+                    p.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&aRecebidos ¢" + amount + " coins de " + ((Player) sender).getDisplayName()));
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                    sender.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cUse o comando /coin add <Nick> <Quantidade>"));
+                }
+            }
+
         } else if (args[0].equalsIgnoreCase("add") && sender.hasPermission("fallcraft.coin.admin.add")) {
             if (Bukkit.getPlayer(args[1]) != null) {
                 try {

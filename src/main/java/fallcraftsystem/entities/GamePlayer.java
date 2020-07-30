@@ -14,8 +14,10 @@ public class GamePlayer {
     private LuzStatus luzStatus;
     private FCScoreboardStatus fcScoreboardStatus;
     private TpaStatus tpaStatus;
+    private NoFallSTatus noFallSTatus;
+    private int teleports;
 
-    public GamePlayer(SpyStatus spyStatus, Player player, PlayerStatus playerStatus, VanishStatus vanishStatus, FlyStatus flyStatus, PvpStatus pvpStatus, InvStatus invStatus, LuzStatus luzStatus, FCScoreboardStatus fcScoreboardStatus, TpaStatus tpaStatus) {
+    public GamePlayer(SpyStatus spyStatus, Player player, PlayerStatus playerStatus, VanishStatus vanishStatus, FlyStatus flyStatus, PvpStatus pvpStatus, InvStatus invStatus, LuzStatus luzStatus, FCScoreboardStatus fcScoreboardStatus, TpaStatus tpaStatus, NoFallSTatus noFallSTatus, int teleports) {
         this.spyStatus = spyStatus;
         this.player = player;
         this.playerStatus = playerStatus;
@@ -26,6 +28,8 @@ public class GamePlayer {
         this.luzStatus = luzStatus;
         this.fcScoreboardStatus = fcScoreboardStatus;
         this.tpaStatus = tpaStatus;
+        this.noFallSTatus = noFallSTatus;
+        this.teleports = teleports;
     }
 
     public GamePlayer(Player player) {
@@ -39,6 +43,8 @@ public class GamePlayer {
         this.luzStatus = LuzStatus.OFF;
         this.fcScoreboardStatus = FCScoreboardStatus.ON;
         this.tpaStatus = TpaStatus.ON;
+        this.noFallSTatus = NoFallSTatus.OFF;
+        this.teleports = 0;
     }
 
 
@@ -121,6 +127,22 @@ public class GamePlayer {
         this.tpaStatus = tpaStatus;
     }
 
+    public NoFallSTatus getNoFallSTatus() {
+        return noFallSTatus;
+    }
+
+    public void setNoFallSTatus(NoFallSTatus noFallSTatus) {
+        this.noFallSTatus = noFallSTatus;
+    }
+
+    public int getTeleports() {
+        return teleports;
+    }
+
+    public void setTeleports(int teleports) {
+        this.teleports = teleports;
+    }
+
     @Override
     public String toString() {
         return "GamePlayer{" +
@@ -134,6 +156,7 @@ public class GamePlayer {
                 ", luzStatus=" + luzStatus +
                 ", fcScoreboardStatus= " + fcScoreboardStatus +
                 ", tpaStatus= " + tpaStatus +
+                ", noFallStatus= " + noFallSTatus +
                 '}';
     }
 }

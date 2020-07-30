@@ -11,4 +11,8 @@ public class Utilities {
                 || (type.equals(Material.DIAMOND))
                 || (type.equals(Material.EMERALD));
     }
+
+    public static boolean isSnow(Material type) {
+        return type.equals(Material.SNOW_BALL);
+    }
 }

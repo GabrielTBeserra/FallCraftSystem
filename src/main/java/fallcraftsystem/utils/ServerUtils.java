@@ -4,10 +4,7 @@ import fallcraftsystem.entities.GamePlayer;
 import fallcraftsystem.entities.PlayerTeleport;
 import org.bukkit.entity.Player;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class ServerUtils {
     public static String PLUGIN_NAME;
@@ -16,6 +13,7 @@ public class ServerUtils {
     public static Map<Player, GamePlayer> players;
     public static List<Player> vanishList;
     public static Map<Player, PlayerTeleport> teleportMap;
+    public static Map<Player, Boolean> noFallList;
 
     static {
         ServerUtils.PLUGIN_NAME = "&FFallPL &9&l>>&f ";
@@ -24,6 +22,7 @@ public class ServerUtils {
         ServerUtils.players = new HashMap<Player, GamePlayer>();
         ServerUtils.vanishList = new ArrayList<Player>();
         ServerUtils.teleportMap = new HashMap<Player, PlayerTeleport>();
+        ServerUtils.noFallList = new HashMap<Player, Boolean>();
     }
 
 }

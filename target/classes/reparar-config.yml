@@ -6,19 +6,15 @@ config:
 
     1:          #Player
       mao: 100
-      tudo: 10000
 
     2:          #Beta
       mao: 90
-      tudo: 9000
 
     3:          #Ouro
       mao: 80
-      tudo: 8000
 
     4:          #Dima
       mao: 70
-      tudo: 7000
 
 
   #Permissão para uso: fallcraft.module.reparar_<número>

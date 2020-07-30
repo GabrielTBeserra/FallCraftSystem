@@ -30,7 +30,10 @@ public class Lobby implements CommandExecutor {
         Player p = (Player) sender;
 
         if (args.length == 1) {
-            if (!p.hasPermission("fallcraft.module.essentials.spawn_admin")) return false;
+            if (!p.hasPermission("fallcraft.module.essentials.spawn_admin")) {
+                sender.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "§cUse /spawn."));
+                return true;
+            }
 
             if (plugin.getServer().getPlayer(args[0]) == null) {
                 sender.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cO player não está online!"));

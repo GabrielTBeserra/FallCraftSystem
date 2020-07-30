@@ -1,6 +1,7 @@
 package fallcraftsystem.modules.reparo.commands;
 
 import fallcraftsystem.core.FallCraftSystem;
+import fallcraftsystem.modules.reparo.utils.ReparoConfig;
 import fallcraftsystem.utils.ServerUtils;
 import fallcraftsystem.utils.Ultilities;
 import fallcraftsystem.utils.dependencies.VaultEconomy;
@@ -29,7 +30,10 @@ public class Reparo implements CommandExecutor {
         
         Player player = (Player) sender;
 
-        if (args.length == 0 || args.length > 2) return false;
+        if (args.length == 0 || args.length > 2) {
+            sender.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "§cUse /reparo <mão/tudo>."));
+            return true;
+        }
 
         if (args.length == 2 && player.hasPermission("fallcraft.modules.reparar_admin")) {
             
@@ -44,7 +48,7 @@ public class Reparo implements CommandExecutor {
         int handall = handOrAll(args);
         boolean bypass = sender.hasPermission("fallcraft.module.reparar_gratis");
         int index = getPermIndex(sender);
-        double price = getPrice(handall, index);
+        double price = ReparoConfig.getRepararFile().getDouble("config.precos." + index + ".mao");
         double money = VaultEconomy.getVault().getBalance(player);
 
         if (index == 0 && !bypass) {

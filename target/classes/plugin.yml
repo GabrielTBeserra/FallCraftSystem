@@ -163,7 +163,6 @@ commands:
     usage: Use /reparo <mão/tudo>
     aliases:
       - fix
-      - reparo
   tpa:
     description: Pede para teleportar para um jogador
     usage: Use /tpa <jogador>.
@@ -189,6 +188,11 @@ commands:
   automessage:
     description: Manda mensagens automáticamente no intervalo de tempo definido nas configs.
     permission: fallcraft.module.automessage
+    aliases:
+      - amsg
+      - automsg
+  coinshop:
+    permission: fallcraft.module.coinshop
 
   permissions:
   fallcraft.module.warp.*:

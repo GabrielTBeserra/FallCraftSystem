@@ -21,11 +21,14 @@ public class Invsee implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player)) {
-            sender.sendMessage("§cComando apensa para players.");
+            sender.sendMessage("§cComando apenas para players.");
             return true;
         }
 
-        if (args.length != 1) return false;
+        if (args.length != 1) {
+            sender.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "§cUse /invsee <jogador>."));
+            return true;
+        }
 
         if (plugin.getServer().getPlayer(args[0]) == null) {
             sender.sendMessage(Ultilities.formater(ServerUtils.SERVER_NAME + "&cO player não está online!"));

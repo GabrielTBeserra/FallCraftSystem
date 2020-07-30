@@ -20,21 +20,21 @@ public class ChestCreator {
     public boolean createChest(){
         int size = 0;
         String name = "          Sem Rank";
-        if (player.hasPermission("fallcraft.modules.chest.ouro")) {
-            size = ChestConfig.getChestFile().getInt("config.tamanhos.ouro");
-            name = "§6§l             Ouro";
+
+        if (player.hasPermission("fallcraft.modules.chest.safira")) {
+            size = ChestConfig.getChestFile().getInt("config.tamanhos.safira");
+            name = "§d§l           Safira";
             chest = Bukkit.createInventory(player, 9 * size, "§fFall§bCraft §9Baú" + name);
             return true;
-
         } else if (player.hasPermission("fallcraft.modules.chest.dima")) {
             size = ChestConfig.getChestFile().getInt("config.tamanhos.dima");
             name = "§b§l             Dima";
             chest = Bukkit.createInventory(player, 9 * size, "§fFall§bCraft §9Baú" + name);
             return true;
 
-        } else if (player.hasPermission("fallcraft.modules.chest.safira")) {
-            size = ChestConfig.getChestFile().getInt("config.tamanhos.safira");
-            name = "§d§l           Safira";
+        } else if (player.hasPermission("fallcraft.modules.chest.ouro")) {
+            size = ChestConfig.getChestFile().getInt("config.tamanhos.ouro");
+            name = "§6§l             Ouro";
             chest = Bukkit.createInventory(player, 9 * size, "§fFall§bCraft §9Baú" + name);
             return true;
         }
